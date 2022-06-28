@@ -1,0 +1,3 @@
+create table m_stock_packing_weight(id int(5) primary key auto_increment,packing_weight float(10,2),mcpacking_id int(3))
+alter table m_stock add tolerance_level varchar(10);
+alter table m_stock_packing_weight add stock_id int(5);

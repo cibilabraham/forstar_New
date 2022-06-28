@@ -1,0 +1,6 @@
+SELECT DISTINCT r.id, 
+FROM room r 
+     LEFT JOIN roombooking_room rbr ON r.id = rbr.room_id
+     LEFT JOIN roombooking ON rbr.roombooking_id = rb.id
+WHERE COALESCE(@StartDate NOT BETWEEN rb.startDate AND rb.endDate, TRUE)
+      AND COALESCE(@EndDate NOT BETWEEN rb.startDate AND rb.endDate, TRUE)

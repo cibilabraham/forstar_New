@@ -1,0 +1,285 @@
+<flexy:include src="../../ftemplate/topL.php" />
+
+<form name="frmSetMonitoringParam" action="SetMonitoringParam.php" method="post">
+	<table cellspacing="0"  align="center" cellpadding="0" width="96%">
+		<tr flexy:if="err">
+			<td height="40" align="center" class="err1" >{err}</td>
+		</tr>
+			<tr>
+				<td height="10" align="center" ></td>
+			</tr>
+			<tr>
+			<td>
+				<table cellpadding="0"  cellspacing="1" border="0" align="center"  width="100%">
+					<tr>
+						<td>							
+								{setBoxHeader(#SETTING MONITORING PARAMETERS#)}
+								<flexy:include src="../../ftemplate/boxTL.tpl" />					
+							<table cellpadding="0"  width="100%" cellspacing="0" border="0" align="center">		
+								<tr>
+									<td colspan="3" align="center">
+	<table width="70%" align="center">		
+		<tr flexy:if="showEntry()">
+			<td>
+				<table cellpadding="0"  cellspacing="1" border="0" align="center"  width="75%">
+					<tr>
+						<td>			
+							
+							{setSubBoxHeader(heading)}
+							<flexy:include src="../../ftemplate/rbTop.tpl" />
+							<table cellpadding="0"  width="100%" cellspacing="0" border="0" align="center">		
+								<tr>
+									<td width="1" ></td>
+									<td colspan="2" >
+										<table cellpadding="0"  width="100%" cellspacing="0" border="0" align="center">
+											<tr>
+												<td height="10" ></td>
+											</tr>
+											<tr>							
+												<td align="center" flexy:if="editMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('SetMonitoringParam.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdSaveChange" class="button" value=" Save Changes " onClick="return validateSetMonitoringParam(document.frmSetMonitoringParam);">	
+												</td>												
+												<td align="center" flexy:if="addMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('SetMonitoringParam.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdAdd" class="button" value=" Add " onClick="return validateSetMonitoringParam(document.frmSetMonitoringParam);">
+												</td>
+											</tr>
+											<input type="hidden" name="hidSetMonitoringParamId" value="{editId}">
+											<tr>
+											  <td nowrap class="fieldName">											  </td>
+										  </tr>
+											
+
+											<tr>
+											  <td colspan="2" height="5"></td>
+										  </tr>
+	<tr>
+		<td colspan="2" align="center" style="padding-left:10px; padding-right:10px;" id="divEntryExistTxt" class="err1"></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center" style="padding-left:10px; padding-right:10px;"> 
+			<table width="70%" border="0">
+				<tr>
+				<TD>
+					<table>
+						<TR>
+						<TD valign="top">
+						<table>
+							<tr>
+							<td class="fieldName" nowrap="nowrap">*Machinery</td>
+							<td class="listing-item">
+								<select name="data[SetMonitoringParam][installed_capacity_id]" id="installedCapacityId"></select>	
+								{if:editMode}
+								<input type="hidden" name="data[SetMonitoringParam][id]" value="" readonly>
+								{end:}
+							</td>
+							</tr>
+							<tr>
+							<td class="fieldName" nowrap="nowrap">*Head Name</td>
+							<td class="listing-item">
+								<input name="data[SetMonitoringParam][head_name]" type="text" id="headName" size="28" value="" >
+							</td>
+							</tr>
+							<tr>
+								<td class="fieldName" nowrap="nowrap">*Monitoring Parameters</td>
+								<td class="listing-item">
+									<select name="data[SetMonitoringParam][monitoring_parameter_id]" id="monitoringParameter"></select>
+								</td>
+							</tr>
+							<tr>
+								<td class="fieldName" nowrap="nowrap">Description</td>
+								<td class="listing-item"><textarea name="data[SetMonitoringParam][description]" id="description"></textarea></td>
+							</tr>						
+						</table>
+						</TD>
+						<td>&nbsp;</td>
+						<td valign="top">
+						<table>		
+							<tr>
+								<td class="fieldName" nowrap="nowrap">*Start</td>
+								<td class="listing-item">
+									<select name="data[SetMonitoringParam][start]" id="start">
+										<option value="">--Select--</option>
+										<option value="Y">YES</option>
+										<option value="N">NO</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td class="fieldName" nowrap="nowrap">Stop</td>
+								<td class="listing-item">
+									<select name="data[SetMonitoringParam][stop]" id="stop">
+										<option value="">--Select--</option>
+										<option value="Y">YES</option>
+										<option value="N">NO</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td class="fieldName" nowrap="nowrap">Monitoring Interval</td>
+								<td class="listing-item" nowrap>
+									<input name="data[SetMonitoringParam][monitoring_interval]" type="text" id="monitoringInterval" size="5" value="" style="text-align:right;" autocomplete="off">
+									&nbsp;HR
+								</td>
+							</tr>
+							
+						</table>
+						</td>
+						</TR>
+					</table>
+				</TD>
+				</tr>
+                                          </table>
+					</td>
+					</tr>
+											<tr>
+											  <td colspan="2" height="5"></td>
+										  </tr>
+											<tr>							
+												<td align="center" flexy:if="editMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('SetMonitoringParam.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdSaveChange" class="button" value=" Save Changes " onClick="return validateSetMonitoringParam(document.frmSetMonitoringParam);">	
+												</td>												
+												<td align="center" flexy:if="addMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('SetMonitoringParam.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdAdd" class="button" value=" Add " onClick="return validateSetMonitoringParam(document.frmSetMonitoringParam);">
+												</td>
+											</tr>
+											<tr>
+												<td  height="10" ></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						<flexy:include src="../../ftemplate/rbBottom.tpl" />
+						</td>
+					</tr>
+				</table>
+				<!-- Form fields end   -->
+			</td>
+		</tr>			
+	</table>
+		</td>
+			</tr>	
+	<tr flexy:if="showEntry()" >
+		<td colspan="3" height="10" ></td>
+	</tr>
+	
+	<tr>
+		<td colspan="3" height="10" ></td>
+	</tr>
+	<tr flexy:if="listMode">	
+		<td colspan="3">
+			<table cellpadding="0" cellspacing="0" align="center">
+			<tr flexy:if="!printMode">
+				<td>{if:del}<input flexy:ignore="yes" type="submit" value=" Delete " class="button"  name="cmdDelete" onClick="return confirmDelete(this.form,'delId_',{setMPRecSize});">{end:}&nbsp;{if:add}<input flexy:ignore="yes" type="submit" value=" Add New " name="cmdAddNew" class="button">{end:}&nbsp;{if:print}<input flexy:ignore="yes" type="button" value=" Print " name="btnPrint" class="button" onClick="return printWindow('SetMonitoringParam.php?print=y',700,600);">{end:}</td>
+			</tr>
+			</table>
+		</td>
+		</tr>
+	<tr>
+		<td colspan="3" height="5" ></td>
+	</tr>
+	<tr flexy:if="errDel">
+		<td colspan="3" height="15" align="center" class="err1">{errDel}</td>
+	</tr>
+	<tr flexy:if="listMode">
+				<td width="1" ></td>
+				<td colspan="2" >
+				<table cellpadding="1"  width="30%" cellspacing="1" border="0" align="center" id="newspaper-b1">
+	{if:setMPRecSize}
+				<tr flexy:if="displayNavRow">
+					<td colspan="10" style="padding-right:10px" class="navRow">
+						<div align="right">
+						{printPagination(maxpage,pageNo,#SetMonitoringParam.php?#):h}
+						<!--<input type="hidden" name="pageNo" value="{pageNo}"> Set to last section -->
+						</div>
+					</td>
+				</tr>
+				<thead>
+			
+	<tr align="center">
+		<th width="20" flexy:if="!printMode"><INPUT type='checkbox' name='CheckAll' id='CheckAll' onClick="chkAll(this.form,'delId_'); " class="chkBox"></th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Machinery</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Head</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Monitoring<br/>Parameters</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Start</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Stop</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Monitoring<br> Interval</th>
+		{if:edit}
+		<th width="45" flexy:if="!printMode">&nbsp;</th>
+		{end:}
+	</tr>
+	</thead>
+	<tbody>
+	{setRow(1)}
+	{foreach:setMPRecs,smpr}
+	<tr>
+		<td width="20" align="center" flexy:if="!printMode">
+			<input type="checkbox" name="data[{getRow():h}][SetMonitoringParam][__del]" id="delId_{getRow():h}" value="{smpr.id}" class="chkBox">
+		</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">{smpr.machinery}</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;">{smpr.headname}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">{smpr.parametername}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;" align="center">{setFlag(smpr.start)}</td>		
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;" align="center">{setFlag(smpr.stop)}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;" align="right">{smpr.monitorinterval}</td>
+		{if:edit}
+		  <td class="listing-item" width="45" align="center" flexy:if="!printMode">
+			<input type="submit" value=" Edit " name="cmdEdit" onClick="assignValue(this.form,{smpr.id},'editId');">
+			</td>
+		{end:}
+	</tr>
+		{incrementRow()}
+	{end:}
+	<input type="hidden" name="hidRowCount"	id="hidRowCount" value="{setMPRecSize}" >
+	<input type="hidden" name="editId" value="">
+	</tbody>
+	<tr flexy:if="displayNavRow">
+		<td colspan="10" style="padding-right:10px" class="navRow">
+			<div align="right">
+			{printPagination(maxpage,pageNo,#SetMonitoringParam.php?#):h}
+			</div>
+		</td>
+	</tr>
+	{else:}
+	<tr><TD align="center">{msg_NoRecs}</TD></tr>
+	{end:}
+		</table>
+		</td>
+								</tr>
+								<tr flexy:if="listMode">
+									<td colspan="3" height="5" ></td>
+								</tr>
+								<tr flexy:if="listMode">	
+									<td colspan="3">
+										<table cellpadding="0" cellspacing="0" align="center">
+											<tr flexy:if="!printMode">
+												<td>{if:del}<input type="submit" value=" Delete " class="button"  name="cmdDelete" onClick="return confirmDelete(this.form,'delId_',{setMPRecSize});">{end:}&nbsp;{if:add}<input type="submit" value=" Add New " name="cmdAddNew" class="button">{end:}&nbsp;{if:print}<input type="button" value=" Print " name="btnPrint" class="button" onClick="return printWindow('SetMonitoringParam.php?print=y',700,600);">{end:}</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3" height="5" ></td>
+								</tr>
+							</table>
+						<flexy:include src="../../ftemplate/boxBR.tpl" />					
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>			
+		<tr>
+			<td height="10">
+			<input type="hidden" name="entryExist" id="entryExist" value="" readonly />
+			<input type="hidden" name="pageNo" value="{pageNo}" readonly /> 
+			</td>
+		</tr>	
+</table>
+</form>
+
+<flexy:include src="../../ftemplate/bottomR.php" />
+

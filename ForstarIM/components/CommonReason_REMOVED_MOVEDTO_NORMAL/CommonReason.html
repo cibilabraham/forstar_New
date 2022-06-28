@@ -1,0 +1,330 @@
+<flexy:include src="../../ftemplate/topL.php" />
+
+<form name="frmCommonReason" action="CommonReason_Original.php" method="post">
+	<table cellspacing="0"  align="center" cellpadding="0" width="96%">
+		<tr flexy:if="err">
+			<td height="40" align="center" class="err1" >{err}</td>
+		</tr>
+			<tr>
+				<td height="10" align="center" ></td>
+			</tr>
+			<tr>
+			<td>
+				<table cellpadding="0"  cellspacing="1" border="0" align="center"  width="100%">
+					<tr>
+						<td>							
+								{setBoxHeader(#Common Reason#)}
+								<flexy:include src="../../ftemplate/boxTL.tpl" />					
+							<table cellpadding="0"  width="100%" cellspacing="0" border="0" align="center">		
+								<tr>
+									<td colspan="3" align="center">
+	<table width="70%" align="center">		
+		<tr flexy:if="showEntry()">
+			<td>
+				<table cellpadding="0"  cellspacing="1" border="0" align="center"  width="75%">
+					<tr>
+						<td>			
+							
+							{setSubBoxHeader(heading)}
+							<flexy:include src="../../ftemplate/rbTop.tpl" />
+							<table cellpadding="0"  width="100%" cellspacing="0" border="0" align="center">		
+								<tr>
+									<td width="1" ></td>
+									<td colspan="2" >
+										<table cellpadding="0"  width="100%" cellspacing="0" border="0" align="center">
+											<tr>
+												<td height="10" ></td>
+											</tr>
+											<tr>							
+												<td align="center" flexy:if="editMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('CommonReason_Original.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdSaveChange" class="button" value=" Save Changes " onClick="return validateCommonReason(document.frmCommonReason);">	
+												</td>												
+												<td align="center" flexy:if="addMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('CommonReason_Original.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdAdd" class="button" value=" Add " onClick="return validateCommonReason(document.frmCommonReason);">
+												</td>
+											</tr>
+											<input type="hidden" name="hidCommonReasonId" value="{editId}">
+											<tr>
+											  <td nowrap class="fieldName">											  </td>
+										  </tr>
+											
+
+											<tr>
+											  <td colspan="2" height="5"></td>
+										  </tr>
+	<tr>
+		<td colspan="2" align="center" style="padding-left:10px; padding-right:10px;" id="divEntryExistTxt" class="err1"></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center" style="padding-left:10px; padding-right:10px;"> 
+			<table width="70%" border="0">
+				<tr>
+				<TD>
+					<table border="0">
+						<TR>
+						<TD valign="top">
+						<table>
+							<tr>
+								<td class="fieldName" nowrap="nowrap">*Account Type</td>
+								<td class="listing-item" align="left">
+									<select name="data[CommonReason][cod]" id="cod"></select>
+								</td>
+							</tr>
+							<tr>
+							<td class="fieldName" nowrap="nowrap">*Reason</td>
+							<td class="listing-item">
+								<input name="data[CommonReason][reason]" type="text" id="reason" size="28" value="" autocomplete="off" />
+								{if:editMode}
+								<input type="hidden" name="data[CommonReason][id]" value="" readonly>
+								{end:}
+							</td>
+							</tr>	
+							<tr>
+								<td class="fieldName" nowrap >Check List</td>
+								<td>
+									<INPUT type="checkbox" name="data[CommonReason][check_point]" id="checkPoint" class="chkBox" value="Y" onclick="showChkPoint();"> &nbsp;&nbsp;<span class="fieldName" style="vertical-align:middle; line-height:normal"><font size="1">(If Yes, please give tick mark)</font></span>
+								</td>
+							</tr>						
+						</table>
+						</TD>						
+						</TR>
+<tr id="chkPointRow">
+		<TD style="padding-left:10px;padding-right:10px;" colspan="2" align="center">
+			<table>
+				<TR>
+					<TD>
+							<table  cellspacing="1" bgcolor="#999999" cellpadding="3" id="tblCheckList" class="newspaperType">
+								<tr align="center">
+									<th nowrap style="text-align:center;">Check List</th>
+									<th nowrap>Required</th>	
+									<th>&nbsp;</th>
+								</tr>
+	{setRow(0)}
+	{foreach:chkListRecs,key,clr}		
+<tr align="center" class="whiteRow" id="row_{getRow():h}">
+	<td align="center" class="listing-item">
+		<input type="text" autocomplete="off" size="38" value="{clr.name}" id="chkListName_{getRow():h}" name="chkListName_{getRow():h}"/>
+	</td>
+	<td align="center" class="listing-item">
+		<input type="checkbox" flexy:nameuses="key" class="chkBox" value="Y" id="required_{key}" name="required_%s" />
+	</td>
+	<td align="center" class="listing-item">
+		<a onclick="setChkListItemStatus('{getRow():h}');" href="###"><img border="0" style="border: medium none ;" src="images/delIcon.gif" title=""/></a>
+		<input type="hidden" value="" id="status_{getRow():h}" name="status_{getRow():h}"/>
+		<input type="hidden" value="N" id="IsFromDB_{getRow():h}" name="IsFromDB_{getRow():h}"/>
+		<input type="hidden" value="{clr.id}" id="chkListEntryId_{getRow():h}" name="chkListEntryId_{getRow():h}" readonly />
+	</td>
+ </tr>
+	
+	{incrementRow()}
+	{end:}
+	</table>
+	<!--  Hidden Fields-->
+	<input type='hidden' name="hidTableRowCount" id="hidTableRowCount" value="{chkListRecSize}">
+	</TD>
+				</TR>
+				<tr><TD height="5"></TD></tr>
+				<tr>
+					<TD>
+						<a href="###" id='addRow' onclick="javascript:addNewCheckListItem();"  class="link1" title="Click here to add new item."><img  SRC='images/addIcon.gif' BORDER='0' style='border:none;padding-right:4px;vertical-align:middle;' >Add New Check List</a>
+					</TD>
+				</tr>
+			</table>
+		</TD>
+	</tr>
+					</table>
+				</TD>
+				</tr>
+	
+                                          </table>
+					</td>
+					</tr>
+											<tr>
+											  <td colspan="2" height="5"></td>
+										  </tr>
+											<tr>							
+												<td align="center" flexy:if="editMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('CommonReason_Original.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdSaveChange" class="button" value=" Save Changes " onClick="return validateCommonReason(document.frmCommonReason);">	
+												</td>												
+												<td align="center" flexy:if="addMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('CommonReason_Original.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdAdd" class="button" value=" Add " onClick="return validateCommonReason(document.frmCommonReason);">
+												</td>
+											</tr>
+											<tr>
+												<td  height="10" ></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						<flexy:include src="../../ftemplate/rbBottom.tpl" />
+						</td>
+					</tr>
+				</table>
+				<!-- Form fields end   -->
+			</td>
+		</tr>			
+	</table>
+		</td>
+			</tr>	
+	<tr flexy:if="showEntry()" >
+		<td colspan="3" height="10" ></td>
+	</tr>
+	
+	<tr>
+		<td colspan="3" height="10" ></td>
+	</tr>
+	<tr flexy:if="listMode">	
+		<td colspan="3">
+			<table cellpadding="0" cellspacing="0" align="center">
+			<tr flexy:if="!printMode">
+				<td>{if:del}<input flexy:ignore="yes" type="submit" value=" Delete " class="button"  name="cmdDelete" onClick="return confirmDelete(this.form,'delId_',{comReasonRecSize});">{end:}&nbsp;{if:add}<input flexy:ignore="yes" type="submit" value=" Add New " name="cmdAddNew" class="button">{end:}&nbsp;{if:print}<input flexy:ignore="yes" type="button" value=" Print " name="btnPrint" class="button" onClick="return printWindow('CommonReason_Original.php?print=y',700,600);">{end:}</td>
+			</tr>
+			</table>
+		</td>
+		</tr>
+	<tr>
+		<td colspan="3" height="5" ></td>
+	</tr>
+	<tr flexy:if="errDel">
+		<td colspan="3" height="15" align="center" class="err1">{errDel}</td>
+	</tr>
+	<tr flexy:if="listMode">
+				<td width="1" ></td>
+				<td colspan="2" >
+				<table cellpadding="1"  width="30%" cellspacing="1" border="0" align="center" id="newspaper-b1">
+	{if:comReasonRecSize}
+				<tr flexy:if="displayNavRow">
+					<td colspan="10" style="padding-right:10px" class="navRow">
+						<div align="right">
+						{printPagination(maxpage,pageNo,#CommonReason_Original.php?#):h}
+						<!--<input type="hidden" name="pageNo" value="{pageNo}"> Set to last section -->
+						</div>
+					</td>
+				</tr>
+				<thead>
+			
+	<tr align="center">
+		<th width="20" flexy:if="!printMode"><INPUT type='checkbox' name='CheckAll' id='CheckAll' onClick="chkAll(this.form,'delId_'); " class="chkBox"></th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Account Type</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Reason</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Check List</th>
+		{if:edit}
+		<th width="45" flexy:if="!printMode">&nbsp;</th>
+		{end:}
+		{if:edit}
+		<th width="45" flexy:if="!printMode">&nbsp;</th>
+		{end:}
+	</tr>
+	</thead>
+	<tbody>
+	{setRow(1)}
+	{foreach:comReasonRecs,icmR}
+	
+	{if:chkDefaultEntry(icmR.default_entry)}
+	<!--<tr onMouseover="ShowTip('Default Entry');" onMouseout="UnTip();">-->
+	<tr title="Default Entry">
+	{else:}
+	<tr>
+	{end:}	
+		<td width="20" align="center" flexy:if="!printMode">
+			{if:chkDefaultEntry(icmR.default_entry)}
+				<input type="hidden" name="data[{getRow():h}][CommonReason][__del]" id="delId_{getRow():h}" value="" readonly>
+			{else:}
+				<input type="checkbox" name="data[{getRow():h}][CommonReason][__del]" id="delId_{getRow():h}" value="{icmR.id}" class="chkBox">
+			{end:}
+
+		</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">{getACType(icmR.cod)}</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" nowrap>{icmR.reason}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;" align="center">
+			{if:displayChkList(icmR.id)}
+			<a href="###" onMouseover="ShowTip('{displayChkList(icmR.id)}');" onMouseout="UnTip();">{chkList(icmR.check_point)}</a>
+			{else:}
+				{chkList(icmR.check_point)}
+			{end:}
+			
+		</td>
+		{if:edit}
+		  <td class="listing-item" width="45" align="center" flexy:if="!printMode"><input type="submit" value=" Edit " name="cmdEdit" onClick="assignValue(this.form,{icmR.id},'editId');">
+			</td>
+		{end:}
+
+		 <td class="listing-item" width="45" align="center" flexy:if="!icmR.active"><input type="submit" value=" Confirm " name="cmdConfirm" onClick="assignValue(this.form,{icmR.id},'confirmId');">
+			</td>
+		
+		 <td class="listing-item" width="45" align="center" flexy:if="icmR.active"><input type="submit" value=" ReleaseConfirm " name="btnRlConfirm" onClick="assignValue(this.form,{icmR.id},'rlconfirmId');">
+			</td>
+	</tr>
+		{incrementRow()}
+	{end:}
+	<input type="hidden" name="hidRowCount"	id="hidRowCount" value="{comReasonRecSize}" >
+	<input type="hidden" name="editId" value="">
+	<input type="hidden" name="confirmId" value="">
+	<input type="hidden" name="rlconfirmId" value="">
+	</tbody>
+	<tr flexy:if="displayNavRow">
+		<td colspan="10" style="padding-right:10px" class="navRow">
+			<div align="right">
+			{printPagination(maxpage,pageNo,#CommonReason_Original.php?#):h}
+			</div>
+		</td>
+	</tr>
+	{else:}
+	<tr><TD align="center">{msg_NoRecs}</TD></tr>
+	{end:}
+		</table>
+		</td>
+								</tr>
+								<tr flexy:if="listMode">
+									<td colspan="3" height="5" ></td>
+								</tr>
+								<tr flexy:if="listMode">	
+									<td colspan="3">
+										<table cellpadding="0" cellspacing="0" align="center">
+											<tr flexy:if="!printMode">
+												<td>{if:del}<input type="submit" value=" Delete " class="button"  name="cmdDelete" onClick="return confirmDelete(this.form,'delId_',{comReasonRecSize});">{end:}&nbsp;{if:add}<input type="submit" value=" Add New " name="cmdAddNew" class="button">{end:}&nbsp;{if:print}<input type="button" value=" Print " name="btnPrint" class="button" onClick="return printWindow('CommonReason_Original.php?print=y',700,600);">{end:}</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3" height="5" ></td>
+								</tr>
+							</table>
+						<flexy:include src="../../ftemplate/boxBR.tpl" />					
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>			
+		<tr>
+			<td height="10">
+			<input type="hidden" name="entryExist" id="entryExist" value="" readonly />
+			<input type="hidden" name="pageNo" value="{pageNo}" readonly /> 
+			</td>
+		</tr>	
+</table>
+{if:showEntry()}
+		<SCRIPT LANGUAGE="JavaScript" type="text/javascript">
+			function addNewCheckListItem()
+			{
+				addNewCheckList('tblCheckList','','');		
+			}
+	showChkPoint();	
+		</SCRIPT>
+	{end:}
+{if:showAddRow()}
+	<SCRIPT LANGUAGE="JavaScript">
+		window.load = addNewCheckListItem();
+	</SCRIPT>
+{end:}	
+{if:chkListRecSize} 
+	<flexy:toJavascript fieldId="chkListRecSize"></flexy:toJavascript>
+{end:}
+</form>
+<flexy:include src="../../ftemplate/bottomR.php" />

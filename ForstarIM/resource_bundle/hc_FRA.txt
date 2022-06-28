@@ -1,0 +1,206 @@
+#page ---------------- FRANCE(FRA) -------------
+
+head.txt 	= HEALTH  CERTIFICATE  FOR EXPORT OF FISHERY PRODUCTS INTENDED FOR HUMAN CONSUMPTION
+country.txt 	= INDE :
+vceu.txt	  = Veterinary certificate to EU
+consigner.txt 	  = 1.1 Expediteur : 
+consigner.name    = Nom
+consigner.address  = Adresse
+consigner.po	  = Code Postal
+consigner.phone   = Tel.
+cert.ref	  = 1.2 N0 de reference du certificat
+
+1.3.txt1	  = 1.3 Autorite centrale competente
+1.3.txt2	 = Export Inspection Council of India
+1.3.txt3	 = (Ministry of Commerce & Industry, Govt. of India)
+	
+1.4.txt1 	= 1.4 Autorite locale competente
+1.4.txt2	= Export Inspection Agency-Mumbai
+1.4.txt3	= (Ministry of Commerce & Industry, Govt. of India)
+
+1.5.txt1  	= 1.5 Destinateire
+1.5.name	= Nom
+1.5.addr	= Adresse
+1.5.po		= Code Postal
+1.5.tel		= Tel.
+
+1.7.txt1	= 1.7 Payes d' origine
+1.7.iso		= Code ISO 
+
+1.8.txt1	= 1.8 Region d' origin 
+1.8.code	= Code
+
+1.9.txt1	= 1.9 Payes deof destination
+1.9.iso		= ISO Code
+
+1.11.txt1	= 1.11 Lieu d' origine
+1.11.name	= Nom
+1.11.addr	= Adresse
+1.11.approval	= Numero d'agrement :
+
+1.13.txt1	= 1.13 Place of loading/Lieu de chargement
+
+1.14.txt1	= 1.14 Date du depart
+
+1.15.txt1	= 1.15 Moyens de Transport
+1.15.aero	= Avion
+1.15.ship	= Navire
+1.15.air	= 
+1.15.railway	= Railway wagon
+1.15.road	= Vehicule routier
+1.15.other	= Autres
+1.15.identity	= Identification
+1.15.document	= Refrences documentaire:
+
+1.16.txt1	= 1.16 PIF d'entrée dans I'UE
+
+1.18.txt1	= 1.18 Description merchandise
+
+1.19.txt1	= 1.19 Code merchandise(code SH)
+
+1.20.txt1	= 1.20 Quantite:
+1.20.net	= NET.WT.:
+1.20.gr		= GR.WT.:
+
+1.21.txt1	= 1.21 Temperature produit
+1.21.amb	= Ambiante
+1.21.chi	= Refrigeree
+1.21.fzn	= Congrlee
+
+1.22.txt1	= 1.22 Nombre de conditionnement:
+
+1.23.txt1	= 1.23 N0 des scelles et n0 des conteneurs
+1.23.container  = Container Number:
+1.23.seal	= Seal number:
+
+1.24.txt1	= 1.24 Type de conditionnement
+
+1.25.txt1	= 1.25 Merchandises certifiees aux fins de: 
+1.25.human	= consommation humaine
+
+1.27.txt1	= 1.27 Pour importation ou admission dans I'UE
+
+1.28.txt1	= 1.28 Identification des marchandises
+1.28.approval	= Numero d'agrement des etablissements  :
+1.28.species	= Espece
+1.28.nature 	= Nature du produit
+1.28.treatment	= Type de traitement
+1.28.manuplant	= Atelier de fabrication
+1.28.numpack	= Nombre de conditionnement 
+1.28.netwt	= Poids Net
+1.28.sciname	= (Nom scientifique)
+1.28.cases	= ( Cases )
+
+P.I.LH		= Partie I:Reseignements concernant le lot expedie
+
+#page ----------------2 -------------
+
+II.country	= PAYS :
+II.fishery	= Produits de la peche 
+II.health	= II Attestation sanitarie
+II.a.certificate = II.B.Numero do reference du certificet
+
+II.1.public	= II.1 Attestation de sante publique.
+
+II.1.txt1	= Je soussigne declare avoir connaissance des dispositions pertinentes des reglements (CE) n0 178/2002,(CE) n0 852/2004, (CE) n0 853/2004 et (CE) n0 854/2004 et certifie que les produites de la peche susmentionnes ont ete produits conformenent auxdites dispositions, et notamment:
+
+II.1.txt2	= qu'ils proviennent d'un/d'etablissement(s) appliquant un programme fonde sur les principes HACCP conformement au reglement(CE) n0 852/2004
+
+II.1.txt3	= qu'ils ont ete captures et manitules a bord des navires, debarques, manipules et, le cas echeant, prepares, transformes, congeles et decongeles facon hygienique dans le respect des exigences de l'annexe III, sectionVIII chapitres I a IV, du reglement (CE) n0 853/2004.
+
+II.1.txt4	= qu'ils sont conformes aux normes sanitaires de l'annexe III, section VIII, chapitre V du reglement(CE) n0 853/2004 et aux criteres du reglement (CE) n0 2073/2005 concernant les criteres microbiologiques applicables aux denrees alimentaires. 
+
+II.1.txt5	= qu'ils ont ete emballes, entreposes et transportes conforment a l'annexe III, section VIII, chapitres VI a VIII, du reglement (CE)n0 853/2004
+
+II.1.txt6	= qu'ils ont ete marques confornement a l'annexe II , section I, du reglement(CE)n0 853/2004
+
+II.1.txt7	= que les garanties couvrant les animaux vidants et les produits qui en sont dereves, s'ils sont issus de l'aquaculture prevues par les plans relatifs aux residus presentes conformement  a la directive 96/23/CE et notamnent a son article 29, sont reunies, et 
+
+II.1.txt8	= 
+
+II.1.txt9	= qu'ils ont subi dev maniere satisfaisante les controles officiels prevus a l'annexe III du reglement(CE) n0 854/2004
+
+II.2.1.txt	= (1)[attestation de sante aninale pour les produits issus de l'aquaculture
+
+II.2.1.txt1 	= Je soussigne declare que les produits de la peche susmentionnes proviennent de poissons ou de crustaces cliniquement saims le jour de leur recolte et qu'ils ont ete transportes dans des conditions n'ayant aucune incidence sur leur stalut sanitaire, et notamment que: 
+
+II.2.1.txt2 	= (!)(2) si les produits sont d'une espece sensible(3) a l'AIS et/ou a la NHE, ils:
+
+II.2.1.txt3	= (1)[proviennent d'une source(4) consideree comme indemne d'AIS ou de NHE conformement a la legislation de I'UE ou norme de l'OIE applicable(5)] 
+
+II.2.1.txt4	= (1)[ont ete mis a mort et evisceres]
+
+II.2.1.txt5	= (1)(6) si les produits sont d'une espece sensible(3) a la SHV et/ou a la NHI ils:
+
+II.2.1.txt6	= (1) proviennent d'une source(4) consideree comme indemne de(1) SHV/(1) NHI conformement a la legislation de I'UE ou norme de l'OIE applicable(5)]
+
+II.2.1.txt7	= (1)[ont ete mis a mort et evisceres]]]
+
+P.II.LH		=  Partie II:Certification
+
+#---------------------- Page 3 -------------------
+
+III.notes	= Notes
+III.p.I		= Partie I :
+
+III.1.8		= Rubrique 1.8:
+III.1.8.txt	= région d'origine: pour less produits issues de l'aquaculture, indiquer, S'il y a lieu, les zones figurant sur les listes établies per les décisions 2002/308/CE et 2003/634/EC de la Commission. Pour les mollusques bivalves congelés ou transformés, indiquer la zone de production.
+
+III.1.11	= Rubrique 1.11   : 
+III.1.11.txt	= Lieu d'origine, nom et adresse de l'établissement d'expédition.
+
+III.1.15	= Rubrique 1.15   :
+III.1.15.txt	= Numéro d'immatriculation (wagon ou conteneur et camion), numéro de vol (avion) ou nom (navire), Des informations distinctes doivent être fournies en cas de déchargement et de rechargement.
+
+III.1.19	= Rubrique 1.19   :
+III.1.19.txt	= Utiliser les codes SH appropriés: 03.01, 03.02, 03.04, 03.05, 03.06, 03.07, 05.11.91, 15.04, 15.18.00, 16.03, 16.04, 16.05.
+
+III.1.23	= Rubrique 1.23   :
+III.1.23.txt	= n<sup>o</sup> des scellés et n<sup>o</sup> des conteneurs: uniquement lorsque la réglementation l'exige.
+
+III.1.28	= Rubrique 1.28   :
+III.1.28.txt	= Nature de la marchandise, préciser s'il  s'agit de produits issues de l'aquaculture ou d'origine sauvage.
+III.1.28.txt1	= Type de traitement: produits vivants, réfrigérés, congelés, transformés.
+III.1.28.txt2	= Atelier de fabrication: y compris les navires-usines, les navires-congélateur, les entrepôts frigoriques, les établissements de transformation.
+
+III.p.II	= Partie II :
+
+III.p.II.txt	= La Partie II.2 ne s'applique pas aux lots destinés à la vente au détail, à condition qu'ils soient conformes aux régles d'emballage et d'étiquetage fixées par le règlement (CE) N<sup>o</sup> 853/2004.
+
+III.p.II.txt1	= Biffer les mentions inutile.
+
+III.p.II.txt2	= Cette partie du certificat de santé animale s'applique uniquement si le lot comprend des espèces considèrèes comme sensibles à l'AIS et/ou à la NHE.
+
+III.p.II.txt2.1	= Cette disposition concerne les exportations à destination de tous les États membres; il convient l'une des deux déclarations, sauf si le lot est destiné à une transformation supplémentaire dans un centre d'importation agréé.
+
+III.p.II.txt3	= Espèces sensibles connues.
+
+III.p.II.disease = Maladie
+III.p.II.species = Espèces hôtes sensibles.
+
+III.p.II.EHN.h	 = NHE
+III.p.II.ISA.h	 = AIS
+III.p.II.VHS.h	 = SHV
+III.p.II.IHN.h   = NHI
+
+III.p.II.EHN	= perche commune (Perca fluviatilis), truite arc-en-ciel (Oncorhynchus mykiss)
+III.p.II.ISA	= saumon atlantique (Salmo salar), truite arc-en-ciel (Oncorhynchus mykiss), truite brune (Salmo trutta),
+III.p.II.VHS	= Morue (Gadus morthua), hareng (Clupea harengus), truite brune (Salmo trutta), saumon chinook (Oncorhynchus tshawytscha), saumon coho (O.kisutch), ombre commun (Thymallus thymallus), églefin (Melanogrammus aeglefinus), morue du Pacifique (Gadus macrocephalus), hareng du Pacifique (Cluteaharengus pallasi), brochet (Esox lucius), truite arc-en-ciel (Oncorhynchus mykiss), loche de mer (Rhinonemus cimbrius), sprat (Sprattus sprattus), turbot (Scophthalmus maximus), corègones (Coregonus sp.).
+III.p.II.IHN	= Truite arc-en-ciel (Oncorhynchus mykiss), espèces de saumon du Pacifique (saumon chinook (O.tshawytscha), saumon rouge (O.nerka), saumon keta (O.keta), saumon masou (O.masou), saumon rose (O.rhodurus) et saumon coho (O.kisutch), et saumon atlantique (Salmo salar).
+
+III.p.II.txt4	= La source peut ètre un pays, une zone ou une exploitation.
+
+III.p.II.txt5	= «Indemne» au sens des dispositions de l'annexe B ou C de la directive 91/67/CEE et des décisions 2001/183/EEC et 2003/466/CE de la Commission. L'absence de maladie au sens de l'édition la plus récente  du code et du manuel de l'OIE est également reconnue.
+
+III.p.II.txt6  = Cette partie du certificat de santé animale s'applique uniquement si le lot comprend des espèces considérées comme sensibles à la SHV et/ou à la NHI. Pour que soit autorisé l'être du lot dans un État membre ou une partie d'É membre (rubriques 1.9 et 1.10 de la partie I du certificat) déclarée indemne de SHV et/ou de NHI, ou faisant l'objet d'un program visant à devenir indemne de ces maladies, il faut conserver l'une des deux dêclarations, sauf si le lot est destiné à une transformation supplémentaire dans un centre d'importation agréé.
+
+III.p.II.txt6.1  = Une liste des États membres et zones en question figure dans les décisions 2002/308/CE et 2003/634/CE de la Commission.
+
+III.p.II.txt6.2  = couleur du cachet et la signature doit être différente de celle des autres mentions du certificat.
+
+III.OFFI.txt	= Inspecteur officiel
+III.OFFI.txt1	= Nom (en majuscules):
+III.OFFI.txt2	= Titre et qualitê:
+III.OFFI.txt3	= Date :
+III.OFFI.txt4	= Signature :
+III.OFFI.txt5	= Cachet :

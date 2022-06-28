@@ -1,0 +1,206 @@
+#page ---------------- Italy(ITA) -------------
+
+head.txt 	= HEALTH  CERTIFICATE  FOR EXPORT OF FISHERY PRODUCTS INTENDED FOR HUMAN CONSUMPTION
+country.txt 	= PAESE :
+vceu.txt	= Certificado veterinario &nbsp;&nbsp; para la UE
+consigner.txt 	  = 1.1 Speditore : 
+consigner.name    = Nome
+consigner.address  = Indirizzo
+consigner.po	  = Codice Postale :
+consigner.phone   = Tel.n. :
+cert.ref	  = 1.2  Numero di riferimento del certificato
+
+1.3.txt1	  = 1.3 Autorita centrale competente
+1.3.txt2	 = Export Inspection Council of India
+1.3.txt3	 = (Ministry of Commerce & Industry, Govt. of India)
+	
+1.4.txt1 	= 1.4 Autorita locale competente	
+1.4.txt2	= Export Inspection Agency-Mumbai
+1.4.txt3	= (Ministry of Commerce & Industry, Govt. of India)
+
+1.5.txt1  	= 1.5 Destinatario : 
+1.5.name	= Nome
+1.5.addr	= Indirizzo
+1.5.po		= Codice Postale 
+1.5.tel		= Tel.n.
+
+1.7.txt1	= 1.7 Paese di origine 
+1.7.iso		= Codice ISO
+
+1.8.txt1	= 1.8 Regione de Origine
+1.8.code	= Codice
+
+1.9.txt1	= 1.9.paese di destinazione
+1.9.iso		= Codice ISO
+
+1.11.txt1	= 1.11 Luogo di origine/ Luogo di pesca
+1.11.name	= Nome
+1.11.addr	= Indirizzo
+1.11.approval	= Numero di riconoscimento : 
+
+1.13.txt1	= 1.13 Luogo di carico
+
+1.14.txt1	= 1.14 Data di partenza:
+
+1.15.txt1	= 1.15 Mezzo di transporto :
+1.15.aero	= Aereo
+1.15.ship	= Nave
+1.15.air	= 
+1.15.railway	= Vagone
+1.15.road	= Autocarro
+1.15.other	= Altro
+1.15.identity	= Identificazione :
+1.15.document	= referimentodocumentale:
+
+1.16.txt1	= 1.16 PIF di entrata nell'UE
+
+1.18.txt1	= 1.18 Descrizione della merce
+
+1.19.txt1	= 1.19 Codice del trodotto (codice SA)
+
+1.20.txt1	= 1.20 Numero di animali/peso lordo 
+1.20.net	= NET.WT.:
+1.20.gr		= GR.WT.:
+
+1.21.txt1	= 1.21 Temperatura
+1.21.amb	= Ambiente
+1.21.chi	= Di frigorifero
+1.21.fzn	= congelazione
+
+1.22.txt1	= 1.22 Numero di colli
+
+1.23.txt1	= 1.23 Numero del sigillo e numero del container
+1.23.container  = CONTAINER NO.:
+1.23.seal	= SEAL NO.:
+
+1.24.txt1	= 1.24 Tipo di imballaggio:
+
+1.25.txt1	= 1.25 Merce certificata per
+1.25.human	= Consumo umano
+
+1.27.txt1	= 1.27 Per importazione o ammissione nell'UE
+
+1.28.txt1	= 1.28 Identificazione detta merce
+1.28.approval	= Numero di riconoscimento degli stabilimenti :
+1.28.species	= Specie
+1.28.nature 	= Natura della merce
+1.28.treatment	= Tipo di trattamento
+1.28.manuplant	= Impianto di fabbricazione
+1.28.numpack	= Numero di colli
+1.28.netwt	= Peso netto
+1.28.sciname	= (Nombre cientifico)
+1.28.cases	= ( Cases )
+
+P.I.LH		=  Parte I:Informa zioni sulla partita spedita
+
+#page ----------------2 -------------
+
+II.country	= PAESE:
+II.fishery	= Prodotti della pesca
+II.health	= II. Informazioni sanitarie
+II.a.certificate = II.a.Numero di riferimento del certificato
+
+II.1.public	= II.1 Attestato sanitarie
+
+II.1.txt1	= II sottoscritto dichiara di essere a conoseenza delle  disposizioni tertinenti dei regolamenti (CE) n. 178/2002, (CE) n. 852/2004 e (CE) n. 853/2004 e certifica che I prodotti della pesca sopradescritti sono stati prodotti conformamente a dette disposizioni e in particolare che: 
+
+II.1.txt2	= provengono da stabilimenti che applicano un programma basato sui principi HACCP, a norma del regolam ento (CE) n. 852/2004, 
+
+II.1.txt3	= sono stati pescati e manipolati a bordo delle navi, sbarcati, manipolati e, a seconda dei casi, preparati, trasformati, congelati e scongelati in modo igienico, conformemente alle prescrizioni di cui all'allegato lll sezione Vlll', capitoli da l a lV, del regolamento (CE) n. 853/2004,
+
+II.1.txt4	= soddisfano le prescrizioni sanitarie di cui all'allegato III, sezione VIII, capitolo V, del regolanento (CE) n.853/2004 e soddisfano I criteri pertinenti di cui al regolamento (CE) n. 2073/2005 sui criteri microbiologici applicabili ai prodotti alimentari,
+
+II.1.txt5	= sono stati imballati, immagazzinati e trasportati conformemente alle prescrizioni di cui all'allegato III, sezione VIII, capitoli da VI a VIII, del regolamento (CE) n. 853/2004, 
+
+II.1.txt6	= recano una marchiatura conformemente all'allegato II, sezione I, del regolamento (CE) n. 853/2004,
+
+II.1.txt7	= sono rispettate le garanzie relative agli animali vivi e ai prodotti da essi ottenuti, se di sequacoltura previste dai piani di sorveglianza dei residui presentati a norma della direttiva acquacoltura, previste dai piani di sorvegtianza dei residui presentati a norma della direttiva 96/23/CE , in particolare dell'articolo 29,
+
+II.1.txt8	= e
+
+II.1.txt9	= hanno superato in modo soddisfacente I controlli ufficiali di cui all;allegato III del regolamento (CE) n.854/2004.
+
+II.2.1.txt	= (1)[Attestato di tolizia sanitaria per I prodotti dell'acquacoltura 
+
+II.2.1.txt1 	= II. Sottoscritto dichiara che I prodotti della pesca descritti sopra derivano da pesci o crostacei che erano clinicamente sani il giorno della raccolta e che sono stati trasportati in condizioni che non alterano lo stato di salute animale dei prodotti e certifica in particolare che:
+
+II.2.1.txt2 	= (1)[(2) se sono di specie sensibili(3) a ISA e/o EHN, essi:
+
+II.2.1.txt3	= (1)[provengono da una fonte (4) considerata indenne da ISA e/o EHN conformemente alla normativa UE o alla norma OIE (5) pertinente],
+
+II.2.1.txt4	= (1)[sono stati abbattuti ed eviscerati]],
+
+II.2.1.txt5	= (1)[(6) se sono di specie sensibili(3) a VHS e/o IHN, essi:
+
+II.2.1.txt6	= (1) [provengono da una fonte(4) considerata indenne da VHS e/o IHN conformemente alla normativa UE o alla norma OIE(5) pertinente],
+
+II.2.1.txt7	= (1) [sono stati abbattuti ed eviscerati ] ] ].
+
+P.II.LH		= Parte ll :Certificazion
+
+#---------------------- Page 3 -------------------
+
+III.notes	= Notes
+III.p.I		= Parte I :
+
+III.1.8		= Casella 1.8:
+III.1.8.txt	= Regione di origine: Per I produtti dell'acquacoltura e se del caso, indicare le zone conformemente alle decisioni 2002/308/CE e 2003/634/CE della Commissione.Per I molluschi bivalvi congelati o trasformati indicare l'area di produzione.
+
+III.1.11	= Casella1.11:
+III.1.11.txt	= Luogo di origine: nome e indirizzo dello stabilimento di spedizione.
+
+III.1.15	= Casella 1.15:
+III.1.15.txt	= Numero di immatricolazione (carri ferroviari o container e autocarri), numero di volo (aeromobili) o nome (nave). Queste informazioni debbono essere aggiornate in caso di scarico e nuovo carico.
+
+III.1.19	= Casella 1.19:
+III.1.19.txt	= Utilizzare I codici SA appropriati: 03.01, 03.02, 03.03, 03.04, 03.05, 03.06, 03.07, 05.11.91, 15.04, 15.18.00, 16.03, 16.04, 16.05.
+
+III.1.23	= Casella 1.23:
+III.1.23.txt	= Identificazione del container/numero di sigillo: se del caso.
+
+III.1.28	= Casella 1.28:
+III.1.28.txt	= Natura della merce: specificare se di acquacoltura o di origine selvatica. Tipo di trattamento: vivo, refrigerazione,
+III.1.28.txt1	= congelazione, trasformazione, impianto di fabbricazione: include navi officina, navi congelatrici, depositi 
+III.1.28.txt2	= frigorifero, stabilimenti di trasformazione.
+
+III.p.II	= Parte II :
+
+III.p.II.txt	= La parte II.2 Non e applicabile alle partit destinate alla vendita al dettaglio, a condizione che esse siano conformi alle norme relative all'imballaggio e all'etichettatura di cui al regolamento (CE) n.853/2004.
+
+III.p.II.txt1	= Cancellare la dicitura non pertinente. 
+
+III.p.II.txt2	= Questa parte del certificato sanitario e pertinente solo se la partita comprende specie sensibili a ISA e/o EHN. La prescrizione e/applicabile a tutte le esportazioni in tutti gli stati membri. Una delle due dichiarazioni va conservala, a meno che la partita non sia destinala a ulteriore trasformazione in un centro d'importazione approvato.
+
+III.p.II.txt2.1	= 
+
+III.p.II.txt3	= Specie sensibili note
+
+III.p.II.disease = Malattia
+III.p.II.species = Specie ospiti sensibili
+
+III.p.II.EHN.h	 = EHN
+III.p.II.ISA.h	 = ISA
+III.p.II.VHS.h	 = VHS
+III.p.II.IHN.h   = IHN
+
+III.p.II.EHN	= Pesce persico (Perca fluviatilis), trota iridea (Oncorhynchus mykiss)
+III.p.II.ISA	= Salmone atlantico(Salmo salar), trota iridea(Ocorhynchus mykiss), salmotra(Salmo trutta)
+III.p.II.VHS	= Merluzzo blanco(Gaddus morhua),aringa(Clupea harengus), salmotrota(Salmo trutta) salmone reale (Ocorhynchus tshawitscha), salmone argentato (O. kisutch), temolo (Thymallus thymallus), Eglefino (Melanogrammus aeglefinus), merluzzo del pacifico (Gadus macrocephalus), aringa del pacifico (Clupea harengus pallasi), luccio (Esox lucius), trota iridea(Oncorhynchus mykiss), motella (Rhinonemus cimbrius), spratto (Sprattus sprattus), rombo (Scophthalmus maximus), coregone bianco(Coregonus sp.)
+III.p.II.IHN	= Trota iridea o americana (Oncorhynchus mykiss), specie di salmone del pacifico [salmone reale (O.tshawytscha) salmone rosso (O.nerka), salmone keta (O.keta), salmone masou (O.masou), salmone rosa (O.rhodurus) e salmone argentato (O.kisutch)] e salmone atlantico (Salmo salar) 
+
+III.p.II.txt4	= La fonte puo essere un paese, una zona oppure una singola azienda.
+
+III.p.II.txt5	= "Indenne" conformemente alle disposizioni di cui all'allegato B o C della direttiva 91/67/CEE e alle decisioni 2001/183/CE e 2003/466/CE della commissione. Si riconosce anche I'accezione di "indenne" conformemente all'edizione pru recente del codice e del manuale dell'OIE.
+
+III.p.II.txt6  = Questa parte del certificato sanitario e pertinente solo se la partita comprende specie sensibili a VHS e/o IHN. Perconsentire I'autorizzazione all'ingresso in uno stato membro di una partita o parte di essa (caselle 1.9 e 1.10 della parte I del certificato),che e stata dichiarata indenne da VHS e/o IHN oppure sottoposta ad un programma per esserne indenne, una delle due dichiarazioni va conservata, a meno che la partita non sia destinata a ulteriore trasformazione in un centro d'importazione approvato.
+
+III.p.II.txt6.1  = Un elenco di tali stati menbri e zone figura nelle decisioni 2002/308/CE e 2003/634/CE della commissione.
+
+III.p.II.txt6.2  = II timbro e la firma devono essere di colore diverso da quello delle altre diciture contenute nel certificato.
+
+III.OFFI.txt	= Ispettore ufficiale
+III.OFFI.txt1	= Nome (in lettere maiuscole) :
+III.OFFI.txt2	= Qualifica e titolo :
+III.OFFI.txt3	= Data  :
+III.OFFI.txt4	= irma :
+III.OFFI.txt5	= Timbro:

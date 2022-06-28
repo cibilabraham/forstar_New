@@ -1,0 +1,1 @@
+alter table t_invoice_main add alphacode varchar(10) 

@@ -1,0 +1,1 @@
+alter table t_purchaseorder_main add allocated_status int(2);

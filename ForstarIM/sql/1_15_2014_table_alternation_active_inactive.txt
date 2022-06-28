@@ -1,0 +1,47 @@
+1)alter table stock_category add active int(1) default 0;
+update stock_category set active=1;
+2)alter table stock_subcategory add active int(1) default 0;
+update stock_subcategory set active=1;
+3)alter table m_unit_group add active int(1) default 0;
+4)alter table m_unitmaster add active int(1) default 0;
+update m_unit_group set active=1;
+update m_unitmaster set active=1;
+5)alter table m_stock_unit add active int(1) default 0;
+update m_stock_unit set active=1;
+
+6)alter table supplier_stock add activeconfirm int(1) default 0;
+update supplier_stock set activeconfirm=1;
+update m_supplier_ratelist set active=1;
+7)alter table m_supplier_ratelist add active int(1) default 0;
+8)alter table m_check_point add active int(1) default 0;
+update m_check_point set active=1;
+9)
+alter table m_department add active int(1) default 0;
+update m_department set active=1;
+
+
+10)alter table stock_field add active int(1) default 0;
+update stock_field set active=1;
+11)alter table stock_group add active int(1) default 0;
+update stock_group set active=1;
+12)alter table m_stock add activeconfirm int(1) default 0;
+update m_stock set activeconfirm=1;
+
+alter table m_distributor add active int(1) default 0;
+update m_distributor set active=1;
+alter table m_rate_list add active int(1) default 0;
+update m_rate_list set active=1;
+alter table m_physical_stock add active int(1) default 0;
+update m_physical_stock set active=1;
+alter table m_weight_slab add active int(1) default 0;
+alter table m_zone add active int(1) default 0;
+alter table m_wastage_rate_percentage add active int(1) default 0;
+alter table m_trptr_wt_slab add active int(1) default 0;
+alter table m_transporter add active int(1) default 0;
+update m_transporter set active=1;
+alter table m_transporter_ratelist add active int(1) default 0;
+update m_transporter_ratelist set active=1;
+alter table m_transporter_other_charge add active int(1) default 0;
+update m_transporter_other_charge set active=1;
+alter table m_transporter_status add active int(1) default 0;
+update m_transporter_status set active=1;

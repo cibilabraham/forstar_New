@@ -1,0 +1,28 @@
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('#checkbox1').change(function(){
+	//alert(this.checked);
+        if(this.checked == true){
+            $('#autoUpdate').hide();
+			$('#autoUpdate2').show();
+			}			
+        else
+		{
+            $('#autoUpdate').show();
+			 $('#autoUpdate2').hide();
+		}
+
+    });
+});
+</script>
+<label><input type="checkbox" id="checkbox1"> Show DIV</label>
+ 
+<div id="autoUpdate" class="autoUpdate" >
+   content1
+</div>
+<div id="autoUpdate2" class="autoUpdate2" style="display:none">
+   content2
+</div>

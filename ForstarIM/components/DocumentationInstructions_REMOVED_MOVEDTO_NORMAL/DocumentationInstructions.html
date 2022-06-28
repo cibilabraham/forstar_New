@@ -1,0 +1,238 @@
+<flexy:include src="../../ftemplate/topL.php" />
+
+<form name="frmDocumentationInstructions" action="DocumentationInstructions.php" method="post">
+	<table cellspacing="0"  align="center" cellpadding="0" width="96%">
+		<tr flexy:if="err">
+			<td height="40" align="center" class="err1" >{err}</td>
+		</tr>
+			<tr>
+				<td height="10" align="center" ></td>
+			</tr>
+			<tr>
+			<td>
+				<table cellpadding="0"  cellspacing="1" border="0" align="center"  width="100%">
+					<tr>
+						<td>							
+								{setBoxHeader(#Documentation Instructions#)}
+								<flexy:include src="../../ftemplate/boxTL.tpl" />					
+							<table cellpadding="0"  width="100%" cellspacing="0" border="0" align="center">		
+								<tr>
+									<td colspan="3" align="center">
+	<table width="70%" align="center">		
+		<tr flexy:if="showEntry()">
+			<td>
+				<table cellpadding="0"  cellspacing="1" border="0" align="center"  width="75%">
+					<tr>
+						<td>			
+							
+							{setSubBoxHeader(heading)}
+							<flexy:include src="../../ftemplate/rbTop.tpl" />
+							<table cellpadding="0"  width="100%" cellspacing="0" border="0" align="center">		
+								<tr>
+									<td width="1" ></td>
+									<td colspan="2" >
+										<table cellpadding="0"  width="100%" cellspacing="0" border="0" align="center">
+											<tr>
+												<td height="10" ></td>
+											</tr>
+											<tr>							
+												<td align="center" flexy:if="editMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('DocumentationInstructions.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdSaveChange" class="button" value=" Save Changes " onClick="return validateDocumentationInstructions(document.frmDocumentationInstructions);">	
+												</td>												
+												<td align="center" flexy:if="addMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('DocumentationInstructions.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdAdd" class="button" value=" Add " onClick="return validateDocumentationInstructions(document.frmDocumentationInstructions);">
+												</td>
+											</tr>
+											<input type="hidden" name="hidDocumentationInstructionsId" value="{editId}">
+											<tr>
+											  <td nowrap class="fieldName">											  </td>
+										  </tr>
+											
+
+											<tr>
+											  <td colspan="2" height="5"></td>
+										  </tr>
+	<tr>
+		<td colspan="2" align="center" style="padding-left:10px; padding-right:10px;" id="divEntryExistTxt" class="err1"></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center" style="padding-left:10px; padding-right:10px;"> 
+			<table width="70%" border="0">
+				<tr>
+				<TD align="center">
+					<table>							
+							<tr>
+							<td class="fieldName" nowrap="nowrap">*Name</td>
+							<td class="listing-item">
+								<input name="data[DocumentationInstructions][name]" type="text" id="name" size="28" value="" autocomplete="off" onblur="xajax_chkRecExist(document.getElementById('name').value, '{editId}');" />
+								{if:editMode}
+								<input type="hidden" name="data[DocumentationInstructions][id]" value="" readonly>
+								{end:}
+							</td>
+							</tr>	
+							<tr>
+								<td class="fieldName" nowrap >Required</td>
+								<td nowrap="true" align="left">
+									<INPUT type="checkbox" name="data[DocumentationInstructions][required]" id="required" class="chkBox" value="Y">&nbsp;&nbsp;<span class="fieldName" style="vertical-align:middle; line-height:normal"><font size="1">(If Yes, please give tick mark)</font></span>
+								</td>
+							</tr>						
+						</table>
+				</TD>
+				</tr>
+	
+                                          </table>
+					</td>
+					</tr>
+											<tr>
+											  <td colspan="2" height="5"></td>
+										  </tr>
+											<tr>							
+												<td align="center" flexy:if="editMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('DocumentationInstructions.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdSaveChange" class="button" value=" Save Changes " onClick="return validateDocumentationInstructions(document.frmDocumentationInstructions);">	
+												</td>												
+												<td align="center" flexy:if="addMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('DocumentationInstructions.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdAdd" class="button" value=" Add " onClick="return validateDocumentationInstructions(document.frmDocumentationInstructions);">
+												</td>
+											</tr>
+											<tr>
+												<td  height="10" ></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						<flexy:include src="../../ftemplate/rbBottom.tpl" />
+						</td>
+					</tr>
+				</table>
+				<!-- Form fields end   -->
+			</td>
+		</tr>			
+	</table>
+		</td>
+			</tr>	
+	<tr flexy:if="showEntry()" >
+		<td colspan="3" height="10" ></td>
+	</tr>
+	
+	<tr>
+		<td colspan="3" height="10" ></td>
+	</tr>
+	<tr flexy:if="listMode">	
+		<td colspan="3">
+			<table cellpadding="0" cellspacing="0" align="center">
+			<tr flexy:if="!printMode">
+				<td>{if:del}<input flexy:ignore="yes" type="submit" value=" Delete " class="button"  name="cmdDelete" onClick="return confirmDelete(this.form,'delId_',{docInstructionsRecSize});">{end:}&nbsp;{if:add}<input flexy:ignore="yes" type="submit" value=" Add New " name="cmdAddNew" class="button">{end:}&nbsp;{if:print}<input flexy:ignore="yes" type="button" value=" Print " name="btnPrint" class="button" onClick="return printWindow('DocumentationInstructions.php?print=y',700,600);">{end:}</td>
+			</tr>
+			</table>
+		</td>
+		</tr>
+	<tr>
+		<td colspan="3" height="5" ></td>
+	</tr>
+	<tr flexy:if="errDel">
+		<td colspan="3" height="15" align="center" class="err1"><?=$errDel;?></td>
+	</tr>
+	<tr flexy:if="listMode">
+				<td width="1" ></td>
+				<td colspan="2" >
+				<table cellpadding="1"  width="30%" cellspacing="1" border="0" align="center" id="newspaper-b1">
+	{if:docInstructionsRecSize}
+	<thead>
+				<tr flexy:if="displayNavRow">
+					<td colspan="10" style="padding-right:10px" class="navRow">
+						<div align="right">
+						{printPagination(maxpage,pageNo,#DocumentationInstructions.php?#):h}
+						<!--<input type="hidden" name="pageNo" value="{pageNo}"> Set to last section -->
+						</div>
+					</td>
+				</tr>
+	<tr align="center">
+		<th width="20" flexy:if="!printMode"><INPUT type='checkbox' name='CheckAll' id='CheckAll' onClick="checkAll(this.form,'delId_'); " class="chkBox"></th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Name</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Required</th>		
+		{if:edit}
+		<th width="45" flexy:if="!printMode">&nbsp;</th>
+		{end:}
+		{if:edit}
+		<th width="45" flexy:if="!printMode">&nbsp;</th>
+		{end:}
+	</tr>
+	</thead>
+	<tbody>
+	{setRow(1)}
+	{foreach:docInstructionsRecs,icmR}
+	<tr>
+		<td width="20" align="center" flexy:if="!printMode">
+			<input type="checkbox" name="data[{getRow():h}][DocumentationInstructions][__del]" id="delId_{getRow():h}" value="{icmR.id}" class="chkBox">
+		</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">{icmR.name}</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" align="center">{chkList(icmR.required)}</td>		
+		{if:edit}
+		  <td class="listing-item" width="45" align="center" flexy:if="!printMode"><input type="submit" value=" Edit " name="cmdEdit" onClick="assignValue(this.form,{icmR.id},'editId');">
+			</td>
+		{end:}
+
+		 <td class="listing-item" width="45" align="center" flexy:if="!icmR.active"><input type="submit" value=" Confirm " name="cmdConfirm" onClick="assignValue(this.form,{icmR.id},'confirmId');">
+			</td>
+		
+		 <td class="listing-item" width="45" align="center" flexy:if="icmR.active"><input type="submit" value=" ReleaseConfirm " name="btnRlConfirm" onClick="assignValue(this.form,{icmR.id},'rlconfirmId');">
+			</td>
+	</tr>
+		{incrementRow()}
+	{end:}
+	<input type="hidden" name="hidRowCount"	id="hidRowCount" value="{docInstructionsRecSize}" >
+	<input type="hidden" name="editId" value="">
+	<input type="hidden" name="confirmId" value="">
+	<input type="hidden" name="rlconfirmId" value="">
+	</tbody>
+	<tr flexy:if="displayNavRow">
+		<td colspan="10" style="padding-right:10px" class="navRow">
+			<div align="right">
+			{printPagination(maxpage,pageNo,#DocumentationInstructions.php?#):h}
+			</div>
+		</td>
+	</tr>
+	{else:}
+	<tr><TD align="center">{msg_NoRecs}</TD></tr>
+	{end:}
+		</table>
+		</td>
+								</tr>
+								<tr flexy:if="listMode">
+									<td colspan="3" height="5" ></td>
+								</tr>
+								<tr flexy:if="listMode">	
+									<td colspan="3">
+										<table cellpadding="0" cellspacing="0" align="center">
+											<tr flexy:if="!printMode">
+												<td>{if:del}<input type="submit" value=" Delete " class="button"  name="cmdDelete" onClick="return confirmDelete(this.form,'delId_',{docInstructionsRecSize});">{end:}&nbsp;{if:add}<input type="submit" value=" Add New " name="cmdAddNew" class="button">{end:}&nbsp;{if:print}<input type="button" value=" Print " name="btnPrint" class="button" onClick="return printWindow('DocumentationInstructions.php?print=y',700,600);">{end:}</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3" height="5" ></td>
+								</tr>
+							</table>
+						<flexy:include src="../../ftemplate/boxBR.tpl" />					
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>			
+		<tr>
+			<td height="10">
+			<input type="hidden" name="entryExist" id="entryExist" value="" readonly />
+			<input type="hidden" name="pageNo" value="{pageNo}" readonly /> 
+			</td>
+		</tr>	
+</table>
+</form>
+
+<flexy:include src="../../ftemplate/bottomR.php" />
+

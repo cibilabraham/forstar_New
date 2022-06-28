@@ -1,0 +1,43 @@
+Managesettings.php
+folderaccess.php
+
+
+
+
+
+
+lib\folderaccess_class.php
+
+
+
+
+
+
+
+libjs/ManageSettings.js
+libjs/folderaccess.js
+
+
+
+
+
+
+
+//updatespages
+accessfolder
+
+
+
+
+
+//Manage challan
+rmlotid
+procurement number
+recipe gate pass
+Seal Number
+weighment datasheet
+Purchase Reference
+container edit
+
+
+

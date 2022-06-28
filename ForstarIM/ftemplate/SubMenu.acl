@@ -1,0 +1,61 @@
+<script>
+fixMozillaZIndex=true; //Fixes Z-Index problem  with Mozilla browsers but causes odd scrolling problem, toggle to see if it helps
+_menuCloseDelay=500;
+_menuOpenDelay=150;
+_subOffsetTop=2;
+_subOffsetLeft=-2;
+
+with(menuStyle=new mm_style()){
+bordercolor="#296488";
+borderstyle="solid";
+borderwidth=1;
+fontfamily="Verdana, Arial, Helvetica, sans-serif";
+fontsize="12px";
+fontstyle="normal";
+headerbgcolor="#ffffff";
+headercolor="#000000";
+offbgcolor="#f1edd9";
+offcolor="#000000";
+onbgcolor="#4f8ccf";
+oncolor="#ffffff";
+padding=5;
+pagebgcolor="#82B6D7";
+pagecolor="black";
+
+separatorcolor="#000000";
+separatorsize=1;
+subimage="images/arrow.gif";
+subimagepadding=2;
+}
+
+
+with(mainMenuStyle=new mm_style()){
+borderstyle="solid";
+fontfamily="Arial, Helvetica, sans-serif";
+fontsize="11px";
+fontstyle="normal";
+fontweight="bold";
+headerbgcolor="#ffffff";
+headercolor="#FFFFFF";
+offbgcolor="transparent";
+//offcolor="#515151";
+
+offcolor="#000000";
+onbgcolor="#4f8ccf";
+// onbgcolor="#b9c9fe";
+oncolor="#FFFFFF";
+padding=5;
+// pagebgcolor="#b9c9fe";
+pagebgcolor="#4f8ccf";
+pagecolor="#FFFFFF";
+
+separatorcolor="#aaffcc";
+separatorsize=1;
+subimage="images/arrow.gif";
+subimagepadding=2;
+}
+
+	eval(subMenuCode1);
+	eval(subMenuCode2);
+drawMenus();
+</script>

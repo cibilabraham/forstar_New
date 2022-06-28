@@ -1,0 +1,1 @@
+alter table t_dailyfrozenpacking_allocate add po_rm_id int(5) default null;

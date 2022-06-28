@@ -1,0 +1,210 @@
+#page ---------------- Slovenia(SLO) -------------
+
+headT.txt	= Uradni list Evropske unije
+slo.head2.txt   = Dodatek IV k Prilogi VI
+slo.head3.txt   = HEALTH CERTIFICATE
+slo.head4.txt   = VZOREC VETERINARSKEGA SPRIČEVALA ZA UVOZ RIBIŠKIH PROIZVODOV ZA PREHRANO LJUDI
+head.txt 	= 
+country.txt 	= DRžAVA:
+vceu.txt	= Veterinarsko spričevalo Evropski uniji
+consigner.txt 	= 1.1 Pošiljatelj
+consigner.name    = Ime
+consigner.address  = Naslov
+consigner.po	  = Poštna koda
+consigner.phone   = Tel.št.
+cert.ref	  = 1.2 Referenčna številka spričevala
+
+1.3.txt1	  = 1.3 Osrednji pristojni organ
+1.3.txt2	 = Export Inspection Council of India, New Delhi
+1.3.txt3	 = (Ministry of Commerce & Industry, Govt. of India)
+	
+1.4.txt1 	= 1.4 Lokalni pristojni organ	
+1.4.txt2	= Export Inspection Agency-Mumbai
+1.4.txt3	= (Ministry of Commerce & Industry, Govt. of India)
+
+1.5.txt1  	= 1.5 Pošiljatelj
+1.5.name	= Ime
+1.5.addr	= Naslov
+1.5.po		= Poštna koda
+1.5.tel		= Tel.št.
+
+1.7.txt1	= 1.7 Država izvora
+1.7.iso		= ISO kode
+
+1.8.txt1	= 1.8 Regija izvora
+1.8.code	= Koda
+
+1.9.txt1	=  1.9. Namembna država
+1.9.iso		= ISO koda
+
+1.11.txt1	= 1.11Kraj izvora/ Obmocje nabiranja
+1.11.name	= Ime
+1.11.addr	= Naslov
+1.11.approval	= Številka odobritve
+
+1.13.txt1	= 1.13 Kraj natovarjanja
+
+1.14.txt1	= 1.14 Datum odhoda
+
+1.15.txt1	= 1.15 Prevozno sredstvo
+1.15.aero	= Letalo
+1.15.ship	= Ladja
+1.15.air	= 
+1.15.railway	= Železniski vagon
+1.15.road	= Cestno prevozno sredstvo
+1.15.other	= Drugo
+1.15.identity	= Identifikacija :
+1.15.document	= Documentary refrences :
+
+1.16.txt1	= 1.16 Mejna kontrolna točka vstopa v EU 
+
+1.18.txt1	= 1.18 Opis blaga
+
+1.19.txt1	= 1.19. Koda blaga (CN koda)
+
+1.20.txt1	= 1.20 Število/kolicina :
+1.20.net	= NET.WT.:
+1.20.gr		= GR.WT.:
+
+1.21.txt1	= 1.21 Temperatura proizvodov
+1.21.amb	= Pri prostorski temperaturi
+1.21.chi	= Ohlajeni
+1.21.fzn	= Zamrznjeni   
+
+1.22.txt1	= 1.22 Število pakiranj
+
+1.23.txt1	= 1.23 Identifikacija kontejnerja/Številka zalivke
+1.23.container  = CONTAINER NO.:
+1.23.seal	= SEAL NO.:
+
+1.24.txt1	= 1.24 Vrsta pakiranja
+
+1.25.txt1	= 1.25 Blago s spričevalom za
+1.25.human	= Za prehrano ljudi
+
+1.27.txt1	= 1.27 Za uvoz ali dostop v EU
+
+1.28.txt1	= 1.28 Identifikacija blaga
+1.28.approval	= Številka odobritve obratov:  
+1.28.species	= Vrsta
+1.28.nature 	= Vrsta blaga
+1.28.treatment	= Način obdelave
+1.28.manuplant	= Proizvodni obrat
+1.28.numpack	= Število pakiranj
+1.28.netwt	= Neto masa
+1.28.sciname	= (Znanstveno ime)
+1.28.cases	= ( Cases )
+
+P.I.LH		= Del l: Podrobnosti odpremljrne pošiljkesss
+
+#page ----------------2 -------------
+
+II.country	= COUNTRY  :
+II.fishery	= Fishery products
+II.health	= II. Health attestation
+II.a.certificate = II.a.Certificate reference number.
+
+II.1.public	= II.1 Public Health attestation
+
+II.1.txt1	= I, the undersigned, declare that I am aware of the relevant provisions of Regulations (EC) No 178/2002, (EC) No 852/2004, (EC) No 853/2004, and  (EC) No 854/2004, and certify that the fishery products described above were produced in accordance with those requirements, in particular that they : 
+
+II.1.txt2	= come from (an) establishment(s) implementing a programme based on the HACCP principles in accordance with Regulation(EC) No 852/2004,
+
+II.1.txt3	= have beeb caught and handled on board vessels , landed, handled and where appropriate prepared, processed, frozen and thawed hygienically in compliance with the requirements laid down in Section VIII, Chapter I to IV of Annex III to Regulation(EC) No 853/2004
+
+II.1.txt4	= satisfy the health standards laid down in Section VIII , Chapter V of Annex III to Regulation(EC) No 853/2004 and the criteria laid down in Regulation(EC) No 2073/2005 on microbiological criteria for foodstuffs, 
+
+II.1.txt5	= have been packaged, stored and transported in compliance with Section VIII , Chapter VI to VIII of Annex III to Regulation (EC) No 853/2004
+
+II.1.txt6	= have been marked in accordance with Section I of Annex II to Regulation(EC) No 853/2004
+
+II.1.txt7	= the guarantees covering live animals and products thereof, if from aquaculture origin, provided by the residue plans submitted in accordance with Directive 96/23/EC, and in particular Article 29 thereof are fulfilled
+
+II.1.txt8	= and
+
+II.1.txt9	= have satisfactorily undergone the official controls laid down in Annex III to Regulation (EC) No 854/2004.
+
+II.2.1.txt	= [Animal health attestation for products of aquaculture origin
+
+II.2.1.txt1 	= I, the undersigned, declare that the fishery products described above originate from fish or crusteceans that were clinically healthy on the day of harvest, and have been transported under conditions that do not alter the animal health status of the products and certify, in particular that: 
+
+II.2.1.txt2 	= (1)[(2) if from species susceptible (3) to ISA and/or EHN , they:
+
+II.2.1.txt3	= (1) [originate from a source(4) considered free from ISA and /or EHN in accordance with the relevant EU legislation or OIE Standard (5) ] , 
+
+II.2.1.txt4	= (1)[have been slaughtered and eviscerated]] 
+
+II.2.1.txt5	= (1)[(6) if from species susceptible (3) to VHS and/or IHN , they :
+
+II.2.1.txt6	= (1) originate from a source (4) considered free from (1) VHS/(1) IHN in accordance with the relevant EU legislation or OIE Standard (5)], 
+
+II.2.1.txt7	= (1) [have been slaughtered and eviscerated]]].
+
+P.II.LH		= Part II :Certification
+
+#---------------------- Page 3 -------------------
+
+III.notes	= Opombe
+III.p.I		= Del I :
+
+III.1.8		= Rubrika 1.8     :
+III.1.8.txt	= Regija porekia, če je primerno, za proizvode iz ribogojstva navedite območja, kakor so navedeni v odločbah Komisije 2002/308/ES in 2003/634/ES. Za zamrznjene ali predelane školjke navedite proizvodno območje.
+
+III.1.11	= Rubrika 1.11   : 
+III.1.11.txt	= Kraj porekla: naziv in naslov obrata odpreme.
+
+III.1.15	= Rubrika 1.15   :
+III.1.15.txt	= Registrska številka (železniških vagonov ali kontejnerjev in tovornjakov), številka leta (letala) ali ime (ladje), V primeru razkladanja in ponovnega nakladanja je treba zagotoviti ločene podatke.
+
+III.1.19	= Rubrika 1.19   :
+III.1.19.txt	= Uporabite ustrezne oznake HS: 03.01, 03.02, 03.04, 03.05, 03.06, 03.07, 05.11.91, 15.04, 15.18.00, 16.03, 16.04, 16.05.
+
+III.1.23	= Rubrika 1.23   :
+III.1.23.txt	= Označitev kontejnerja/številka pečata: samo kadar je primerno.
+
+III.1.28	= Rubrika 1.28   :
+III.1.28.txt	= Vrsta blaga: določite, ali gre za proizvode iz ribogojstva ali proizvode s poreklom v naravi.
+III.1.28.txt1	= Način obdelave: živi, ohlajeni, zamrznjeni, predelani.
+III.1.28.txt2	= Proizvodni obrat: vključuje predelovalno plovilo, zamrzovalno plovilo, hladilnico, predelovalni obrat.
+
+III.p.II	= Del II :
+
+III.p.II.txt	= Del II.2 ni potreben za pošiljke, namenjene za prodajo na drobno, če so v skladu s predpisi o pakiranju in označevanje iz Uredbi (ES) Št.853/2004
+
+III.p.II.txt1	= Neustrezno črtajte.
+
+III.p.II.txt2	= Ta del veterinarskega spričevala je potreben samo, če pošiljka vključuje vrste, navedene kot dovzetne za ISA in/ali EHN.
+
+III.p.II.txt2.1	= Zahteve velja za izvoze v vse države članice, pri čemer bi bilo treba eno o dveh izjav ohraniti, razen če je pošiljka predvidena za nadaljnjo predelavo v odobrenem uvoznem centru.
+
+III.p.II.txt3	= Znane vrste, dovzetne za bolezni.
+
+III.p.II.disease = Bolezen
+III.p.II.species = Gostiteljske vrste, dovzetne za bolezen.
+
+III.p.II.EHN.h	 = EHN
+III.p.II.ISA.h	 = ISA
+III.p.II.VHS.h	 = VHS
+III.p.II.IHN.h   = IHN
+
+III.p.II.EHN	= Navadni ostriž (Perca fluviatilis), amerikanka (Oncorhynchus mykiss)
+III.p.II.ISA	= Atlantski losos (Salmo salar), amerikanka (Oncorhynchus mykiss), postrv (Salmo trutta),
+III.p.II.VHS	= Trska (Gadus morthua), atlantski sled (Clupea harengus), postrv (Salmo trutta), kraljevski losos (Oncorhynchus tshawytscha), srebrni losos (O.kisutch), lipan (Thymallus thymallus), vahnja (Melanogrammus aeglefinus), pacifiška trska (Gadus macrocephalus), pacifiški sled (Cluteaharengus pallasi), ščuka (Esox lucius), amerikanka (Oncorhynchus mykiss), brkati morskimenek (Rhinonemus cimbrius), papalina (Sprattus sprattus), veliki romb (Scophthalmus maximus), ozimice (Corugonus sp.)
+III.p.II.IHN	= šarenka ali amerikanka (Oncorhynchus mykiss), vrste pacifiškega lososa (kraljevski losos (O.tshawytscha), pacifiški losos (O.nerka), keta losos (O.keta), masu losos (O.masou), rdeči losos (O . rhodurus) in srebrni losos (O.kisutch), in atlantski losos (Salmo salar).
+
+III.p.II.txt4	= Vir je lahko država, območje ali posamezna ribogojnica.
+
+III.p.II.txt5	= Stanje brez bolezni v skladu z določbami iz prilogi B ali C k Direktivi 91/67/EGS in odločbama Komisije 2001/183/EGS in 2003/466/ES. Priznava se ludi stanje brez bolezni v skladu z zadnjo izdajo Kodeksa in Priročnika OIE.
+
+III.p.II.txt6  = Ta del veterinarskega spričevala je potreben samo, če pošiljka vključuje vrste, navedene kot dovzetne za VHS in/ali IHN. Za odobritev pošiljke v državo članico ali območje države članice (rubriki 1.9 in 1.10 dela I spričevala), kjer potrjeno ni okužbe z VHS in/ali IHN ali kjer se izvaja program, s katerim se stanje brez bolezni doseže, je treba ohraniti eno od dveh izjav, razen če je pošiljka namenjena nadaljnji predelavi v odobrenem  uvoznem centru.
+
+III.p.II.txt6.1  = Seznam takšnih držav članic in območij je naveden v odločbah Komisije 2002/308/ES in 2003/634/ES.
+
+III.p.II.txt6.2  = Barva žiga in podpisa se mora razlikovati od barve drugh podatkov na spričevalu.
+
+III.OFFI.txt	= Uradni inšpektor
+III.OFFI.txt1	= Ime (z velikimi črkami):
+III.OFFI.txt2	= Izobrazba in naziv :
+III.OFFI.txt3	= Datum :
+III.OFFI.txt4	= Podpis :
+III.OFFI.txt5	= Žig :

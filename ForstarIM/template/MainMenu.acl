@@ -1,0 +1,37 @@
+<?php
+$currentUserRoleId 	= 	$sessObj->getValue("userRole");
+#For taking the Main Menu
+$distinctModuleIdRecs	=	$manageroleObj->disitnctModuleIdRecs($currentUserRoleId);
+
+
+?>
+	<table align="left"  height="31" width="100%" cellspacing="0" cellpadding="0"  border="0" >
+		<tr>
+		<td align="left" width="100%">
+		<script>
+		with(milonic=new menuname("Main Menu")) {
+		style=mainMenuStyle;
+		top=10;
+		itemwidth="130";
+		alwaysvisible=1;
+		orientation="horizontal";
+		margin=2;
+		position="relative";
+		aI("text=Home;url=Home.php");		
+		<?		
+		$mainModuleName = "";
+		foreach ($distinctModuleIdRecs as $dmr) {
+			$mainModuleName = $dmr[1];
+			if ($mainModuleName!="") {
+		?>		
+		aI("text=<?=$mainModuleName;?>;showmenu=<?=$mainModuleName;?>;url=javascript:void(0);");		
+		<?
+				} 
+			}
+		?>
+		aI("text=Logout;url=javascript:confirmLogout();");
+		}		
+		drawMenus();
+		</script>
+		</td></tr>
+	</table>

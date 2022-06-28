@@ -1,0 +1,1 @@
+create table inventory_purchase_order(id int(5) auto_increment primary key ,termsandconditions text,paymentterms varchar(15))

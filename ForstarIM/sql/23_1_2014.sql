@@ -1,0 +1,1 @@
+alter table m_supplier_ratelist add (rate float(5,2),stock_id int(2))

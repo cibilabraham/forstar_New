@@ -1,0 +1,1 @@
+alter table m_plant add active int(1);

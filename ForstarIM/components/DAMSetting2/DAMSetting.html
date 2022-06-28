@@ -1,0 +1,412 @@
+<flexy:include src="../../ftemplate/topL.php" />
+
+<form name="frmDAMSetting" action="DAMSetting.php" method="post">
+	<table cellspacing="0"  align="center" cellpadding="0" width="96%">
+		<tr flexy:if="err">
+			<td height="40" align="center" class="err1" >{err}</td>
+		</tr>
+			<tr>
+				<td height="10" align="center" ></td>
+			</tr>
+			<tr>
+			<td>
+				<table cellpadding="0"  cellspacing="1" border="0" align="center"  width="100%">
+					<tr>
+						<td>							
+								{setBoxHeader(#Daily Activity Monitoring Setting#)}
+								<flexy:include src="../../ftemplate/boxTL.tpl" />					
+							<table cellpadding="0"  width="100%" cellspacing="0" border="0" align="center">		
+								<tr>
+									<td colspan="3" align="center">
+	<table width="70%" align="center">		
+		<tr flexy:if="showEntry()">
+			<td>
+				<table cellpadding="0"  cellspacing="1" border="0" align="center"  width="75%">
+					<tr>
+						<td>			
+							
+							{setSubBoxHeader(heading)}
+							<flexy:include src="../../ftemplate/rbTop.tpl" />
+							<table cellpadding="0"  width="100%" cellspacing="0" border="0" align="center">		
+								<tr>
+									<td width="1" ></td>
+									<td colspan="2" >
+										<table cellpadding="0"  width="100%" cellspacing="0" border="0" align="center">
+											<tr>
+												<td height="10" ></td>
+											</tr>
+											<tr>							
+												<td align="center" flexy:if="editMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('DAMSetting.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdSaveChange" class="button" value=" Save Changes " onClick="return validateDAMSetting(document.frmDAMSetting);">	
+												</td>												
+												<td align="center" flexy:if="addMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('DAMSetting.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdAdd" class="button" value=" Add " onClick="return validateDAMSetting(document.frmDAMSetting);">
+												</td>
+											</tr>
+											<input type="hidden" name="hidDAMSettingId" value="{editId}">
+											<tr>
+											  <td nowrap class="fieldName">											  </td>
+										  </tr>
+											
+
+											<tr>
+											  <td colspan="2" height="5"></td>
+										  </tr>
+	<tr>
+		<td colspan="2" align="center" style="padding-left:10px; padding-right:10px;" id="divEntryExistTxt" class="err1"></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center" style="padding-left:10px; padding-right:10px;"> 
+			<table width="70%" border="0">
+				<tr>
+				<TD>
+					<table border="0">
+						<TR>
+						<TD valign="top">
+						<table>
+							<tr>
+							<td class="fieldName" nowrap="nowrap">*Head</td>
+							<td class="listing-item">
+<!-- onblur="xajax_chkICExist(document.getElementById('headName').value, '{editId}');" -->
+								<input name="data[DAMSetting][head_name]" type="text" id="headName" size="28" value="" onkeyup="singleHead();" >
+								{if:editMode}
+								<input type="hidden" name="data[DAMSetting][id]" value="" readonly>
+								{end:}
+							</td>
+							</tr>
+														
+						</table>
+						</TD>
+						<td>&nbsp;</td>
+						<td valign="top">
+						<table>	
+						<tr>
+								<td class="fieldName" nowrap="nowrap">*NOS</td>
+								<td class="listing-item">
+									<input name="data[DAMSetting][sub_head]" type="text" id="totalHead" size="3" value="" style="text-align:right;" autocomplete="off" onkeyup="displaySubhead(document.getElementById('totalHead').value); singleHead();">
+									<input type="hidden" name="hidTotalHead" id="hidTotalHead" size="3" value="" style="text-align:right;" autocomplete="off" readonly="true">
+								</td>
+							</tr>
+						</table>
+						</td>
+						</TR>
+					</table>
+				</TD>
+				</tr>
+				<tr>
+				<TD align="center" style="padding-left:5px; padding-right:5px;">
+				<table>
+				<TR>
+					<TD align="center" >
+						<table  cellspacing="1" bgcolor="#999999" cellpadding="3" id="tblSubhead" class="newspaperType">
+							<tr align="center">
+								<th nowrap style="text-align:center;">Sub Head</th>
+								<th nowrap style="text-align:center;">Produced</th>
+								<th nowrap style="text-align:center;">Stocked</th>
+								<th nowrap style="text-align:center;">O/S Supply</th>
+								<th nowrap style="text-align:center;">O/S Sale</th>
+								<th nowrap style="text-align:center;">O/B</th>
+								<th nowrap style="text-align:center;">Unit</th>
+								<th nowrap style="text-align:center;">As On</th>
+								<!--<th>&nbsp;</th>-->
+							</tr>
+	{setRow(0)}
+	{foreach:subHeadRecs,key,shr}	
+	<tr align="center" class="whiteRow" id="row_{getRow():h}">
+		<td align="center" class="listing-item">
+			<input type="text" autocomplete="off" size="38" value="{shr.sub_head_name}" id="subheadName_{key}" name="subheadName_%s" flexy:nameuses="key" />
+		</td>
+		<td align="center" class="listing-item">
+			<select id="produced_{key}" name="produced_%s" flexy:nameuses="key">
+				<option value="">--Select--</option>
+				<option value="Y">YES</option>
+				<option value="N">NO</option>
+			</select>
+		</td>
+		<td align="center" class="listing-item">
+			<select id="stocked_{key}" name="stocked_%s" flexy:nameuses="key">
+				<option value="">--Select--</option>
+				<option value="Y">YES</option>
+				<option value="N">NO</option>
+			</select>
+		</td>
+		<td align="center" class="listing-item">
+			<select id="osSupply_{key}" name="osSupply_%s" flexy:nameuses="key">
+				<option value="">--Select--</option>
+				<option value="Y">YES</option>
+				<option value="N">NO</option>
+			</select>
+		</td>
+		<td align="center" class="listing-item">
+			<select id="osSale_{key}" name="osSale_%s" flexy:nameuses="key">
+				<option value="">--Select--</option>
+				<option value="Y">YES</option>
+				<option value="N">NO</option>
+			</select>
+		</td>
+		<td align="center" class="listing-item">
+			<input type="text" style="text-align: right;" autocomplete="off" size="6" value="{shr.opening_balance}" id="openingBalance_{key}" name="openingBalance_%s" flexy:nameuses="key" />
+		</td>
+		<td align="center" class="listing-item">
+			<select id="selUnit_{key}" name="selUnit_%s" flexy:nameuses="key">
+				<!--<option value="">--Select--</option>-->
+				<?php if ($t->suR)  {?>
+				<?php foreach($t->suR as $stkUnitId=>$stkUnitName) {?>
+					<option value='<?=$stkUnitId?>'><?=$stkUnitName?></option>;
+				<?php }?>	
+				<?php }?>
+			</select>
+		</td>
+		<td align="center" class="listing-item">
+			<input type="text" style="text-align: right;" autocomplete="off" size="8" value="" id="startDate_{key}" name="startDate_%s" flexy:nameuses="key" />
+
+			<input type="hidden" value="" id="status_{getRow():h}" name="status_{getRow():h}" />
+			<input type="hidden" value="N" id="IsFromDB_{getRow():h}" name="IsFromDB_{getRow():h}" />
+			<input type="hidden" value="{shr.id}" id="damEntryId_{getRow():h}" name="damEntryId_{getRow():h}" readonly="true" />
+		</td>
+		<!--<td align="center" class="listing-item">
+			<a onclick="setItemStatus('0');" href="###">
+				<img border="0" style="border: medium none ;" src="images/delIcon.gif" title="Click here to remove this item" />
+			</a>			
+		</td>-->
+	</tr>	
+<!--<tr align="center" class="whiteRow" id="row_{getRow():h}">
+	<td align="center" class="listing-item">
+		<input type="text" autocomplete="off" size="38" value="{shr.name}" id="chkListName_{getRow():h}" name="chkListName_{getRow():h}"/>
+	</td>
+	<td align="center" class="listing-item">
+		<input type="checkbox" flexy:nameuses="key" class="chkBox" value="Y" id="required_{key}" name="required_%s" />
+	</td>
+	<td align="center" class="listing-item">
+		<a onclick="setChkListItemStatus('{getRow():h}');" href="###"><img border="0" style="border: medium none ;" src="images/delIcon.gif" title=""/></a>
+		<input type="hidden" value="" id="status_{getRow():h}" name="status_{getRow():h}"/>
+		<input type="hidden" value="N" id="IsFromDB_{getRow():h}" name="IsFromDB_{getRow():h}"/>
+		<input type="hidden" value="{shr.id}" id="chkListEntryId_{getRow():h}" name="chkListEntryId_{getRow():h}" readonly />
+	</td>
+ </tr>-->
+	
+	{incrementRow()}
+	{end:}
+	</table>
+	<!--  Hidden Fields-->
+	<input type='hidden' name="hidTableRowCount" id="hidTableRowCount" value="{subHeadRecSize}" readonly="true" />
+	<!--<input type='text' name="tableRowL" id="tableRowL" value="{subHeadRecSize}" readonly="true" />-->
+	</TD>
+				</TR>
+				<tr><TD height="5"></TD></tr>
+				<!--<tr>
+					<TD>
+						<a href="###" id='addRow' onclick="javascript:addNewItem();"  class="link1" title="Click here to add new item."><img  SRC='images/addIcon.gif' BORDER='0' style='border:none;padding-right:4px;vertical-align:middle;' >Add New Item</a>
+					</TD>
+				</tr>-->
+			</table>
+				</TD>
+				</tr>
+                                          </table>
+					</td>
+					</tr>
+											<tr>
+											  <td colspan="2" height="5"></td>
+										  </tr>
+											<tr>							
+												<td align="center" flexy:if="editMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('DAMSetting.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdSaveChange" class="button" value=" Save Changes " onClick="return validateDAMSetting(document.frmDAMSetting);">	
+												</td>												
+												<td align="center" flexy:if="addMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('DAMSetting.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdAdd" class="button" value=" Add " onClick="return validateDAMSetting(document.frmDAMSetting);">
+												</td>
+											</tr>
+											<tr>
+												<td  height="10" ></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						<flexy:include src="../../ftemplate/rbBottom.tpl" />
+						</td>
+					</tr>
+				</table>
+				<!-- Form fields end   -->
+			</td>
+		</tr>			
+	</table>
+		</td>
+			</tr>	
+	<tr flexy:if="showEntry()" >
+		<td colspan="3" height="10" ></td>
+	</tr>
+	
+	<tr>
+		<td colspan="3" height="10" ></td>
+	</tr>
+	<tr flexy:if="listMode">	
+		<td colspan="3">
+			<table cellpadding="0" cellspacing="0" align="center">
+			<tr flexy:if="!printMode">
+				<td>{if:del}<input flexy:ignore="yes" type="submit" value=" Delete " class="button"  name="cmdDelete" onClick="return confirmDelete(this.form,'delId_',{DAMSettingRecSize});">{end:}&nbsp;{if:add}<input flexy:ignore="yes" type="submit" value=" Add New " name="cmdAddNew" class="button">{end:}&nbsp;{if:print}<input flexy:ignore="yes" type="button" value=" Print " name="btnPrint" class="button" onClick="return printWindow('DAMSetting.php?print=y',700,600);">{end:}</td>
+			</tr>
+			</table>
+		</td>
+		</tr>
+	<tr>
+		<td colspan="3" height="5" ></td>
+	</tr>
+	<tr flexy:if="errDel">
+		<td colspan="3" height="15" align="center" class="err1">{errDel}</td>
+	</tr>
+	<tr flexy:if="listMode">
+				<td width="1" ></td>
+				<td colspan="2" >
+				<table cellpadding="1"  width="30%" cellspacing="1" border="0" align="center" id="newspaper-b1">
+	{if:DAMSettingRecSize}
+				<tr flexy:if="displayNavRow">
+					<td colspan="10" style="padding-right:10px" class="navRow">
+						<div align="right">
+						{printPagination(maxpage,pageNo,#DAMSetting.php?#):h}
+						<!--<input type="hidden" name="pageNo" value="{pageNo}"> Set to last section -->
+						</div>
+					</td>
+				</tr>
+				<thead>
+			
+	<tr align="center">
+		<th width="20" flexy:if="!printMode"><INPUT type='checkbox' name='CheckAll' id='CheckAll' onClick="chkAll(this.form,'delId_'); " class="chkBox"></th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Head</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">NOS</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Sub Head</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Produced</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Stocked</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">O/S Supply</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">O/S Sale</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">O/B</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Unit</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">As On</th>
+		{if:edit}
+		<th width="45" flexy:if="!printMode">&nbsp;</th>
+		{end:}
+		{if:edit}
+		<th width="45" flexy:if="!printMode">&nbsp;</th>
+		{end:}
+	</tr>
+	</thead>
+	<tbody>
+	{setRow(1)}
+	{foreach:DAMSettingRecs,damsR}
+		 
+	<tr>
+		<td width="20" align="center" flexy:if="!printMode">
+			{if:chkPrevDAMSettingId(damsR.id)}
+			<input type="checkbox" name="data[{getRow():h}][DAMSetting][__del]" id="delId_{getRow():h}" value="{damsR.id}" class="chkBox">
+			{else:}
+			<input type="hidden" name="data[{getRow():h}][DAMSetting][__del]" id="delId_{getRow():h}" value="" readonly>
+			{end:}
+		</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">
+			{if:chkPrevDAMSettingId(damsR.id)}
+			{damsR.mainhead}
+			{end:}
+		</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;">
+			{if:chkPrevDAMSettingId(damsR.id)}
+			{damsR.numsubhead}
+			{end:}
+		</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">{damsR.subhead}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;" align="center">{damsR.produced}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;" align="center">{damsR.stocked}</td>		
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;" align="center">{damsR.ossupply}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;" align="center">{damsR.ossale}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;" align="right">{damsR.ob}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">{damsR.stkname}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;" align="center">{damsR.startdate}</td>
+		{if:edit}			
+		  	<td class="listing-item" width="45" align="center" flexy:if="!printMode">
+				{if:chkPrevDAMSettingId(damsR.id)}
+				<input type="submit" value=" Edit " name="cmdEdit" onClick="assignValue(this.form,{damsR.id},'editId');">
+				{end:}
+			</td>			
+		{end:}
+		{if:chkPrevDAMSettingId(damsR.id)}
+		 <td class="listing-item" width="45" align="center" flexy:if="!damsR.active"><input type="submit" value=" Confirm " name="cmdConfirm" onClick="assignValue(this.form,{icmR.id},'confirmId');">
+			</td>
+		
+		 <td class="listing-item" width="45" align="center" flexy:if="damsR.active"><input type="submit" value=" ReleaseConfirm " name="btnRlConfirm" onClick="assignValue(this.form,{icmR.id},'rlconfirmId');">
+			</td>
+			{end:}
+	</tr>
+		{setPrevRec(damsR.id)}
+		{incrementRow()}
+	{end:}
+	<input type="hidden" name="hidRowCount"	id="hidRowCount" value="{DAMSettingRecSize}" >
+	<input type="hidden" name="editId" value="">
+	<input type="hidden" name="confirmId" value="">
+	<input type="hidden" name="rlconfirmId" value="">
+	</tbody>
+	<tr flexy:if="displayNavRow">
+		<td colspan="10" style="padding-right:10px" class="navRow">
+			<div align="right">
+			{printPagination(maxpage,pageNo,#DAMSetting.php?#):h}
+			</div>
+		</td>
+	</tr>
+	{else:}
+	<tr><TD align="center">{msg_NoRecs}</TD></tr>
+	{end:}
+		</table>
+		</td>
+								</tr>
+								<tr flexy:if="listMode">
+									<td colspan="3" height="5" ></td>
+								</tr>
+								<tr flexy:if="listMode">	
+									<td colspan="3">
+										<table cellpadding="0" cellspacing="0" align="center">
+											<tr flexy:if="!printMode">
+												<td>{if:del}<input type="submit" value=" Delete " class="button"  name="cmdDelete" onClick="return confirmDelete(this.form,'delId_',{DAMSettingRecSize});">{end:}&nbsp;{if:add}<input type="submit" value=" Add New " name="cmdAddNew" class="button">{end:}&nbsp;{if:print}<input type="button" value=" Print " name="btnPrint" class="button" onClick="return printWindow('DAMSetting.php?print=y',700,600);">{end:}</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3" height="5" ></td>
+								</tr>
+							</table>
+						<flexy:include src="../../ftemplate/boxBR.tpl" />					
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>			
+		<tr>
+			<td height="10">
+				<input type="hidden" name="entryExist" id="entryExist" value="" readonly />
+				<input type="hidden" name="pageNo" value="{pageNo}" readonly /> 
+				<input type="hidden" name="addMode" id="addMode" value="{addMode}" readonly />
+			</td>
+		</tr>
+</table>
+{if:showEntry()}
+	<SCRIPT LANGUAGE="JavaScript" type="text/javascript">
+		function addNewItem()
+		{
+			addNewItemRow('tblSubhead','','');		
+		}
+	</SCRIPT>
+{end:}
+{if:showAddRow()}
+	<SCRIPT LANGUAGE="JavaScript" type="text/javascript">
+		window.load = addNewItem();
+	</SCRIPT>
+{end:}
+	
+{if:subHeadRecSize} 
+	<flexy:toJavascript fieldId="subHeadRecSize"></flexy:toJavascript>
+{end:}
+</form>
+
+<flexy:include src="../../ftemplate/bottomR.php" />

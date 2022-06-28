@@ -1,0 +1,206 @@
+#page ---------------- Portugal(POR) -------------
+
+head.txt 	= HEALTH  CERTIFICATE  FOR EXPORT OF FISHERY PRODUCTS INTENDED FOR HUMAN CONSUMPTION
+country.txt 	= PAIS :
+vceu.txt	= Certificado veterinario  &nbsp;&nbsp; para la UE
+consigner.txt 	= 1.1 Expedidor: 
+consigner.name    = Nome
+consigner.address  = Endereco
+consigner.po	  = Codigo postal 
+consigner.phone   = Tel.n0 :
+cert.ref	  = 1.2  N.o de referencia do sertificado
+
+1.3.txt1	  = 1.3 Autoridade central competente
+1.3.txt2	 = Export Inspection Council of India
+1.3.txt3	 = (Ministry of Commerce & Industry, Govt. of India)
+	
+1.4.txt1 	= 1.4 Autoridade local campetente
+1.4.txt2	= Export Inspection Agency-Mumbai
+1.4.txt3	= (Ministry of Commerce & Industry, Govt. of India)
+
+1.5.txt1  	= 1.5 Destinatario
+1.5.name	= Nome
+1.5.addr	= Endereco
+1.5.po		= Codigo Postal
+1.5.tel		= Tel.n0
+
+1.7.txt1	= 1.7 Pais de origem
+1.7.iso		= Codigo ISO
+
+1.8.txt1	= 1.8 Regiao de Origem
+1.8.code	= Codigo
+
+1.9.txt1	= 1.9.pais de destino
+1.9.iso		= Codigo ISO
+
+1.11.txt1	= 1.11 Local de origem/local de pesca
+1.11.name	= Nome
+1.11.addr	= Endereco
+1.11.approval	= Numero de aprovacao : 
+
+1.13.txt1	= 1.13 Local de carregamento
+
+1.14.txt1	= 1.14 Data de partida :
+
+1.15.txt1	= 1.15 Meios de transporte
+1.15.aero	= Aviao
+1.15.ship	= Navio
+1.15.air	= 
+1.15.railway	= Vagao ferioviario 
+1.15.road	= Velculo rodoviario
+1.15.other	= Outro
+1.15.identity	= Identificacao :
+1.15.document	= Referencia documental:
+
+1.16.txt1	= 1.16 PIF de entrada na UE
+
+1.18.txt1	= 1.18 Descricao da mercadoria:
+
+1.19.txt1	= 1.19 Codigo do produto (codigo NC)
+
+1.20.txt1	= 1.20 Numero /Quantidade  
+1.20.net	= NET.WT.:
+1.20.gr		= GR.WT.:
+
+1.21.txt1	= 1.21 Temperatura dos produtos
+1.21.amb	= Ambiente
+1.21.chi	= De refrigeracao
+1.21.fzn	= congelacao
+
+1.22.txt1	= 1.22 Numero de embalagens 
+
+1.23.txt1	= 1.23 N.0 do selo e n.0 do contentor
+1.23.container  = CONTAINER NO.:
+1.23.seal	= SEAL NO.:
+
+1.24.txt1	= 1.24 Tipo de acondicionamento:
+
+1.25.txt1	= 1.25 Mercadorias certidicadas para
+1.25.human	= Consumo humano
+
+1.27.txt1	= 1.27 Para importacao ou anmissao na UE
+
+1.28.txt1	= 1.28 Identificacao das mercadorias
+1.28.approval	= Numero de aprovacao dos estabelecimentos: 
+1.28.species	= Especie
+1.28.nature 	= Natureza do produto 
+1.28.treatment	= Tipo de tratamento
+1.28.manuplant	= Instalacao de fabrico
+1.28.numpack	= Numero de embalagens
+1.28.netwt	= Peso liquido 
+1.28.sciname	= (Designacao cientifica)
+1.28.cases	= ( Cases )
+
+P.I.LH		= Parte I:Informa zioni sulla partita spedita
+
+#page ----------------2 -------------
+
+II.country	= PAIS :
+II.fishery	= produtos da pesca
+II.health	= II.  Atestaso sanitario
+II.a.certificate = II.a Numero de referencia do certificado
+
+II.1.public	= II.1 Atestado de saude publica
+
+II.1.txt1	= Eu, abaixo assinado, declaro conhecer as disposicoes aplicaveis dos Regulamentos (CE) n.o 178/2002, (CE) n.o 852/2004, (CE) n.o 853/2004 e (CE) n.o 854/2004 e certifico que os produtos da pesca acima descritos foram produzidos em conformidade com esses requisitos, em especial que:
+
+II.1.txt2	= provem de estabelecimentos que aplicam um programa baseado nos principios HACCP em  conformidade com o Regulamento (CE) n.o 852/2004,
+
+II.1.txt3	= foram capturados e manuseados a bordo de navios, desembarcados, manuseados e, se for caso disso, preparados, transformacos, congelados e descongelados de forma higienica, em conformidade com os requisitos da seccao VIII, capitulos I a IV, do anexo III do Regulamento (CE) n.o 853/2004,
+
+II.1.txt4	= satisfazem as nornas sanitarias da seccao VIII, capitulo V, do anexo III do Regulamento (CE) n.o 853/2004 e os criterios do Regulamento (CE) n.o 2073/2005 relativo aos criterios microbiologicos aplicaveis aos generos alimenticios, 
+
+II.1.txt5	= foram embalados, armazenados e teansportados em conformidade com a seccao VIII, capitulos VI a VIII, do anexo III do Regulamento (CE) n.o 853/2004, 
+
+II.1.txt6	= foram marcados en conformidade com a seccao I do anexo II do Regulamento (CE) n.o 853/2004,
+
+II.1.txt7	= estao satisfeitas as garantias que abrangem os animais vivos e os produtos deles derivados, se provenientes da aquicultura, fomecidas pelos planos de controlo de residuos apresentados em conformiddade com a Directiva 96/23/EC, nomeadamnete o artigo 29.o, 
+
+II.1.txt8	= e
+
+II.1.txt9	= foram submetidos, com resultados satisfatorios, aos controlos oficiais estabelecidos no anexo lll do Regulamento (CE) n.o 854/2004.
+
+II.2.1.txt	= (1) [Atestado de sanidade animal para produtos provenientes da aquicultura
+
+II.2.1.txt1 	= Eu, abaixo assinado, declaro que os produtos da pesca acima descritos sao provenientes de peixes ou crustaceos que estavam clinicamente saudaveis no dia da colhetia e foram transportados em comdicoes que nao alteram o estatuto sanitario dos produtos, e certifico, em particular, que:
+
+II.2.1.txt2 	= (1)[(2) se de especies senciveis (3) a AIS e/ou NHE. Os produtos:
+
+II.2.1.txt3	= (1) [sao originarios de uma fonte (4) comsiderada nidemne de AIS e/ou NHE em  
+
+II.2.1.txt4	= conformidade com a legislacao comunitaria ou norma do OIE pertinentes (5)],
+
+II.2.1.txt5	= (1)[(6) se de especies senciveis (3) a SHV e/ou NHI, os produtos:
+
+II.2.1.txt6	= (1) sao originatrios de uma fonte (4) considerada nidemne de (1) SHV//(1)NHI em conformidade com legislacao comunitaria ou norma do OIE pertinentes (5)],
+
+II.2.1.txt7	= (1)[foram abatidos e eviscerados]]].
+
+P.II.LH		= Parte II Certificacao
+
+#---------------------- Page 3 -------------------
+
+III.notes	= Notes
+III.p.I		= Parte l :
+
+III.1.8		= Casa 1.8 
+III.1.8.txt	= Regiao de origem: aplicavel aos produtos provenientes da aquicultura e se apropriado, indicar as zonos enumeradas nas Descisoas 2002/308/CE e 2003/634/CE da Comissao No caso de moluscos bivolves congelados ou transformados, indicar a area de producao
+
+III.1.11	= Casa 1.11
+III.1.11.txt	= Local de origem: nome e pndereco do estabelecimemto de expedicao
+
+III.1.15	= Casa 1.15
+III.1.15.txt	= Numero de registo/matricula (cariuagens ferroviarias ou contentores e camioes), numero do voo (aviao) ou nome (navio). Devem ser fornecidas informacoes separadas em caso de descarregamento e recarregamento 
+
+III.1.19	= Casa 1.19
+III.1.19.txt	= Utilizar os codigos HS apropriados: 03.01, 03.02, 03.03, 03.04, 03.05, 03.06, 03.07, 05.11.91, 15.04, 15.18.00, 16.03, 16.04, 16.05,
+
+III.1.23	= Casa 1.23
+III.1.23.txt	= Idemtificacao do contentor/Numero do selo so se aplichavel .
+
+III.1.28	= Casa 1.28
+III.1.28.txt	= Natureza do produto: especificar se proveniente da aquicultura ou de origem selvagem.
+III.1.28.txt1	= tipo de tratamento: vivo refrigerado, congeldo, transformado.
+III.1.28.txt2	= Instalacao de fabrico: inclui nabio-fabrica, navio congelador, entreposto firgorifico, unidadade de transformacao.
+
+III.p.II	= Parte ll:
+
+III.p.II.txt	= A parte ll.2 nao se palica a remessas destinadas a vendea a retalho, desde que se cumpram as regias aplicaveis a embalagem e rotulagem estabelecidas no Regulamento (CE) n.o 853/2004 
+
+III.p.II.txt1	= Riscar o que nao interessa.
+
+III.p.II.txt2	= Esta parte do certificado sanitario so se aplica se a remessa for constituida por especies referidas como sensiveis a A/S e/ou NHE. O requisito aplica-se a exportacose para todos os Estados-Membros, devendo manter-se uma das duas declaracoes, excepto se a remessa se destinar a transformacao posterior num centro de importacao aprovado.
+
+III.p.II.txt2.1	= 
+
+III.p.II.txt3	= Especies sensiveis conhecidas:
+
+III.p.II.disease = Doenca
+III.p.II.species = Especie hospedeira sensivel
+
+III.p.II.EHN.h	 = NHE
+III.p.II.ISA.h	 = AIS
+III.p.II.VHS.h	 = SHV
+III.p.II.IHN.h   = IHN
+
+III.p.II.EHN	= Perca europeia (Perca fluviatilis), truta arco iris (Oncorhynchus mykiss)
+III.p.II.ISA	= Salmao-do-atlantico (Salmo salar), truto arco iris (Oncorhynchus mykiss), truto marisca (Salmo trutta)
+III.p.II.VHS	= Bacalhau-do-atlantico arenque (Clupea herengus), truta marisca (Salmo trutta), salmao-real (Oncorhynchus tshawytscha), salmao-prateado (O. kisutch), peixe-sombra (Thymallus thymallus), arinca (Melanogrammus aeglefinus), bacalhau-do-pacifico (Gadus macrocephalus0, arenque-do-pacifico (Clupea harengus pallasi),lucio (Esox lucius), truta arco-iris (Oncorhynchus mykiss), chumbo (Rhinonemus cimbrius), espadilha (Sprattus sprattus), pregado (Scophthalmus maximus), coregono (Coregonus sp.).
+III.p.II.IHN	= Truta arco iris (Oncorhynchus mykiss), as especies dos salmoes do pacifico [salmao real (O. tshawytscha), salmao vermelho (O. nerka), salmao cao (O. masou),salmao de biwa (O. rhodurus), e salmao prateado (O.kisutch)] e salmao-do-atlantico (Salmo salar).
+
+III.p.II.txt4	= A fomte pode ser um pais, uma zona ou uma exploracao.
+
+III.p.II.txt5	= Estaputo de indemne em conformidade com o disposto no anexo B ou C da Directiva 91/67/CEE e nas Decisoes 2001/183/Ce e 2003/466/CE da comissao. Tambem se reconhece o estatuto de indemne em conformidade com a edicao mais recente do codigo e do manual do OIE.
+
+III.p.II.txt6  = Esta parte do certificado sanitario so se aplica se a remessa for constituida por especies referidas como sensiveis a SHV e/ou NHI. Para que a remessa seja auturizada num Estado Membro ou em parte de um Estado Membro (casas l.9 e l.10 da parte l do certificado) declarados indemnes de SHV e/ou NHI ou submetidos a um programa com vista a obter o estatuto  de indemne, deve manter se uma das duas deslaracoes excepo se a remessa se destinar a transformacao posterior num centro de importacao aprovado.
+
+III.p.II.txt6.1  = Uma lista destes Estados Membros e zonas consta das Decisoes 2002/308/CE e 2003/643/CE da Comissao.
+
+III.p.II.txt6.2  = O carimbo e a assinatura deven ser de uma cor diferente da utilizada nas outras mencoes do sertificado.
+
+III.OFFI.txt	= Inspector oficial
+III.OFFI.txt1	= Nome (em maiusculas) :
+III.OFFI.txt2	= Qualificacoes e cargo:
+III.OFFI.txt3	= Data:
+III.OFFI.txt4	= Assinatura;
+III.OFFI.txt5	= Carimbo:

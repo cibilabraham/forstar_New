@@ -1,0 +1,1 @@
+alter table supplier add (fssairegnno varchar(20),servicetaxno varchar(20))

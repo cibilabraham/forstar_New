@@ -1,0 +1,2 @@
+
+INSERT INTO `function` (`id`, `module_id`, `name`, `url`, `target`, `pmenu_id`, `form_add`, `form_edit`, `form_delete`, `form_print`, `form_confirm`, `form_reedit`, `processing_activity`, `menu_order`, `group_main_id`, `frm_cpny_specific`, `extraflag`) VALUES (NULL, '1', 'Production Working Hours', 'ProductionWorkingHours.php', NULL, '17', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '103', '253', 'Y', NULL);

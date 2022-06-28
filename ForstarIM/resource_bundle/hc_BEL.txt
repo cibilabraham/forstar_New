@@ -1,0 +1,205 @@
+#page ---------------- Belgium(BEL) -------------
+
+head.txt 	= HEALTH CERTIFICATE  FOR EXPORT OF FISHERY PRODUCTS INTENDED FOR HUMAN CONSUMPTION
+country.txt 	= LAND :
+vceu.txt	= Veterinair certiticaat voor de     invoer in de EU 
+consigner.txt 	= 1.1 Verzender : 
+consigner.name  = Naam
+consigner.address  = Adres
+consigner.po	  = Post Code 
+consigner.phone   = Tel.
+cert.ref	  = 1.2  referentienummer certificaat
+
+1.3.txt1	  = 1.3 Bevoegde centrale autoriteit
+1.3.txt2	 = Export Inspection Council of India
+1.3.txt3	 = (Ministry of Commerce & Industry, Govt. of India)
+	
+1.4.txt1 	= 1.4 Bevoegde lokale autoriteit
+1.4.txt2	= Export Inspection Agency-Mumbai
+1.4.txt3	= (Ministry of Commerce & Industry, Govt. of India)
+
+1.5.txt1  	= 1.5 Geadresseerde
+1.5.name	= Naam
+1.5.addr	= Adres
+1.5.po		= PostCode
+1.5.tel		= Tel.
+
+1.7.txt1	= 1.7 Land van oorsprong
+1.7.iso		= ISO-Code
+
+1.8.txt1	= 1.8 Regio van oorsprong 
+1.8.code	= Code
+
+1.9.txt1	= 1.9 Land van bestemming
+1.9.iso		= ISO-Code
+
+1.11.txt1	= 1.11 Plaats van oorsprong/plaats van de vangst
+1.11.name	= Naam
+1.11.addr	= Adres
+1.11.approval	= Erkenningsnummer :
+
+1.13.txt1	= 1.13 Plaats van lading
+
+1.14.txt1	= 1.14 Vertrekdatum
+
+1.15.txt1	= 1.15 Vervoermiddelen
+1.15.aero	= Vliegtuig:
+1.15.ship	= Vaartuig
+1.15.air	= 
+1.15.railway	= Treinwagon:
+1.15.road	= Wegvoertuig:
+1.15.other	= Andere
+1.15.identity	= Identificatie:
+1.15.document	= referentiedocumenten
+
+1.16.txt1	= 1.16 Grensinspectiepost van binnenkomst in EU
+
+1.18.txt1	= 1.18 Omschrijving van de goederen
+
+1.19.txt1	= 1.19 Productcode (GN-Code)
+
+1.20.txt1	= 1.20 Aantal/hoeveelheid:
+1.20.net	= NET.WT.:
+1.20.gr		= GR.WT.:
+
+1.21.txt1	= 1.21 Temperatuur producten
+1.21.amb	= Omgevingstemperatuur
+1.21.chi	= Gekoeld
+1.21.fzn	= Bevroren
+
+1.22.txt1	= 1.22 Aantal verpakkingen
+
+1.23.txt1	= 1.23 Nr. Zegel en nr.container 
+1.23.container  = CONTAINER NO.:
+1.23.seal	= SEAL NO.:
+
+1.24.txt1	= 1.24 Aard van de verpaqkkingen
+
+1.25.txt1	= 1.25 Goederen gecertificeerd voor:
+1.25.human	= Menselijke consumptie
+
+1.27.txt1	= 1.27 Voor in voer of toelating in EU
+
+1.28.txt1	= 1.28 Identificatie van de goederen 
+1.28.approval	= Erkenningsnummer van inrichtingen :
+1.28.species	= Soort
+1.28.nature 	= Soort Product 
+1.28.treatment	= Soort behandeling
+1.28.manuplant	= Verwerkingsbedrijf
+1.28.numpack	= Aantal verpakkingen
+1.28.netwt	= Nettogewicht
+1.28.sciname	= (Wetenschappelijke benaming)
+1.28.cases	= ( Cases )
+
+P.I.LH		= Deel I:Gegevens betreffende de zending 
+#page ----------------2 -------------
+
+II.country	= LAND:
+II.fishery	= Visserijproducten
+II.health	= II. Gezondheidsverklaring
+II.a.certificate = II.a.Refeentienummer van het certificaat:
+
+II.1.public	= II.1 Verklaring inzke de volksgezondheid
+
+II.1.txt1	= Ondergetekende verklaart dat hij kennis heeft van de bepalingen van de verordeningen (EG) nr.852/2004,(EG) nr.853/2004 en (EG) nr.854/2004 en dat de hierboven omschreven visserijtroducten overeenkomstig deze voor schriften zijn geproduceerd en met name:
+
+II.1.txt2	= afkomstig zijn van een bedrijf dat (bedrijven die) overeenkomstig verordenning (EG) nr.852/2004 een op de HACCP-beginselen gebaseerd programma toepast (toepassen);
+
+II.1.txt3	= zijn gevangen en aan boord van de vaartuigen zijn behandeld, op hygienische wijze zijn gelost, behandeld en, in voorkomend geval, bewerkt, verwerkt, ingevroren, ontdooid en opgeslagen overee nkomstig de voorschriften van sectie VIII, hoofdstukken I tot en met IV, van bijlage III vij verordening (EG) nr.853/2004
+
+II.1.txt4	= voldoen aan de gezondheidsnornen van sectie VIII, hoofdstuk V, van bijlage III bij verordening (EG) nr.853/2004 en de criteria van verordening (EG) nr.2073/2005 inzake microbiologische criteria voor levensmiddelen;
+
+II.1.txt5	= zijn verpakt, opgeslagen en vervoerd overeenkomstig sectie VIII, hoofdstukken VI tot en met VIII, van bijlage III bij verordening (EG) nr.853/2004
+
+II.1.txt6	= voorzien zijn van een merk overeenkomstig sectie I van bijlage II bij verordening (EG) nr.853/2004
+
+II.1.txt7	= met betrekking tot levende dieren en producten daarvan, indien afkomstig van aquacultuur, alle garanties worden geboden dre zijn vervat in de overeenkomstig richtlijn 96/23/EG, en met name artikel 29, ingediende plannen betreffende residuen;
+
+II.1.txt8	= en
+
+II.1.txt9	= op afdoende wijze de officiele controles overeenkomstig bijlage III bij verordening (EG) nr. 854/2004 hebben ondergaan.
+
+II.2.1.txt	= (1)[Verklaring inzake de diergezondheid voor producten afkomstig van aquacultuur
+
+II.2.1.txt1 	= Ondergetekende verklaart dat de hier boven omschreven visserijproducten afkomstig zijn van vis of sehaaldieren die klinisch gezond waren op de vangstdatum en vervoerd zijn onder omstandigheden die geen gevolgen hebben voor de gezondheidsstatus van de producten en dat zij met name:
+
+II.2.1.txt2 	= (1)[(2)indien behorend tot soorten die vatbaar (3) zijn voor ISA en/of EHN,
+
+II.2.1.txt3	= (1)[afkomstig zijn van een bron (4) die als vrij van ISA en/of EHN wordt beschouwd overeenkomstig de desbetreffende EU-wetgeving of OIE-norm (5)] 
+
+II.2.1.txt4	= (1)[geslacht en gestript zijn]],
+
+II.2.1.txt5	= (1)[(6)indien behorend tot soorten die vatbaar (3) zijn voor VHS en/of IHN,
+
+II.2.1.txt6	= (1)[afkomstig zijn van een bron (4) die als vrij van (1) VHS/(1)IHN wordt beschouwd overeenkomstig de desbetreffende EU-wetgeving of OIE-norm(5)] 
+
+II.2.1.txt7	= (1)[geslacht en gestript zijn]]]
+
+P.II.LH		= Deel II: Certificering
+
+#---------------------- Page 3 -------------------
+
+III.notes	= 
+III.p.I		= Deel I :
+
+III.1.8		= Vak 1.8: 
+III.1.8.txt	= Regio van oorsprong: voor producten afkomstig van aquacultuur: geef zo nodig de in de beschikkingen 2002/308/EG en 2003/634/EG van de commissie vermelde gebieden aan. Voor diepgevroren of verwerkte tweekleppige weekdieren: geef het productiegebied aan.
+
+III.1.11	= Vak 1.11:
+III.1.11.txt	= Plaats van oorsprong: naam en adres van de verzendende inrichting.
+
+III.1.15	= Vak 1.15:
+III.1.15.txt	= Registratienummer (voor wagons, containers en vrachtwagens), vluchtnummer 9vliegtuig0 of naam van het schip In geval van overslag moet afzonderlijke informative worden verstrekt.
+
+III.1.19	= Vak1.19:
+III.1.19.txt	= gebruik de juiste GS- codes: 03..01,03.02,03.03,03.04, 03.05, 03.06, 03.07, 05.11.91, 15.04, 15.18.00, 16.03, 16.04, 16.05. 
+
+III.1.23	= Vak 1.23:
+III.1.23.txt	= Nr.zegel en nr. Container: uitsluitend indien van toepassing.
+
+III.1.28	= Vak 1.28: 
+III.1.28.txt	= Soort product: vermeld of product afkomstig is van aquacultuur of uit het wild.
+III.1.28.txt1	= soort behandeling : levend, gekoeld, diepgevroren, verwerkt.
+III.1.28.txt2	= Productiebedrijf: omvat fabrieksvaartuig, vriesschit, koelhuis, verwerkingsfabriek.
+
+III.p.II	= Deel ll:
+
+III.p.II.txt	= Deel ll .2 is niet van toepassing op zendingen die voor de detailhandel bestemd zijn mits zig voldoen aan de voorschirften inzake verpakking en etikettering van Verordening (EG) nr. 853/2004 
+
+III.p.II.txt1	= Boorhaeln wat niet van toepassing is.
+
+III.p.II.txt2	= Dit deel van de verklaring inzake de diergezondheid is uitsluitend van toevassing indien de zending soorten omvat die vatbaar zijn voor ISA en/of EHN. Hat voorschrift geldt voor de uitvoer naar alle ledstaten, waarbij een van de beide verklaringen moet worden bewaard, tenzij de zending bestemd is voor verdere verwerking in een erkend invoercentrum.
+
+III.p.II.txt2.1	= 
+
+III.p.II.txt3	= Bekende vatdare soorten 
+
+III.p.II.disease = Ziekte
+III.p.II.species = Vatvare gestheersoort
+
+III.p.II.EHN.h	 = EHN
+III.p.II.ISA.h	 = ISA
+III.p.II.VHS.h	 = VHS
+III.p.II.IHN.h   = IHN
+
+III.p.II.EHN	= Baars (Perca fluviatilis), regenboogforel (oncorhynchus mykiss)
+III.p.II.ISA	= Atlantische zalm (slamo salar), regenboogforel (oncorhynchus mykiss), zeeforel( salmo trutta)
+III.p.II.VHS	= Groenlandse kabeljauw (gadus morhua), (atlantische) haring ( Clupeaharengus), zeeforel( Salmo trutta) koningszalm (oncorhynchus tshawytscha), coho zalm (o. kisutch), vlagzalm (Thymallus thymallus) schelvis (Melanogrammus aeglefinus), Pacifische kabeljauw (Gadus macrocephalus), Pacifische haring (Clupea harengus pallasi), Snoek (Esox lucius), regenboogforel (Oncorhynchus mykiss), Sprot (Sprattus sprattus), tarbot (Scophthalmus maximus), witvis (Coregonus salar).
+III.p.II.IHN	= regenboogforel, ook "Amerikaanse forel" genoemd (Oncorhynchus mykiss),de Pacifische zalmsoorten [Koningszalm (O. tshawytscha), Sockeye zalm ( O. nerka), chumzalm  (O. keta), "masou zalm (O. masou), roze zalm (O. rhodurus) en coho zalm (O. kisutch)], en Atalatnische zalm (Salmo salar)
+
+III.p.II.txt4	= De born kan een land, een gebied of een afzonderlijke kwekerij zijn 
+
+III.p.II.txt5	= Verij van ziekte overeenkomstig de bepalingen van biejlagen B of C bij Richtlijn 91/67/EEG en de Beschikkingen 2001/183/EEG en 2003/466/EG van de Commissie. Als ziektevirj erkand overeen komstig de meest receante versie van de code en het Manual van de OIE.
+
+III.p.II.txt6  = Dit deel van de verklaring inzake de diergezondheid is uitsluitend van toepassing indien de zedeing soorten omvat die vatbaar zijn voor VHS en/of IHN. Voor de invoer van de zending in een lidstaat of een gedeelt daarvan (vak 1.9 en 1.10 van deel I van de verklaring, die (dat virij van VHS en/of IHN is verklaard of onderworpen is aan een programma met het oog daarop, moet een van de beide verklaingen worden bewaard, tenzij de zedeing bestemd is voor verdere verwerking in een erkand invoercentrum.
+
+III.p.II.txt6.1  = De Beschikkingen 2002/308/EG en 2003/634/EG van de commissie bevattem een lijst van deze lidstaten en gebienden.
+
+III.p.II.txt6.2  = De kleur van het stempel en de handtekening moet verchillen van de kleur van de andere gegevens op het certificaat
+
+III.OFFI.txt	= Officiele inspecteur
+III.OFFI.txt1	= Naam( in hoofdletters):
+III.OFFI.txt2	= Kwalificatie en titel:
+III.OFFI.txt3	= Datum:
+III.OFFI.txt4	= Handtekening:
+III.OFFI.txt5	= Stempel:

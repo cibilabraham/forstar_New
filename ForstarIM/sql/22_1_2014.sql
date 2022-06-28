@@ -1,0 +1,1 @@
+alter table supplier_stock add startdate date

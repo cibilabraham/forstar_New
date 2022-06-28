@@ -1,0 +1,4 @@
+alter table t_dailyfrozenpacking_grade add rgzQty int(5);
+alter table t_dailyfrozenpacking_main add reglazed_from varchar(100);
+alter table t_dailyfrozenpacking_main add reglaze_frozen_id int(10);
+alter table t_dailyfrozenpacking_main add reglaze_main_id int(10)

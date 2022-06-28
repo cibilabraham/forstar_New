@@ -1,0 +1,1 @@
+alter table m_purchaseorder add (delivaryatfact int(1),bearer int(1));

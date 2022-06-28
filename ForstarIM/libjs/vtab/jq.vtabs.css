@@ -1,0 +1,144 @@
+#moving_div {
+    position:absolute; 
+    left:0; 
+    top:0; 
+    border: 0;
+    margin:0;
+    padding: 0;
+    text-align: right;
+}
+#page {
+     margin: 20px;
+     /*padding: 20px;*/
+	padding-left: 11px;
+	padding-top:20px;
+     font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+     font-size: 12px;
+     color: #333333;
+     margin: auto;
+     width: 1000px;
+}
+
+
+#tabs { z-index: 2; margin:0; padding:0; list-style:none;}
+#tabs li { 
+	/*padding: 2px 0; */
+	padding: 4px;
+	background-color:#bbb; text-align: left; width: 100px; 
+	/*margin:2px;*/
+	margin:5px;
+	border: 1px solid #CCCCCC;
+     	border-right: 1px solid #E0E0E0;
+}
+#tabs li a {
+	color:#fff; text-decoration:none;
+}
+#tabs li.current { background: #FFFFFF;border-right: 1px solid #FFFFFF;}
+#tabs li.current a { 
+	color: #333333;
+	text-decoration:none; 
+	font-weight: bold;
+     	font-size: 14px;
+     	border-right: 1px solid #FFFFFF;
+}
+
+#tabs li a.editTab { 
+	color:#3B5998; 
+	margin-left:2px;	
+}
+
+#tabs li a.removeTab { 
+	color:#f00; 
+	margin-left:3px;
+	margin-right:2px;	
+}
+
+.mytabs-container {
+     z-index: 1;
+     clear: both;
+     border: 1px solid #E0E0E0;
+     padding: 10px;
+     top: -1px;
+     /*height: 300px;*/
+     height: 450px;	
+	overflow:scroll;
+    /* overflow-x: scroll; 
+     overflow-y: scroll;*/	
+}
+
+.tabCtrl {
+	position:relative;
+	float:left;
+}
+
+.ctlDiv {
+	position:relative;
+	float:right;
+	margin-top:-16px;
+}
+
+
+/* ------------------------------- */
+/*
+ul.mytabs {    
+     z-index: 2;
+     text-align: left;
+}
+ul.mytabs, ul.mytabs li {
+     margin: 0;
+     padding: 0;
+     list-style: none;     
+}
+ul.mytabs li { 
+    padding: 2px 0;
+    text-align: left;
+    width: 100px;
+}
+ul.mytabs li a {     
+     padding: 7px;
+     border: 1px solid #CCCCCC;
+     border-right: 1px solid #E0E0E0;
+     background-color: #F0F0F0;
+     text-decoration: none;
+     color: #333333;
+     display:block;
+}
+ul.mytabs li a:hover, ul.mytabs li.current a {
+     background: #FFFFFF;
+}
+ul.mytabs li.current a {
+     font-weight: bold;
+     font-size: 14px;
+     border-right: 1px solid #FFFFFF;
+}
+.mytabs-container {
+     z-index: 1;
+     clear: both;
+     border: 1px solid #E0E0E0;
+     padding: 10px;
+     top: -1px;
+     height: 300px;
+}
+
+ul.mytabs li span.editTab {
+	color:#333333;
+	margin-left:10px;
+	cursor:pointer;
+}
+
+ul.mytabs li.current span.editTab {
+	font-weight: normal; 
+	border:0px;
+}
+
+ul.mytabs li span.removeTab {
+	color:#FF0000;
+	margin-left:10px;
+	cursor:pointer;
+}
+
+ul.mytabs li.current span.removeTab {
+	font-weight: normal; 
+	border:0px;
+}
+*/

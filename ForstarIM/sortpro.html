@@ -1,0 +1,37 @@
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
+<div id="example5">            
+  <ul class="list-group">
+      <li id="1" class="list-group-item menlink">11111</li>
+      <li id="2" class="list-group-item menlink">22222</li>
+      <li id="3" class="list-group-item menlink">33333</li>
+      <li id="4" class="list-group-item menlink">44444
+        <ul class="list-group">
+          <li id="6" class="list-group-item menlink">66666</li>
+          <li id="7" class="list-group-item menlink">77777</li>
+          <li id="8" class="list-group-item menlink">88888</li>
+          <li id="9" class="list-group-item menlink">99999</li>
+        </ul>
+      </li>
+      <li id="5" class="list-group-item menlink">55555</li>
+    </ul>  
+</div> 
+
+<script>
+$("#example5").sortable({
+    connectWith: "#example5 ul",
+    items: "li",
+    placeholder: "ui-state-highlight",
+    update : function(event, ui) {
+       var order = $(this).sortable('toArray').toString();
+       var serial = $(this).sortable('serialize');
+       alert(order);
+       alert(serial);
+
+    }
+ });
+ </script>

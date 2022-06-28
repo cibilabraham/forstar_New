@@ -1,0 +1,1 @@
+ALTER TABLE `m_physical_stk_packing_entry` ADD `rm_lot_id` INT NOT NULL AFTER `grade_id`;

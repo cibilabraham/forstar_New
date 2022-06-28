@@ -1,0 +1,1 @@
+create table stock_transfer(id int(5),fromunit int(5),tounit int(5),item varchar(25));

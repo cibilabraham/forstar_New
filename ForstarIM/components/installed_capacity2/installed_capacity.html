@@ -1,0 +1,401 @@
+<flexy:include src="../../ftemplate/topL.php" />
+
+<form name="frmInstalledCapacity" action="InstalledCapacity.php" method="post">
+	<table cellspacing="0"  align="center" cellpadding="0" width="96%">
+		<tr flexy:if="err">
+			<td height="40" align="center" class="err1" >{err}</td>
+		</tr>
+			<tr>
+				<td height="10" align="center" ></td>
+			</tr>
+			<tr>
+			<td>
+				<table cellpadding="0"  cellspacing="1" border="0" align="center"  width="100%">
+					<tr>
+						<td>							
+								{setBoxHeader(#INSTALLED CAPACITY#)}
+								<flexy:include src="../../ftemplate/boxTL.tpl" />					
+							<table cellpadding="0"  width="100%" cellspacing="0" border="0" align="center">		
+								<tr>
+									<td colspan="3" align="center">
+	<table width="70%" align="center">		
+		<tr flexy:if="showEntry()">
+			<td>
+				<table cellpadding="0"  cellspacing="1" border="0" align="center"  width="75%">
+					<tr>
+						<td>			
+							
+							{setSubBoxHeader(heading)}
+							<flexy:include src="../../ftemplate/rbTop.tpl" />
+							<table cellpadding="0"  width="100%" cellspacing="0" border="0" align="center">		
+								<tr>
+									<td width="1" ></td>
+									<td colspan="2" >
+										<table cellpadding="0"  width="100%" cellspacing="0" border="0" align="center">
+											<tr>
+												<td height="10" ></td>
+											</tr>
+											<tr>							
+												<td align="center" flexy:if="editMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('InstalledCapacity.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdSaveChange" class="button" value=" Save Changes " onClick="return validateInstalledCapacity(document.frmInstalledCapacity);">	
+												</td>												
+												<td align="center" flexy:if="addMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('InstalledCapacity.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdAdd" class="button" value=" Add " onClick="return validateInstalledCapacity(document.frmInstalledCapacity);">
+												</td>
+											</tr>
+								<input type="hidden" name="hidInstalledCapacityId" value="{editInstalledCapacityId}">
+										<tr>
+											  <td colspan="2" height="5"></td>
+										  </tr>
+	<tr>
+		<td colspan="2" align="center" style="padding-left:10px; padding-right:10px;" id="divEntryExistTxt" class="err1"></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center" style="padding-left:10px; padding-right:10px;"> 
+			<table width="70%" border="0">
+				<tr>
+				<TD>
+					<table>
+						<TR>
+						<TD valign="top">
+						<table>
+							<tr>
+							<td class="fieldName" nowrap="nowrap">*Machinery</td>
+							<td class="listing-item">
+								<input name="data[InstalledCapacity][name]" type="text" id="machinery" size="28" value="" onblur="xajax_chkICExist(document.getElementById('machinery').value, '{editId}');">
+								{if:editMode}
+								<input type="hidden" name="data[InstalledCapacity][id]" value="" readonly>
+								{end:}
+							</td>
+							</tr>
+							<tr>
+								<td class="fieldName" nowrap="nowrap">Description</td>
+								<td class="listing-item"><textarea name="data[InstalledCapacity][description]" id="description"></textarea></td>
+							</tr>
+							<tr>
+								<td class="fieldName" nowrap="nowrap">*Type of Operation</td>
+								<td class="listing-item">
+									<select name="data[InstalledCapacity][operation_type_id]" id="operationType"></select>
+								</td>
+							</tr>
+						</table>
+						</TD>
+						<td>&nbsp;</td>
+						<td valign="top">
+						<table>
+							<tr>
+								<TD colspan="2" valign="top">
+								<table cellpadding="0" cellspacing="2" width="100%">
+								<tr align="center">
+									<td class="fieldName" nowrap="nowrap" style="text-align:center; line-height:normal;">*Capacity</td>
+									<td class="fieldName" nowrap="nowrap" style="text-align:center; line-height:normal;">*Unit</td>
+									<td class="fieldName" nowrap="nowrap" style="text-align:center; line-height:normal;">*Per</td>
+								</tr>
+								<tr align="center">
+									<td nowrap="true">
+										<input name="data[InstalledCapacity][capacity]" type="text" id="capacity" size="5" value="" style="text-align:right;" autocomplete="off">
+									</td>
+									<td nowrap="true">
+										<select name="data[InstalledCapacity][unit_id]" id="unitId" style="width:75px;"></select>
+									</td>
+									<td nowrap class="listing-item" style="padding-left:5px;">
+										<input name="data[InstalledCapacity][per_val]" type="text" id="perVal" size="5" value="" style="text-align:right;" autocomplete="off">&nbsp;HR
+									</td>
+								</tr>								
+								</table>
+								</TD>
+							</tr>							
+							<tr>
+								<td class="fieldName" nowrap="nowrap">*Monitor</td>
+								<td class="listing-item">
+									<select name="data[InstalledCapacity][monitor]" id="monitor" onchange="validParam();">
+										<option value="">--Select--</option>
+										<option value="S">SINGLE</option>
+										<option value="M">MULTIPLE</option>
+									</select>
+								</td>
+							</tr>
+							<!--<tr>
+								<td class="fieldName" nowrap="nowrap">*Monitoring Factors</td>
+								<td class="listing-item">
+									<select name="data[InstalledCapacity][monitoring_parameter_id]" id="monitoringParameter"></select>
+								</td>
+							</tr>-->
+						</table>
+						</td>
+						</TR>
+					</table>
+				</TD>
+				</tr>
+                        </table>
+		</td>
+	</tr>
+	<tr>
+		<TD style="padding-left:10px;padding-right:10px; color: Maroon;" colspan="2" align="center" class="listing-item" nowrap>
+			Please confirm that the entries are in sequence.
+		</TD>
+	</tr>
+	<tr>
+		<TD style="padding-left:10px;padding-right:10px;" colspan="2" align="center">
+			<table>
+				<TR>
+				<TD>
+					<table  cellspacing="1" bgcolor="#999999" cellpadding="3" id="tblMonitorParam" class="newspaperType">
+					<tr align="center">
+						<th nowrap style="text-align:center;">*Head</th>
+						<th nowrap style="text-align:center; line-height:normal;">*Monitoring<br> Factor</th>	
+						<th nowrap style="text-align:center;">*Start</th>
+						<th nowrap style="text-align:center;">Stop</th>
+						<th nowrap style="line-height:normal; text-align:center;">Monitoring <br> Interval<br>(HR)</th>
+						<th nowrap style="line-height:normal; text-align:center;" id="seqFlagHCol">Sequential<br>To</th>
+						<th>&nbsp;</th>
+					</tr>
+	{setRow(0)}
+	{foreach:monitorParamRecs,key,mpr}		
+	<tr align="center" class="whiteRow" id="row_{getRow():h}">
+		<td align="center" class="listing-item">
+			<input type="text" autocomplete="off" size="24" value="{mpr.head_name}" id="headName_{key}" name="headName_%s" flexy:nameuses="key" />
+		</td>
+		<td align="center" class="listing-item">
+			<select id="monitoringParamId_{key}" name="monitoringParamId_%s" flexy:nameuses="key">
+			</select>
+		</td>
+		<td align="center" class="listing-item">
+			<select id="smpStart_{key}" name="smpStart_%s" flexy:nameuses="key" onchange="validParam();">
+				<option value="">--Select--</option>
+				<option value="Y">YES</option>
+				<option value="N">NO</option>
+			</select>
+		</td>
+		<td align="center" class="listing-item">
+			<select id="smpStop_{key}" name="smpStop_%s" flexy:nameuses="key" onchange="validParam();">
+				<option value="">--Select--</option>
+				<option value="Y">YES</option>
+				<option value="N">NO</option>
+			</select>
+		</td>
+		<td align="center" class="listing-item">
+			<input type="text" style="text-align: right;" autocomplete="off" size="5" value="" id="monitoringInterval_{key}" name="monitoringInterval_%s" flexy:nameuses="key" />
+		</td>
+		<td align="center" class="listing-item" id="seqFlagRCol_{getRow():h}" >
+			<input type='checkbox' name="seqFlag_%s" id="seqFlag_{key}" value='Y' class='chkBox' flexy:nameuses="key" style="display:none;">
+<!-- Sequential To   -->
+			<select id="seqMParamId_{key}" name="seqMParamId_%s" flexy:nameuses="key" style="width:100px;">
+			</select>
+		</td>
+		<td align="center" class="listing-item">
+			<a onclick="setMParamItemStatus('{getRow():h}');" href="###">
+				<img border="0" style="border: medium none ;" src="images/delIcon.gif" title="Click here to remove this item"/>
+			</a>
+			<input type="hidden" value="" id="status_{getRow():h}" name="status_{getRow():h}"/>
+			<input type="hidden" value="N" id="IsFromDB_{getRow():h}" name="IsFromDB_{getRow():h}"/>
+			<input type="hidden" value="{mpr.id}" id="monitoringParamEntryId_{getRow():h}" name="monitoringParamEntryId_{getRow():h}" readonly="true"/>
+			<input type="hidden" value="{mpr.seq_flag}" id="mParamSeqFlag_{getRow():h}" name="mParamSeqFlag_{getRow():h}" readonly="true"/>
+		</td>
+	</tr>
+	
+	{incrementRow()}
+	{end:}
+	</table>
+	<!--  Hidden Fields-->
+	<input type='hidden' name="hidTableRowCount" id="hidTableRowCount" value="{monitorParamRecSize}" readonly="true">
+	</TD>
+				</TR>
+				<tr><TD height="5"></TD></tr>
+				<tr>
+					<TD>
+						<a href="###" id='addRow' onclick="javascript:addNewMonitorParamItem();"  class="link1" title="Click here to add new item."><img  SRC='images/addIcon.gif' BORDER='0' style='border:none;padding-right:4px;vertical-align:middle;' >Add New </a>
+					</TD>
+				</tr>
+			</table>
+		</TD>
+	</tr>
+											<tr>
+											  <td colspan="2" height="5"></td>
+										  </tr>
+											<tr>							
+												<td align="center" flexy:if="editMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('InstalledCapacity.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdSaveChange" class="button" value=" Save Changes " onClick="return validateInstalledCapacity(document.frmInstalledCapacity);">	
+												</td>												
+												<td align="center" flexy:if="addMode">
+												<input flexy:ignore="yes" type="submit" name="cmdCancel" class="button" value=" Cancel " onClick="return cancel('InstalledCapacity.php');">&nbsp;&nbsp;
+												<input flexy:ignore="yes" type="submit" name="cmdAdd" class="button" value=" Add " onClick="return validateInstalledCapacity(document.frmInstalledCapacity);">
+												</td>
+											</tr>
+											<tr>
+												<td  height="10" ></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						<flexy:include src="../../ftemplate/rbBottom.tpl" />
+						</td>
+					</tr>
+				</table>
+				<!-- Form fields end   -->
+			</td>
+		</tr>			
+	</table>
+		</td>
+			</tr>	
+	<tr flexy:if="showEntry()" >
+		<td colspan="3" height="10" ></td>
+	</tr>
+	
+	<tr>
+		<td colspan="3" height="10" ></td>
+	</tr>
+	<tr flexy:if="listMode">	
+		<td colspan="3">
+			<table cellpadding="0" cellspacing="0" align="center">
+			<tr flexy:if="!printMode">
+				<td>{if:del}<input flexy:ignore="yes" type="submit" value=" Delete " class="button"  name="cmdDelete" onClick="return confirmDelete(this.form,'delId_',{icmRecSize});">{end:}&nbsp;{if:add}<input flexy:ignore="yes" type="submit" value=" Add New " name="cmdAddNew" class="button">{end:}&nbsp;{if:print}<input flexy:ignore="yes" type="button" value=" Print " name="btnPrint" class="button" onClick="return printWindow('InstalledCapacity.php?print=y',700,600);">{end:}</td>
+			</tr>
+			</table>
+		</td>
+		</tr>
+	<tr>
+		<td colspan="3" height="5" ></td>
+	</tr>
+	<tr flexy:if="errDel">
+		<td colspan="3" height="15" align="center" class="err1">{errDel}</td>
+	</tr>
+	<tr flexy:if="listMode">
+				<td width="1" ></td>
+				<td colspan="2" >
+				<table cellpadding="1"  width="30%" cellspacing="1" border="0" align="center" id="newspaper-b1">
+	{if:icmRecSize}
+				<tr flexy:if="displayNavRow">
+					<td colspan="10" style="padding-right:10px" class="navRow">
+						<div align="right">
+						{printPagination(maxpage,pageNo,#InstalledCapacity.php?#):h}
+						<!--<input type="hidden" name="pageNo" value="{pageNo}"> Set to last section -->
+						</div>
+					</td>
+				</tr>
+				<thead>
+			
+	<tr align="center">
+		<th width="20" flexy:if="!printMode"><INPUT type='checkbox' name='CheckAll' id='CheckAll' onClick="chkAll(this.form,'delId_'); " class="chkBox"></th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Machinery</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Description</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Type of Operation</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Capacity</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Unit</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Per</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Monitor</th>
+		<!--<th nowrap style="padding-left:10px; padding-right:10px;">Monitoring<br/>Parameters</th>-->
+		{if:edit}
+		<th width="45" flexy:if="!printMode">&nbsp;</th>
+		{end:}
+		{if:edit}
+		<th width="45" flexy:if="!printMode">&nbsp;</th>
+		{end:}
+	</tr>
+	</thead>
+	<tbody>
+	{setRow(1)}
+	{foreach:icmRecs,icmR}
+	<tr>
+		<td width="20" align="center" flexy:if="!printMode">
+			<input type="checkbox" name="data[{getRow():h}][InstalledCapacity][__del]" id="delId_{getRow():h}" value="{icmR.id}" class="chkBox">
+		</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">			
+			{if:displayMonitorParams(icmR.id)}
+			<a href="###" onMouseover="ShowTip('{displayMonitorParams(icmR.id)}');" onMouseout="UnTip();" class="link5" >{icmR.name}</a>
+			{else:}
+				{icmR.name}
+			{end:}
+		</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;">{icmR.description}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">{icmR.operationtype}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">{icmR.capacity}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">{icmR.unitname}</td>		
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">{icmR.per_val}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">{getMonitor(icmR.monitor)}</td>
+		<!--<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">{icmR.parameter}</td>-->
+		{if:edit}
+		  <td class="listing-item" width="45" align="center" flexy:if="!printMode"><input type="submit" value=" Edit " name="cmdEdit" onClick="assignValue(this.form,{icmR.id},'editId');">
+			</td>
+		{end:}
+
+		 <td class="listing-item" width="45" align="center" flexy:if="!icmR.active"><input type="submit" value=" Confirm " name="cmdConfirm" onClick="assignValue(this.form,{icmR.id},'confirmId');">
+			</td>
+		
+		 <td class="listing-item" width="45" align="center" flexy:if="icmR.active"><input type="submit" value=" ReleaseConfirm " name="btnRlConfirm" onClick="assignValue(this.form,{icmR.id},'rlconfirmId');">
+			</td>
+	</tr>
+		{incrementRow()}
+	{end:}
+	<input type="hidden" name="hidRowCount"	id="hidRowCount" value="{icmRecSize}" >
+	<input type="hidden" name="editId" value="">
+	<input type="hidden" name="confirmId" value="">
+	<input type="hidden" name="rlconfirmId" value="">
+	</tbody>
+	<tr flexy:if="displayNavRow">
+		<td colspan="10" style="padding-right:10px" class="navRow">
+			<div align="right">
+			{printPagination(maxpage,pageNo,#InstalledCapacity.php?#):h}
+			</div>
+		</td>
+	</tr>
+	{else:}
+	<tr><TD align="center">{msg_NoRecs}</TD></tr>
+	{end:}
+	</table>
+		</td>
+								</tr>
+								<tr flexy:if="listMode">
+									<td colspan="3" height="5" ></td>
+								</tr>
+								<tr flexy:if="listMode">	
+									<td colspan="3">
+										<table cellpadding="0" cellspacing="0" align="center">
+											<tr flexy:if="!printMode">
+												<td>{if:del}<input type="submit" value=" Delete " class="button"  name="cmdDelete" onClick="return confirmDelete(this.form,'delId_',{icmRecSize});">{end:}&nbsp;{if:add}<input type="submit" value=" Add New " name="cmdAddNew" class="button">{end:}&nbsp;{if:print}<input type="button" value=" Print " name="btnPrint" class="button" onClick="return printWindow('InstalledCapacity.php?print=y',700,600);">{end:}</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3" height="5" ></td>
+								</tr>
+							</table>
+						<flexy:include src="../../ftemplate/boxBR.tpl" />					
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>			
+		<tr>
+			<td height="10">
+			<input type="hidden" name="entryExist" id="entryExist" value="" readonly />
+			<input type="hidden" name="pageNo" value="{pageNo}" readonly /> 
+			</td>
+		</tr>	
+</table>
+{if:showEntry()}
+		<SCRIPT LANGUAGE="JavaScript" type="text/javascript">
+			function addNewMonitorParamItem()
+			{
+				addNewMonitorParam('tblMonitorParam','','');		
+			}
+			// Check valid parameter
+			validParam();
+		</SCRIPT>
+{end:}
+{if:showAddRow()}
+	<SCRIPT LANGUAGE="JavaScript">
+		window.load = addNewMonitorParamItem();
+	</SCRIPT>
+{end:}	
+{if:monitorParamRecSize}
+	<flexy:toJavascript fieldId="monitorParamRecSize"></flexy:toJavascript>
+{end:}
+</form>
+
+<flexy:include src="../../ftemplate/bottomR.php" />

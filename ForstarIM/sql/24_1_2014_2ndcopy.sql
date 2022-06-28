@@ -1,0 +1,1 @@
+alter table purchaseorder_entry add (notover int(5),proddescription varchar(50))

@@ -1,0 +1,39 @@
+<html>
+	<title>{title}</title>
+	<head>
+	</head>
+<body>
+	<!-- form name="frm" method="POST">
+		<input type="hidden" name="data[user][createdby]" value="2">
+		Username: <input type="text" name="data[user][username]" value="" ></br>
+		Password: <input type="password" name="data[user][password]" value="" ></br>
+		<input name="go" value="go" type="submit" >
+	</form-->
+	<br>
+	<form name="objs" method="POST">
+	<table border='1'>
+		<tr>
+			<th>id</th>
+			<th>username</th>
+			<th>password</th>
+			<th>createdon</th>
+			<th>createdby</th>
+		</tr>	
+		{foreach:userRecords,user}
+      		<tr>
+			<td>{user.id}</td>
+        		<input type='hidden' name="data[{user.id}][user][id]" value="{user.id}" id="data_{user.id}_user_id">
+        		<td><input name="data[{user.id}][user][username]" id="data_{user.id}_user_username" value="{user.username}" onchange="this.form.data_{user.id}_user_updated.value=1;" ></td>
+        		<td><input name="data[{user.id}][user][password]" id="data_{user.id}_user_password" value="{user.password}" onchange="this.form.data_{user.id}_user_updated.value=1;"></td>
+        		<td><input name="data[{user.id}][user][createdon]" id="data_{user.id}_user_createdon" value="{user.createdon}" onchange="this.form.data_{user.id}_user_updated.value=1;"></td>
+        		<td><input name="data[{user.id}][user][createdby]" id="data_{user.id}_user_createdby" value="{user.createdby}" onchange="this.form.data_{user.id}_user_updated.value=1;"></td>
+			<input type='hidden' name="data[{user.id}][user][__updated]" id="data_{user.id}_user_updated" value="0" >
+      		</tr>
+    		{end:}
+		<tr>
+			<td colspan="5"><input type="submit" name="update" ></td>
+		</tr>
+	</table>
+	</form>
+</body>
+</html>

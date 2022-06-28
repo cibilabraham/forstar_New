@@ -1,0 +1,1 @@
+update m_customer set active=1;

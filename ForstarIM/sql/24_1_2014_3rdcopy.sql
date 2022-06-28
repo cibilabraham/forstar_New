@@ -1,0 +1,1 @@
+alter table purchaseorder_entry add printoutdescrip varchar(5)

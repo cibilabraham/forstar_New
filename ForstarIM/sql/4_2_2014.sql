@@ -1,0 +1,1 @@
+create table m_stock_plantunit(id int(5) primary key auto_increment,stock_id int(5),unit_id int(5));

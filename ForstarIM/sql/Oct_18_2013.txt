@@ -1,0 +1,1 @@
+alter table role_function add supplierdtflg int(3);

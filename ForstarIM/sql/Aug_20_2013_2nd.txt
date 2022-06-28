@@ -1,0 +1,56 @@
+CREATE TABLE `t_dailyfrozenreglazing` (
+	`id` INT(5) NOT NULL AUTO_INCREMENT,
+	`fish_id` INT(5) NULL DEFAULT NULL,
+	`processcode_id` INT(5) NULL DEFAULT NULL,
+	`freezing_stage_id` INT(5) NULL DEFAULT NULL,
+	`eucode_id` INT(5) NULL DEFAULT NULL,
+	`brand_id` INT(5) NULL DEFAULT NULL,
+	`frozencode_id` INT(5) NULL DEFAULT NULL,
+	`mcpacking_id` INT(5) NULL DEFAULT NULL,
+	`reglazing_reason_id` INT(5) NULL DEFAULT NULL,
+	`num_inner_packs_used` INT(10) NULL DEFAULT NULL COMMENT 'Number of new inner packs used',
+	`num_labels_used` INT(10) NULL DEFAULT NULL COMMENT 'Number of labels or header used',
+	`num_mc_used` INT(10) NULL DEFAULT NULL COMMENT 'Number of new Master Carton used',
+	`reglaze_eucode_id` INT(5) NULL DEFAULT NULL COMMENT 'Repacked Eu Code Id',
+	`reglaze_brand_id` INT(5) NULL DEFAULT NULL COMMENT 'Repacked Brand Id',
+	`reglaze_frozencode_id` INT(5) NULL DEFAULT NULL COMMENT 'Repacked frozen code Id',
+	`reglaze_mcpacking_id` INT(5) NULL DEFAULT NULL COMMENT 'Repacked MC Packing Id',
+	`select_date` DATE NULL DEFAULT NULL,
+	`flag` INT(2) NULL DEFAULT '0' COMMENT 'flag 0:Not saved, 1:for saved',
+	PRIMARY KEY (`id`),
+	INDEX `tdfrp_id` (`id`),
+	INDEX `tdfrp_fish_id` (`fish_id`),
+	INDEX `tdfrp_pc_id` (`processcode_id`),
+	INDEX `tdfrp_fs_id` (`freezing_stage_id`),
+	INDEX `tdfrp_euc_id` (`eucode_id`),
+	INDEX `tdfrp_brand_id` (`brand_id`),
+	INDEX `tdfrp_fc_id` (`frozencode_id`),
+	INDEX `tdfrp_mcp_id` (`mcpacking_id`),
+	INDEX `tdfrp_rpr_id` (`reglazing_reason_id`),
+	INDEX `tdfrp_reeuc_id` (`reglaze_eucode_id`),
+	INDEX `tdfrp_rebran_id` (`reglaze_brand_id`),
+	INDEX `tdfrp_refc_id` (`reglaze_frozencode_id`),
+	INDEX `tdfrp_remcp_id` (`reglaze_mcpacking_id`),
+	INDEX `tdfrp_date` (`select_date`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=19;
+
+CREATE TABLE `t_dailyfrozenreglazing_grade` (
+	`id` INT(5) NOT NULL AUTO_INCREMENT,
+	`main_id` INT(5) NULL DEFAULT NULL,
+	`grade_id` INT(5) NULL DEFAULT NULL,
+	`number_mc_reglaze` INT(5) NULL DEFAULT NULL COMMENT 'Number of MC used for Repacking',
+	`number_loose_slab_reglaze` INT(5) NULL DEFAULT NULL COMMENT 'Number of Loose Slab used for Repacking',
+	`number_mc_stock` INT(5) NULL DEFAULT NULL COMMENT 'total MC stock',
+	`number_loose_slab_stock` INT(5) NULL DEFAULT NULL COMMENT 'total loose slab stock',
+	PRIMARY KEY (`id`),
+	INDEX `tdfrpg_id` (`id`),
+	INDEX `tdfrpg_main_id` (`main_id`),
+	INDEX `tdfrpg_grade_id` (`grade_id`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=12;
+

@@ -1,0 +1,182 @@
+<?php
+$currentUserRoleId 	= 	$sessObj->getValue("userRole");
+#For taking the Main Menu
+$distinctModuleIdRecs	=	$manageroleObj->disitnctModuleIdRecs($currentUserRoleId);
+//$getRecordsForModule	=	$modulemanagerObj->getFunctionsForModule();  Removed on 16-5-08
+?>
+<script>
+fixMozillaZIndex=true; //Fixes Z-Index problem  with Mozilla browsers but causes odd scrolling problem, toggle to see if it helps
+_menuCloseDelay=500;
+_menuOpenDelay=150;
+_subOffsetTop=2;
+_subOffsetLeft=-2;
+
+with(menuStyle=new mm_style()){
+bordercolor="#296488";
+borderstyle="solid";
+borderwidth=1;
+fontfamily="Verdana, Arial, Helvetica, sans-serif";
+fontsize="12px";
+fontstyle="normal";
+headerbgcolor="#ffffff";
+headercolor="#000000";
+offbgcolor="#f1edd9";
+offcolor="#000000";
+onbgcolor="#4F8EB6";
+oncolor="#ffffff";
+padding=5;
+pagebgcolor="#82B6D7";
+pagecolor="black";
+
+separatorcolor="#000000";
+separatorsize=1;
+subimage="images/arrow.gif";
+subimagepadding=2;
+}
+
+
+with(mainMenuStyle=new mm_style()){
+borderstyle="solid";
+fontfamily="Arial, Helvetica, sans-serif";
+fontsize="11px";
+fontstyle="normal";
+fontweight="bold";
+headerbgcolor="#ffffff";
+headercolor="#000000";
+offbgcolor="transparent";
+offcolor="#515151";
+onbgcolor="#4F8EB6";
+oncolor="#ffffff";
+padding=5;
+pagebgcolor="#82B6D7";
+pagecolor="black";
+
+separatorcolor="#000000";
+separatorsize=1;
+subimage="images/arrow.gif";
+subimagepadding=2;
+}
+	<?
+	$mainModuleId = "";
+	$mainMenuName = "";
+	foreach ($distinctModuleIdRecs as $dmr) {
+		$mainModuleId = $dmr[0];
+		$mainMenuName = $dmr[1];
+		//if ($dmr[1]!="") {
+	?>
+		with(milonic=new menuname("<?=$mainMenuName?>")){
+		overflow="scroll";
+		style=menuStyle;
+	<?
+	$i=1;
+	$target="";
+	$j=0;
+	$getDistinctSubModule = $modulemanagerObj->getDistinctSubModule($mainModuleId, $currentUserRoleId);
+	if (sizeof($getDistinctSubModule)>0) {
+		foreach ($getDistinctSubModule as $gdsm) {
+			$subModuleId = $gdsm[0];
+			if ($subModuleId!=0) {
+				$subModuleName = $manageroleObj->findSubMenu($subModuleId);
+				$tempVar = "text=$subModuleName;showmenu=$subModuleName;";
+	?>
+		aI("text=<?=$subModuleName;?>;showmenu=<?=$subModuleName;?>");
+	<?
+			} else {
+				$getNoSubMenuRecords = $modulemanagerObj->getEmptyOfSubModule($dmr[0]);
+				$tempVar = "";
+				$menuItems = "";
+				foreach ($getNoSubMenuRecords as $nsm) {
+					$functionId	=	$nsm[0];
+					$moduleId	=	$nsm[1];
+					$functionName	=	$nsm[2];
+					$functionUrl	=	$nsm[3];
+					$tget		=	$nsm[4];
+					$accesscontrolObj->getAccessControl($moduleId, $functionId);
+					if ($accesscontrolObj->canAccess()) {
+						if ($tget!="") $functionUrl ="javascript:mynewwindow('$functionUrl')";
+						$tempVar = "text=$functionName;url=$functionUrl;";
+						echo $menuItems="aI(\"".$tempVar . "\");\n";
+					}
+				}
+			}
+		}
+	}
+	?>				
+		}
+	<?
+		//}
+	}
+	?>
+	
+	<?
+	$mainModuleId = "";
+	foreach ($distinctModuleIdRecs as $dmr) {
+		$mainModuleId = $dmr[0];
+		$getDistinctSubModule = $modulemanagerObj->getDistinctSubModule($mainModuleId, $currentUserRoleId);
+		foreach ($getDistinctSubModule as $gdsm) {
+			$subModuleId = $gdsm[0];
+			if ($subModuleId!=0) {
+				$subModuleName = $manageroleObj->findSubMenu($subModuleId);
+				$getSubMenuRecords = $modulemanagerObj->getSubmenus($subModuleId);
+				if (sizeof($getSubMenuRecords)>0) {
+					//$subMenu = $manageroleObj->findSubMenu($pmenuId); edited 06-06-08
+	?>
+	with(milonic=new menuname("<?=$subModuleName;?>")){
+	overflow="scroll";
+	style=menuStyle;
+	<?
+	$menuItems = "";
+	$functionName = "";
+	$functionUrl = "";
+	foreach ($getSubMenuRecords as $gs) {
+		$subMenuModuleId   = $gs[0];
+		$subMenuFunctionId = $gs[2]; 
+		$functionName	=	$gs[4];
+		$functionUrl	=	$gs[5];
+		$accesscontrolObj->getAccessControl($subMenuModuleId, $subMenuFunctionId);
+		$tempVar = "";
+		if ($accesscontrolObj->canAccess()) {
+			$tempVar = "text=$functionName;url=$functionUrl;";
+			echo $menuItems="aI(\"".$tempVar . "\");\n";
+		}
+	}
+	?>
+	}
+	<?
+				}
+			}
+		}
+	}
+	?>
+drawMenus();
+</script>
+	<table align="left"  height="31" width="100%" cellspacing="0" cellpadding="0"  border="0">
+		<tr>
+		<td align="left" width="100%">
+		<script>
+		with(milonic=new menuname("Main Menu")) {
+		style=mainMenuStyle;
+		top=10;
+		itemwidth="130";
+		alwaysvisible=1;
+		orientation="horizontal";
+		margin=2;
+		position="relative";
+		aI("text=Home;url=Home.php");		
+		<?		
+		$mainModuleName = "";
+		foreach ($distinctModuleIdRecs as $dmr) {
+			$mainModuleName = $dmr[1];
+			if ($mainModuleName!="") {
+		?>		
+		aI("text=<?=$mainModuleName;?>;showmenu=<?=$mainModuleName;?>;");		
+		<?
+				} 
+			}
+		?>
+		aI("text=Logout;url=javascript:confirmLogout();");
+		}		
+		drawMenus();
+		</script>
+		</td></tr>
+	</table>

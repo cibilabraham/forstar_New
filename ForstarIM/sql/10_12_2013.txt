@@ -1,0 +1,2 @@
+alter table t_purchaseorder_rm_entry change eucode_id eucode_id_removed int(5);
+alter table role_function modify supplierdtflg varchar(25);

@@ -1,0 +1,210 @@
+#page ---------------- English(ENG) -------------
+
+head.txt 	= HEALTH   CERTIFICATE  FOR EXPORT OF FISHERY PRODUCTS INTENDED FOR HUMAN CONSUMPTION
+head1.txt 	= 
+head2.txt 	= 
+subHead.txt	= MUSTER-GENUSSTAUGLICHKEITSBESCHEINIGUNG FUR DIE EINFUHR VON FISCHEREIERZEUGNISSEN FUR DEN MENSCHLICHEN VERZEHR
+
+country.txt 	= LAND  : 
+vceu.txt	=  Veterinarbescheinigung fur die  &nbsp;&nbsp; Einfuhr in die EU
+consigner.txt 	= 1.1 Absender :   
+consigner.name    = Name
+consigner.address  = Anschrift
+consigner.po	  = Postleitzahl :
+consigner.phone   = Tel.
+cert.ref	  = 1.2 Bezugs-Nr. Der Bescheingung
+
+1.3.txt1	  = 1.3 Zustandige oberste Behorde
+1.3.txt2	 = Export Inspection Council of India
+1.3.txt3	 = (Ministry of Commerce & Industry, Govt. of India)
+	
+1.4.txt1 	= 1.4 Zustandige ortliche Behorde
+1.4.txt2	= Export Inspection Agency-Mumbai
+1.4.txt3	= (Ministry of Commerce & Industry, Govt. of India)
+
+1.5.txt1  	= 1.5 Empfanger :
+1.5.name	= Name
+1.5.addr	= Anschrift
+1.5.po		= Postleitzahl :
+1.5.tel		= Tel.
+
+1.7.txt1	= 1.7 Herkunftsland
+1.7.iso		= ISO Code
+
+1.8.txt1	= 1.8 Herkunftsregion  
+1.8.code	= Code
+
+1.9.txt1	= 1.9 Bestimmungsland
+1.9.iso		= ISO Code
+
+1.11.txt1	= 1.11 Herkumftsort/Fangort
+1.11.name	= Name
+1.11.addr	= Anschrift
+1.11.approval	= Zulassungsnummer : 
+
+1.13.txt1	= 1.13 Verladeort
+
+1.14.txt1	= 1.14 Versanddatum
+
+1.15.txt1	= 1.15 Transportmittel
+1.15.aero	= Flugzeug
+1.15.ship	= Schiff
+1.15.air	= 
+1.15.railway	= Eisenbahnwaggon
+1.15.road	= StraBenfahrzeug
+1.15.other	= Andere
+1.15.identity	= Kennzeichnung  :
+1.15.document	= Bezugsdokumente
+
+1.16.txt1	= 1.16 Eingangsgrenzkontrollstelle
+
+1.18.txt1	= 1.18 Beschreibung der Ware
+
+1.19.txt1	= 1.19 Erzeugnis- code (HS -code)
+
+1.20.txt1	= 1.20 Anzahl/Menge :  
+1.20.net	= NET.WT.:
+1.20.gr		= GR.WT.:
+
+1.21.txt1	= 1.21 Erzeugnistemperatur
+1.21.amb	= Umgebungstemperatur
+1.21.chi	= Gekuhlt
+1.21.fzn	= Gefroren
+
+1.22.txt1	= 1.22 Anzahl packstucke : 
+
+1.23.txt1	= 1.23 Plomben-und Containemummer
+1.23.container  = CONTAINER NO.:
+1.23.seal	= SEAL NO.:
+
+1.24.txt1	= 1.24 Art der Verpackung
+
+1.25.txt1	= 1.25 Waren zertifiziert fur 
+1.25.human	= Lebensmittel
+
+1.27.txt1	= 1.27 Fur Einfuhr in die EU oder zulassung
+
+1.28.txt1	= 1.28 Kennzeichnung der Waren
+1.28.approval	= Zulassungsunmmer des Betriebs :
+1.28.species	= Arte
+1.28.nature 	= Art der ware
+1.28.treatment	= Art der Behandlung
+1.28.manuplant	= Herstellungsvetrieb
+1.28.numpack	= Anzahl Packstucke
+1.28.netwt	= Nettogewicht
+1.28.sciname	= (PENAEUS MONODON)
+1.28.cases	= ( Cases )
+
+P.I.LH		= Teil I:Angaben zus Sendung
+
+#page ----------------2 -------------
+
+II.country	= LAND : 
+II.fishery	= Fischereierzeugnisse
+II.health	= II. Bescheinigung
+II.a.certificate = II.a.Nummer der Bescheinigung
+
+II.1.public	= II.1 Bescheinigung der Genusstauglichkeit
+
+II.1.txt1	= Der/die Unterzeichnete bestatugt, mit den einschlagigen Vorschriften der Verordnungen (EG) Nr. 178/2002, (EG) Nr. 852/2004, (EG) Nr.854/2004 vertraut zu sein, und bescheinigt, dass die vorstehend bezeichneten Fischereierzeuguisse unter Einhaltung dieser Vorschriften gewonnen wurden und dass sie insbesondere
+
+II.1.txt2	= aus einem Betrieb/Betrieben stammen, der/die ein auf der Grundlage der HACCP-Grundsatze gemaB dar Verordnung (EG) Nr.852/2004 erstelltes Programm durchfuhrt/durchfuhren,
+
+II.1.txt3	= gefangen und an Bord von Schiffen gehandhabt, angelandet, gehandhabt und ggf. Zuvereitet, eingefrorem und hygienisch aufgetaut werdem gemaB den Bestinmungen von Anhang III Abschlitt VIII kapitel I bis IV der Verordnung (EG) Nr.853/2004.
+
+II.1.txt4	= die kriterien von Anhang III Absehnitt VIII kapitil V der verordnung (EG) Nr.853/2004 und der Verordnung (EG) Nr.2073/2005 uber mikrobionogische kriteritn fur Lenbensmittel erfullen, 
+
+II.1.txt5	= gemaB Anhang III Abschnitt VIII Kapitel VI bis VIII der Verordnung (EG) Nr.853/2004 verpackt, gelagert und befordert wurden, 
+
+II.1.txt6	= gemaB Anhang III Abschnitt I der Verordnumg (EG) Nr. 853/2004 gekennzeichnet wurden, 
+
+II.1.txt7	= dass die Garantien uber lebende Tiere und daraus gewommene Erzeugnissa, sofern sie aus Aquakultur stammen, aus den gemaB der Richtlinie 96/23/EG, insbesondere Artiken 29, vorgelegten Ruckstandsplanem erfullt sind
+
+II.1.txt8	= und
+
+II.1.txt9	= dass  die Fischereiezeugnisse den amtlichen kontrollen gemaB Anhang III der Verordnung (EG) Nr.854/2004 mit zufrieden stellendem Ergebnis unterzogen wurden.
+
+II.2.1.txt	= (1)[Bescheinigung der Tiergesundheit fur Erzeugenissc aus Aquakultur
+
+II.2.1.txt1 	= Der/die Untezeichnete bestatigt, dass die forstehend bezeichneten Fischereierzeugnisse von Fischel oder Krebstierel stammen, die am Tag der Ernte klinisch gesund waren und  unter Bedingungen gefordert wurden, die den Gesundheitsstatus der Erzeugnisse nicht veranderm, und beschuinigt, dass:
+
+II.2.1.txt2 	= (1)[(2) sofern es sich un fur ISA und /oder EHN empfangliche Arten (3) handelt, sie
+
+II.2.1.txt3	= (1) [aus einer Quelle (4) stammen, die gemaB den entsprechenden EU-Vorschriften oder dem OIE-Standard (5) als ISA-und/oder EHN-frei gilt],
+
+II.2.1.txt4	= (1) [geschlachtet und ausgenommen wurden] ]
+
+II.2.1.txt5	= (1)[(6) sofern es sich un fur VHS und /oder IHN empfangliche Arten (3) handelt, sie
+
+II.2.1.txt6	= (1) [aus einer Quelle (4) stammen, die gemaB den entsprechenden EU-Vorschriften oder dem OIE-Standard (4) als (1) VHS-und/oder (1)IHN-frei gilt],
+
+II.2.1.txt7	= (1) [geschlachtet und ausgenommen wurden] ].
+
+P.II.LH		= Teil II: Besche-inigung
+
+#---------------------- Page 3 -------------------
+
+III.notes	= Anmerkungen 
+III.p.I		= Teil I:
+
+III.1.8		= Feld I.8 : 
+III.1.8.txt	= Ursprungsregion: Bei Erzeugnissen aus Aqualultur sofern zutreffend, Angabe der Zonen GemaB den Entscheidungen 2004/308/EG und 2003/634/EG der Kommission Bei gefrorenen oder verabeiteten muscheln, Angabe des Erzeugungsgebiets.
+
+III.1.11	= Feld.I.11 :
+III.1.11.txt	= Ursprungsort: Name und Anschrift des Versendebetriebs.
+
+III.1.15	= Feld.I.15 :
+III.1.15.txt	= Zulassungsunmmer (Eisenbahnwaggons oder Container und LKW). Flugnmmer (Flugzeug) oder Name (Schiff).Diese  Angaben sind im Falle des Ent-und Umladens getrennt zu machen.
+
+III.1.19	= Feld.I.19 : 
+III.1.19.txt	= Es sind die entsprechenden HS-Codes zu verwenden: 03.01, 03.02, 03.03, 03.04, 03.05, 03.06,03.07, 05.11.91, 15.04,15.18.00,16.03, 16.04, 16.05.
+
+III.1.23	= Feld. I.23 :
+III.1.23.txt	= Kennzeichnung des Containers/Pnombennummer : sofern zutreffend. 
+
+III.1.28	= Feld.I.28 :
+III.1.28.txt	= Art der Ware: Angabe, ob aus Aquakunltur oder frei lebend;
+III.1.28.txt1	= Art der Behandlung: lebend, gekuhlt, gefroren, verarbeitet; 
+III.1.28.txt2	= Herstellungsebetrieb: einschlieBlich Fabrikschiff, Gefrierschiff, Kuhlhaus, Verarbeitungsbetrieb.
+
+III.p.II	= Teil II:
+
+III.p.II.txt	= Teil II.2 betrifft nicht fur den Einzelhandel bestimmte Sendungen, sofern sie die Bestimmungen uber Verpackung und Etikettierung der Verordnung (EG) Nr.853/2004 erfullen. 
+
+III.p.II.txt1	= Nichtzutreffendes streichen.
+
+III.p.II.txt2	= Dieser Teil der Tiergesundheitsveschaingung betrifft nur Sendungen, die fur ISA und /oder EHN empfangliche Arten umfassen. Die Bestimmung gilt fur Ausfuhren in alle Mitgliedstaaten, wobei eine der beiden Erklarungen aufzubewahren ist, sofern die Sendung nicht fur die weitere Verabeitung in einem zegelassenen Einfuhrzentrum destimmt ist.
+
+III.p.II.txt2.1	= 
+
+III.p.II.txt3	= Bekannte empfangliche Arten 
+
+III.p.II.disease = Krankheit
+III.p.II.species = Empfangliche Wirtsart 
+
+III.p.II.EHN.h	 = EHN
+III.p.II.ISA.h	 = ISA
+III.p.II.VHS.h	 = VHS
+III.p.II.IHN.h   = IHN
+
+III.p.II.EHN	= Flussbarsch (Perca fluviatills), Regenbogenforelle (Oncorhynchus mykiss)
+III.p.II.ISA	= Atlantischer Lachs (Salmo salar), Regenbogenforelle (Oncorhymchus mykiss), Lachsforelle (Salmo trutta),
+III.p.II.VHS	= Dorsch (Gadus morhua) , Atlantischer Hering (Clupea harengus), Lachsforelle (Salmo trutta), Konigslachs (Oncorhynchus tshaowytscha), Siberlachs (O. kisutch), Asche (Thymallus thymallus), Schellfisch (Melanogrammus aeglefinus), Tazifischer kabeljau (Gadus macrocephalus), Pazifischer Hering (Clupea harengus pallasi), Hecht (Esox lucius), Regenvogenforelle (Oncorhynchus mykiss ), Vierbartelige Seequappe (Rhinonemus cimbrius), Sprotte (Sprattus sprattus), Steinbutt (Scophthalmus maximus), Marane (Coregonus sp.)
+III.p.II.IHN	= Regenbogen-oder Stahlkopfforelle (Oncorhynchus mykiss), die pazifischen Lachsarten (Konigslachs (O.tshawytscha), Rotlachs (O. nerka), Keta-Lachs (O.keta), Jatan-Lachs (O. masou), Lachs der Art Onorhynchus rhodus) und Silberlachs (O. kisutch) ) und Atlantischer Lachs (Salmo salar) 
+
+III.p.II.txt4	= Die Quelle kann ein Land, eine zone oder eine einzelne Fischfarm seim. 
+
+III.p.II.txt5	= Krankheitsfrei gemaB Anhang B oder C der Richtlinie 91/67/EWG und den Entscheidungen 2001/183/EWG und 2003/466/EG der Kommission. Krankheitsfrei gemaB der aktuellsten Fassung von code und Handbuch des OIE wird ebenfalls anerkannt. 
+
+III.p.II.txt6  = Dieser Teil der Tiergesundheitsbescheinigung betrifft nur Sendungem, die fui VHS und / oder IHN empfangliche Arten umfassen.Damit die Sendung in einem Mitgliedstaat oder einem Teil eines Mitgliedstaates zugelassen wird (Feld I.9 und I.10 von Teil der Bescheinigung), muss sie als VHS-und/oder IHN-frei bescheinigt werden oder aneinen Piogrann teilnehmen, bei den die Freiheit von der Krankheit angestrebt wird. Eine der beiden Erklarungen muss aufbewahrt werden, sofem die Sendung nicht zur weiteren Verarbeitung in einem zugelassenen Einfuhrzentrum destimmt ist.
+
+III.p.II.txt6.1  = Eine Liste dieser Mitgliedstaaten und zonen ist in den Entscheidungen 2002/308/EG und 2003/634/EG enthalten. 
+
+III.p.II.txt6.2  = Stempel und Unterschrift mussen sich farblich von der Druckfarbe der Bescheinigung absetzen. 
+
+III.OFFI.txt	= Amtlicher Kontrolleur
+III.OFFI.txt1	= Name (In GroBbuchstaben):
+III.OFFI.txt2	= Antsdezeichnung und Titel :
+III.OFFI.txt3	= Datum:
+III.OFFI.txt4	= Unterschrift :
+III.OFFI.txt5	= Stempel:

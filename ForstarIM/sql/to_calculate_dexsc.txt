@@ -1,0 +1,13 @@
+stockgroup--c,s
+
+id===24
+
+stock_group_entry---main_id and stk_field_id---15
+
+
+id--get id---69
+
+
+m_stock_stkg_entry----stock_id,that before id---fieldvalue
+
+

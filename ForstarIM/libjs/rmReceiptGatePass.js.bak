@@ -1,0 +1,140 @@
+function validateRMReceiptGatePass(form)
+{
+	
+	var processType	=	form.processType.value;
+	var lotId	=	form.lotId.value;
+	var procurmentGatePassId 	=	form.procurmentGatePassId .value;
+	var vehicleNumbers	=	form.vehicleNumbers.value;
+	var driver	=	form.driver.value;
+	var outSeal	=	form.outSeal.value;
+	var verified	=	form.verified.value;
+	//var selCompanyName	=	form.selCompanyName.value;
+	//var unit	=	form.unit.value;
+	var supplierChallanNo	=	form.supplierChallanNo.value;
+	var dateOfEntry	=	form.dateOfEntry.value;
+	
+	
+	if (processType=="") {
+		alert("Please select processType.");
+		form.processType.focus();
+		return false;
+	}
+	if (lotId=="") {
+		alert("Please generate lotId.");
+		form.lotId.focus();
+		return false;
+	}
+	if (procurmentGatePassId =="") {
+		alert("Please select procurmentGatePassId .");
+		form.procurmentGatePassId .focus();
+		return false;
+	}
+	if (vehicleNumbers=="") {
+		alert("Please select vehicleNumbers.");
+		form.vehicleNumbers.focus();
+		return false;
+	}
+	if (driver=="") {
+		alert("Please select driver.");
+		form.driver.focus();
+		return false;
+	}
+	if (outSeal=="") {
+		alert("Please select seal Returned.");
+		form.outSeal.focus();
+		return false;
+	}
+	
+	if (verified=="") {
+		alert("Please select verified.");
+		form.verified.focus();
+		return false;
+	}
+	// if (selCompanyName=="") {
+		// alert("Please select Company Name.");
+		// form.selCompanyName.focus();
+		// return false;
+	// }
+	// if (unit=="") {
+		// alert("Please select unit.");
+		// form.unit.focus();
+		// return false;
+	// }
+	if (supplierChallanNo=="") {
+		alert("Please enter supplierChallanNo.");
+		form.supplierChallanNo.focus();
+		return false;
+	}
+	if (dateOfEntry=="") {
+		alert("Please select dateOfEntry.");
+		form.dateOfEntry.focus();
+		return false;
+	}
+
+	
+	
+	if (!confirmSave()) return false;
+	return true;
+
+}
+function displayDiv()
+{
+	jQuery('#supplier_display').show();
+	jQuery('#equipment_display').show();
+	jQuery('#chemical_display').show();
+	jQuery('#blocked_seal_details').show();
+}
+function calculateEquipDiff(returnedQnty,rowid)
+{
+	//alert(returnedQnty+'---'+rowid);
+	if(isNaN(returnedQnty))
+	{
+		alert('Please enter the valid quantity');
+	}
+	else
+	{
+		var issuedQuantity=document.getElementById('equipmentIssuedQuantity_'+rowid).value;
+		if(parseInt(returnedQnty) > parseInt(issuedQuantity))
+		{
+			var result = parseInt(issuedQuantity) - parseInt(returnedQnty);
+			document.getElementById('equipmentDifferenceQuantity_'+rowid).value = result;
+			alert('Required quantity must be less than Issued quantity');
+		}
+		else
+		{
+			var result = parseInt(issuedQuantity) - parseInt(returnedQnty);
+			document.getElementById('equipmentDifferenceQuantity_'+rowid).value = result;
+		}
+	}
+}
+
+function calculateChemicalDiff(returnedQnty,rowid)
+{
+	//alert(returnedQnty+'---'+rowid);
+	if(isNaN(returnedQnty))
+	{
+		alert('Please enter the valid quantity');
+	}
+	else
+	{
+		var issuedQuantity=document.getElementById('chemicalIssuedQuantity_'+rowid).value;
+		if(parseInt(returnedQnty) > parseInt(issuedQuantity))
+		{	
+			var result = parseInt(issuedQuantity) - parseInt(returnedQnty);
+			document.getElementById('chemicalDifferenceQuantity_'+rowid).value = result;
+			alert('Required quantity must be less than Issued quantity');
+		}
+		else
+		{
+			var result = parseInt(issuedQuantity) - parseInt(returnedQnty);
+			document.getElementById('chemicalDifferenceQuantity_'+rowid).value = result;
+		}
+	}
+}
+
+function getField(material)
+{
+	alert("hii"+material);
+    $('.rawtype').hide();
+    $('#'+material).show();
+}

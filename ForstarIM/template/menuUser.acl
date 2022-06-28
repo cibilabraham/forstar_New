@@ -1,0 +1,98 @@
+<SCRIPT>
+<!--
+// Menu -1
+var menu1=new Array()
+menu1[0]='<a href="FishMaster.php">Fish Master</a>'
+menu1[1]='<a href="GradeMaster.php">Grade Master</a>'
+//menu1[2]='<a href="Fish2GradeMaster.php">Fish Grade Master</a>'
+menu1[3]='<a href="QualityMaster.php">Quality Master</a>'
+menu1[4]='<a href="LandingCenter.php">Landing Centers</a>'
+menu1[5]='<a href="PreProcessors.php">Pre-Processors</a>'
+menu1[6]='<a href="SupplierDetails.php">Supplier Details</a>'
+menu1[7]='<a href="UnitMaster.php">Unit Master</a>'
+menu1[8]='<a href="ProcessCode.php">Process Codes</a>'
+menu1[9]='<a href="Processes.php">Pre-Process Codes</a>'
+//menu1[8]='<a href="ProcessRates.php">Process Rates</a>'
+menu1[10]='<a href="Packing.php">Frozen Packing Codes</a>'
+menu1[11]='<a href="Competitors.php">Competitors</a>'
+menu1[12]='<a href="PlantsandUnits.php">Plants/Units</a>'
+menu1[13]='<a href="CompanyDetails.php">Company Details</a>'
+
+
+
+
+// Menu -2
+var menu2=new Array()
+//menu2[0]='<a href="DailyCatchEntry.php">Daily Catch Entry</a>'
+menu2[1]='<a href="DailyCatchEntry_New.php">Daily Catch Entry</a>'
+menu2[2]='<a href="DailyPreProcess.php">Daily Pre-Process</a>'
+menu2[3]='<a href="DailyProcessing.php">Daily Processing</a>'
+menu2[4]='<a href="CompetitorsCatch.php">Compeitiors Catch</a>'
+menu2[5]='<a href="DailyRates.php">Daily Rates</a>'
+menu2[6]='<a href="SupplierAccount.php">Supplier Account</a>'
+menu2[7]='<a href="SupplierPayments.php">Supplier Payments</a>'
+menu2[8]='<a href="ProcessorsAccounts.php">Pre-Processor Accounts</a>'
+menu2[9]='<a href="ProcessorsPayments.php">Pre-Processor Payments</a>'
+
+
+
+// Menu -3
+var menu3=new Array()
+menu3[0]='<a href="DailyCatchReport.php">Daily Catch Report</a>'
+menu3[1]='<a href="DailyCatchSummary.php">Daily Catch Summary</a>'
+menu3[2]='<a href="DailyProcessingReport.php">Processing Report</a>'
+menu3[3]='<a href="PurchaseStatement.php">Purchase Statement</a>'
+menu3[4]='<a href="PreProcessingReport.php">Pre-Processing Report</a>'
+
+
+// Menu -4
+var menu4=new Array()
+menu4[0]='<a href="ManageUsers.php">Manage Users</a>'
+menu4[1]='<a href="ManageRole.php">Manage Role</a>'
+//menu4[1]='<a href="ChangePassword.php">Change Password</a>'
+
+
+// Menu -5
+var menu5=new Array()
+menu5[0]='<a href=""></a>'
+
+// Menu -6
+var menu6=new Array()
+//menu6[0]='<a href="DocumentBank.php">Document Bank</a>'
+
+
+// Menu -7
+var menu7=new Array()
+//menu7[0]='<a href="Upload_Approvals.php">Create Request</a>'
+
+
+// Menu -8
+var menu9=new Array()
+//menu9[0]='<a href="AddCenter.php">Add</a>'
+
+//-->
+</SCRIPT>
+
+	<table align="left"  height="31" width="60%" cellspacing="0" cellpadding="0"  border="0" >
+		<tr align="center" height="28"> 
+			<td align="center"  Style="padding-left:8px; padding-right:10px;">
+				<a href="#" class="NavMenu">Home</a>
+			</td>
+			<td width="1" bgcolor="#E2E2E2" ></td>
+			<td align="center" class="nav_Menu_top"  onClick="return clickreturnvalue()" onMouseover="dropdownmenu(this, event, menu1, '150px')" onMouseout="delayhidemenu()" >
+				<a href="#" class="NavMenu" >Master Files</a></td>
+			<td width="1" bgcolor="#E2E2E2"></td>
+			<td align="center"  class="nav_Menu_top" onClick="return clickreturnvalue()" onMouseover="dropdownmenu(this, event, menu2, '160px')" onMouseout="delayhidemenu()" >
+				<a href="#" class="NavMenu">Transactions</a></td>
+			<td width="1" bgcolor="#E2E2E2"></td>
+			<td align="center" class="nav_Menu_top" onClick="return clickreturnvalue()" onMouseover="dropdownmenu(this, event, menu3, '150px')" onMouseout="delayhidemenu()" >
+				<a href="#" class="NavMenu">Reports</a></td>
+			<td width="1" bgcolor="#E2E2E2"></td>
+			<td align="center" class="nav_Menu_top" onClick="return clickreturnvalue()" onMouseover="dropdownmenu(this, event, menu4, '150px')" onMouseout="delayhidemenu()" >
+				<a href="#" class="NavMenu">System</a></td>
+			<td width="1" bgcolor="#E2E2E2"></td>
+			<td align="center" class="nav_Menu_top"  >
+				<a href="Logout.php" class="NavMenu" onClick="return confirmLogout();">Logout</a></td>
+			
+		</tr>
+	</table>

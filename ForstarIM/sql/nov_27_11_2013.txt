@@ -1,0 +1,3 @@
+create table m_exporter_unit (id int(3)  primary key auto_increment,unitno int(3),unitcode varchar(10),exporterid int(3))
+alter table t_invoice_main add unitid int(3);
+alter table t_invoice_main add eucode int(5);

@@ -1,0 +1,1 @@
+alter table supplier add bankifsccode varchar(10);

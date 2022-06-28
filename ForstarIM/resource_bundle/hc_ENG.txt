@@ -1,0 +1,205 @@
+#page ---------------- English(ENG) -------------
+
+head.txt 	= HEALTH CERTIFICATE FOR EXPORT OF FISHERY PRODUCTS INTENDED FOR HUMAN CONSUMPTION
+country.txt 	= COUNTRY:
+vceu.txt	= Veterinary certificate to EU
+consigner.txt 	= 1.1 Consignor : 
+consigner.name  = Name
+consigner.address  = Address
+consigner.po	  = Postal Code
+consigner.phone   = Tel.No.
+cert.ref	  = 1.2 Certificate reference number
+
+1.3.txt1	  = 1.3 Central Competent Authority
+1.3.txt2	 = Export Inspection Council of India, New Delhi
+1.3.txt3	 = (Ministry of Commerce & Industry, Govt. of India)
+	
+1.4.txt1 	= 1.4 Local Competent Authority	
+1.4.txt2	= Export Inspection Agency-Mumbai
+1.4.txt3	= (Ministry of Commerce & Industry, Govt. of India)
+
+1.5.txt1  	= 1.5 Consignee :
+1.5.name	= Name
+1.5.addr	= Address
+1.5.po		= Postal Code 
+1.5.tel		= Tel.No.
+
+1.7.txt1	= 1.7 Country of origin 
+1.7.iso		= ISO Code
+
+1.8.txt1	= 1.8 Region of origin 
+1.8.code	= Code
+
+1.9.txt1	= 1.9 Country of destination
+1.9.iso		= ISO Code
+
+1.11.txt1	= 1.11 Place of origin
+1.11.name	= Name
+1.11.addr	= Address
+1.11.approval	= APPROVAL NUMBER :
+
+1.13.txt1	= 1.13 Place of loading
+
+1.14.txt1	= 1.14 Date of departure
+
+1.15.txt1	= 1.15 Means of Transport :
+1.15.aero	= Aeroplane
+1.15.ship	= Ship
+1.15.air	= BY AIR
+1.15.railway	= Railway wagon
+1.15.road	= Road Vehicle
+1.15.other	= Other
+1.15.identity	= Identification
+1.15.document	=  Documentary refrences:
+
+1.16.txt1	= 1.16 Entry B/P in EU
+
+1.18.txt1	= 1.18 Description of Commodity:
+
+1.19.txt1	= 1.19 Commodity code(HS Code)
+
+1.20.txt1	= 1.20 Quantity :
+1.20.net	= NET.WT.:
+1.20.gr		= GR.WT.:
+
+1.21.txt1	= 1.21 Temperature of product
+1.21.amb	= Ambient
+1.21.chi	= Chilled
+1.21.fzn	= FROZEN
+
+1.22.txt1	= 1.22 Number of Packages : 
+
+1.23.txt1	= 1.23 Identification of container / Seal number:
+1.23.container  = CONTAINER NO.:
+1.23.seal	= SEAL NO.:
+
+1.24.txt1	= 1.24 Type of Packaging
+
+1.25.txt1	= 1.25 Commodities certified for 
+1.25.human	= Human consumption
+
+1.27.txt1	= 1.27 For import or admission into EU
+
+1.28.txt1	= 1.28 Identification of the commodities
+1.28.approval	= Approval no of establishment:
+1.28.species	= Species
+1.28.nature 	= Nature of commodity
+1.28.treatment	= Treatment type
+1.28.manuplant	= Manufacturing plant
+1.28.numpack	= Number of packages
+1.28.netwt	= Net weight
+1.28.sciname	= (Scientific name)
+1.28.cases	= ( Cases )
+
+P.I.LH		= PART I: Details of dispatched consignment
+#page ----------------2 -------------
+
+II.country	= COUNTRY  :
+II.fishery	= Fishery products
+II.health	= II. Health attestation
+II.a.certificate = II.a.Certificate reference number.
+
+II.1.public	= II.1 Public Health attestation
+
+II.1.txt1	= I, the undersigned, declare that I am aware of the relevant provisions of Regulations (EC) No 178/2002, (EC) No 852/2004, (EC) No 853/2004, and  (EC) No 854/2004, and certify that the fishery products described above were produced in accordance with those requirements, in particular that they : 
+
+II.1.txt2	= come from (an) establishment(s) implementing a programme based on the HACCP principles in accordance with Regulation(EC) No 852/2004,
+
+II.1.txt3	= have beeb caught and handled on board vessels , landed, handled and where appropriate prepared, processed, frozen and thawed hygienically in compliance with the requirements laid down in Section VIII, Chapter I to IV of Annex III to Regulation(EC) No 853/2004
+
+II.1.txt4	= satisfy the health standards laid down in Section VIII , Chapter V of Annex III to Regulation(EC) No 853/2004 and the criteria laid down in Regulation(EC) No 2073/2005 on microbiological criteria for foodstuffs, 
+
+II.1.txt5	= have been packaged, stored and transported in compliance with Section VIII , Chapter VI to VIII of Annex III to Regulation (EC) No 853/2004
+
+II.1.txt6	= have been marked in accordance with Section I of Annex II to Regulation(EC) No 853/2004
+
+II.1.txt7	= the guarantees covering live animals and products thereof, if from aquaculture origin, provided by the residue plans submitted in accordance with Directive 96/23/EC, and in particular Article 29 thereof are fulfilled
+
+II.1.txt8	= and
+
+II.1.txt9	= have satisfactorily undergone the official controls laid down in Annex III to Regulation (EC) No 854/2004.
+
+II.2.1.txt	= [Animal health attestation for products of aquaculture origin
+
+II.2.1.txt1 	= I, the undersigned, declare that the fishery products described above originate from fish or crusteceans that were clinically healthy on the day of harvest, and have been transported under conditions that do not alter the animal health status of the products and certify, in particular that: 
+
+II.2.1.txt2 	= (1)[(2) if from species susceptible (3) to ISA and/or EHN , they:
+
+II.2.1.txt3	= (1) [originate from a source(4) considered free from ISA and /or EHN in accordance with the relevant EU legislation or OIE Standard (5) ] , 
+
+II.2.1.txt4	= (1)[have been slaughtered and eviscerated]] 
+
+II.2.1.txt5	= (1)[(6) if from species susceptible (3) to VHS and/or IHN , they :
+
+II.2.1.txt6	= (1) originate from a source (4) considered free from (1) VHS/(1) IHN in accordance with the relevant EU legislation or OIE Standard (5)], 
+
+II.2.1.txt7	= (1) [have been slaughtered and eviscerated]]].
+
+P.II.LH		= Part II :Certification
+
+#---------------------- Page 3 -------------------
+
+III.notes	= Notes
+III.p.I		= Part I :
+
+III.1.8		= Box reference 1.8     :
+III.1.8.txt	= Region of Origin and if appropriate, indicate zones as listed in commission Decisions 2002/308/EC and 2003/634/EC.For frozen or processed bivalve molluscs, indicate the production area.
+
+III.1.11	= Box reference 1.11   : 
+III.1.11.txt	= Place of origin, name  and address of the dispatch establishment.
+
+III.1.15	= Box reference 1.15   :
+III.1.15.txt	= Registration number(railway wagons or container and lorries),flight number(aircraft) or name(ship), saperate information is to be provided in the event of unloading and reloading.
+
+III.1.19	= Box reference 1.19   :
+III.1.19.txt	= Use the appropriate HS Codes: 03.01, 03.02, 03.04, 03.05, 03.06, 03.07, 05.11.91, 15.04, 15.18.00, 16.03, 16.04, 16.05.
+
+III.1.23	= Box reference 1.23   :
+III.1.23.txt	= Identification of container/seal number : only when applicable
+
+III.1.28	= Box reference 1.28   :
+III.1.28.txt	= Nature of commodity, specify if aquaculture or wild origin.
+III.1.28.txt1	= Treatment type : live ,chilled,frozen, processed.
+III.1.28.txt2	= Manufacturing plant: includes factory vessel, freezer vessel, cold store, processing plant.
+
+III.p.II	= Part II :
+
+III.p.II.txt	= Part II.2 is not relevant for consignments intended for retail , provided they comply with the rules applying to packaging and labelling laid down in Regulation (EC) No.853/2004
+
+III.p.II.txt1	= Delete as appropriate.
+
+III.p.II.txt2	= This part of the animal health certificate is only relevant if the consignment comprises species referred to as susceptible to ISA and / or EHN.
+
+III.p.II.txt2.1	= The requirement applies to exports to all member states , whereby one of the two statements should be retained , unless the consignment is intended for further processing in an approved import centre.
+
+III.p.II.txt3	= Known susceptible species.
+
+III.p.II.disease = Disease
+III.p.II.species = Susceptible host species.
+
+III.p.II.EHN.h	 = EHN
+III.p.II.ISA.h	 = ISA
+III.p.II.VHS.h	 = VHS
+III.p.II.IHN.h   = IHN
+
+III.p.II.EHN	= Redfin perch(Perca fluviatilis), rainbow trout(Oncorhynchus mykiss)
+III.p.II.ISA	= Atlantic salmon (Salmo salar) , rainbow trout(Oncorhynchus mykiss),brown trout(Salmo trutta),
+III.p.II.VHS	= Atlantic cod(Gadus morthua),Atlantic herring(Clupea harengus),brown trout(Salmo trutta), Chinook salmon(Oncorhynchus tshawytscha),coho salmon(O.kisutch), grayling(thymallus thymallus), haddock(melanogrammus aeglefinus),Pacific cod(Gadus macrocephalus), Pacific herring(Cluteaharengus pallasi), pike(Esox lucius), Rainbow trout(Oncorhynchus mykiss) rockling(Rhinonemus cimbrius), sprat(Sprattus sprattus),turbot (Scophthalmus maximus), white fish (Corugonus sp.)
+III.p.II.IHN	= Rainbow or steelhead trout(Oncorhynchus mykiss), the Pacific salmon species(chinook salmon (O.tshawytscha),sockeye salmon(O.nerka), chum salmon(O.keta),masou salmon(O.masou), pink salmon(O.rhodurus) and coho salmon(O.kisutch), and Atlantic salmon(Salmo salar).
+
+III.p.II.txt4	= Source may be a country, zone, or an individual farm.
+
+III.p.II.txt5	= Freedom according to the provisions laid down in Annex B or C to Directive 91/67/EEC, and Commission Decisions 2001/183/EEC and 2003/466/EC. Freedom according to the most current edition of the OIE Code and Manual is also recognised.
+
+III.p.II.txt6  = This part of the animal health certificate is only relevent if the consignment comprises species referred to as susceptible to VHS and/or IHN.In order for the consignment to be authorised into a Member State or part thereof (boxes 1.9 and 1.10 of part I of the certificate) declared free from VHS , and/or IHN, or undergoing a programme for such freedom, one of the two statements must be retained , unless the consignment is intended for further processing in an approved import centre.
+
+III.p.II.txt6.1  = A list of such Member States and Zones are listed in Commission Decisions 2002/308/EC and 2003/634/EC.
+
+III.p.II.txt6.2  = The colour of the stamp and signature must be different from that of the most particulars in the certificate.
+
+III.OFFI.txt	= Official Inspector
+III.OFFI.txt1	= Name (In Capitals):
+III.OFFI.txt2	= Qualification and Title :
+III.OFFI.txt3	= Date :
+III.OFFI.txt4	= Signature :
+III.OFFI.txt5	= Stamp :

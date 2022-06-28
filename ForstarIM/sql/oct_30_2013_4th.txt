@@ -1,0 +1,6 @@
+alter table m_freezing add active int(1) default 0;
+alter table m_frozenpacking add active int(1) default 0;
+alter table m_mcpacking add active int(1) default 0;
+alter table m_brand add active int(1) default 0;
+alter table m_glaze add active int(1) default 0;
+alter table m_processcode add active int(1) default 0;

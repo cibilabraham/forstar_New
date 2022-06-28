@@ -1,0 +1,210 @@
+#page ---------------- Spain(SPA) -------------
+
+head.txt 	= HEALTH CERTIFICATE / CERTIFICADO SANITARIO
+head1.txt 	= HEALTH CERTIFICATE FOR IMPORTS OF FISHERY PRODUCTS FOR HUMAN CONSUMPTION /
+head2.txt 	= CERTIFICADO SANITARIO PARA LAS IMPORTACIONES DE PRODUCTOS DE LA PESCA DESTINADOS AL CONSUMO HUMANO
+
+country.txt 	= PAIS :
+vceu.txt	= Certificado veterinario &nbsp;    para la UE
+consigner.txt 	= 1.1 Expedidor : 
+consigner.name    = Nombre
+consigner.address  = Direccion
+consigner.po	  =  Codigo Postal 
+consigner.phone   = Tel.
+cert.ref	  = 1.2 N0 de referencia del certificado
+
+1.3.txt1	  = 1.3 Autoridad central competente
+1.3.txt2	 = Export Inspection Council of India
+1.3.txt3	 = (Ministry of Commerce & Industry, Govt. of India)
+	
+1.4.txt1 	= 1.4 Autoridad local competente
+1.4.txt2	= Export Inspection Agency-Mumbai
+1.4.txt3	= (Ministry of Commerce & Industry, Govt. of India)
+
+1.5.txt1  	= 1.5 Destinatario
+1.5.name	= Nombre
+1.5.addr	= Direccion
+1.5.po		= Codigo Postal
+1.5.tel		= Tel.
+
+1.7.txt1	= 1.7 Pais de origen
+1.7.iso		= Codigo ISO
+
+1.8.txt1	= 1.8 Region de Origen 
+1.8.code	= Codigo
+
+1.9.txt1	= 1.9.Pais de stino
+1.9.iso		= Codigo ISO
+
+1.11.txt1	= 1.11 Lugar de orige/ lugar de captura
+1.11.name	= Nombre:
+1.11.addr	= direccion:
+1.11.approval	= Numero de authorizacion : 
+
+1.13.txt1	= 1.13 lugar de carga
+
+1.14.txt1	= 1.14 Fecha de salida:
+
+1.15.txt1	= 1.15 Medio de transporte
+1.15.aero	= Aeronave
+1.15.ship	= Buque
+1.15.air	= 
+1.15.railway	= Vagon de ferrocarril
+1.15.road	= Vehiculo de carretera
+1.15.other	= Otros
+1.15.identity	= Identificacion :
+1.15.document	= referencia documental:
+
+1.16.txt1	= 1.16 Mejna kontrolna tocka vstopa v EU
+
+1.18.txt1	= 1.18 Descripcion de la mercancia
+
+1.19.txt1	= 1.19 Codigo del producto (codigo NC)
+
+1.20.txt1	= 1.20 Numero/ cantidad:  
+1.20.net	= NET.WT.:
+1.20.gr		= GR.WT.:
+
+1.21.txt1	= 1.21 temperatura de los productos
+1.21.amb	= Ambiente
+1.21.chi	= refrigeracion
+1.21.fzn	= congelacion
+
+1.22.txt1	= 1.22 Numero de bultos 
+
+1.23.txt1	= 1.23 No del precinto Yno del contenedor
+1.23.container  = CONTAINER NO.:
+1.23.seal	= SEAL NO.:
+
+1.24.txt1	= 1.24 Tipo de embalage:
+
+1.25.txt1	= 1.25 Mercancias certificadas para: 
+1.25.human	= Consumo humano
+
+1.27.txt1	= 1.27 Para importacion o admision en la UE
+
+1.28.txt1	= 1.28 Identificacion de las mercancias 
+1.28.approval	= Numero de aprobacion de los :<br>Establecimientos
+1.28.species	= Especie
+1.28.nature 	= Tipo de mercancia 
+1.28.treatment	= Tipo de trataminto
+1.28.manuplant	= Fabrica
+1.28.numpack	= Numero de bultons
+1.28.netwt	= Peso neto
+1.28.sciname	= (Nombre cientifico)
+1.28.cases	= ( Cases )
+
+P.I.LH		=  Partel: Detalles del envio
+
+#page ----------------2 -------------
+
+II.country	= PAIS:
+II.fishery	= Productos de la pesca
+II.health	= Information sanitaria
+II.a.certificate = II.a.Numero de referencia del<br>certificado.
+
+II.1.public	= II.1 Declaracion sanitaria
+
+II.1.txt1	= EI abajo firmante declara que las disposiciones de los Reglamentos (CE) no178/2002, (CE) no 852/2004 y (CE) no 853/2004 y certifica que los productos de la pesca anteriormente descritos han sido producidos conforme a dichos raquisitos, especialmente que: 
+
+II.1.txt2	= Proceden de (un) establecimiento(s) que aplica(n) un programa vasado en los principios de APPCC de conform dade con lo establecido en el Reglamento (CE) no 852/2004 
+
+II.1.txt3	= han sido capturados y manipulados a bordo de buques besembarcados, manitulados y, en su caso preparados pransformados, congelados y descongelados higienicemaente cumpliendo los requisitos establecidos en el anexo lll, seccion Vlll, capitulos l a lV del Reglamento (CE) no 853/2004 
+
+II.1.txt4	= cumplen las normas sanitarias contempladas en el anexo lll, seccion Vlll, capitulo V, del Reglamento (CE) no 853/2004 y los criterios establecidos en el Regalomento (CE) no 2073/2005 reletivo a los criterios microbiologicos aplicables a los productos alimenticios 
+
+II.1.txt5	= han sido embalados, almacannados y transportados cumpliendo lo establecido en el anexo III, seccion VIII, capituos VI  a Vlll , del Reglamento (CE) no 853/2004 
+
+II.1.txt6	= han sido marcados conforme a lo dispuesto en el anexo ll , seccion l, del Reglamento (CE) no 853/2004
+
+II.1.txt7	= se cubren las garantias relativas a animales vivos y sus productos, si proceden de la acuicultura, que ofrecen los planes de residuos presentados de confirmidad con la directiva 96/23/CE, y , en particular, su articulo 29
+
+II.1.txt8	= y
+
+II.1.txt9	= han superado satisfactoriamente los controles oficiales establecidos en el anexo lll del Reglamento (CE) no 854/2004.
+
+II.2.1.txt	= Declaracion zoosanitaria para los productos procedentes de la acuicultura
+
+II.2.1.txt1 	= EI abajo firmante declara que los productos de la pesca anteriormente descritos proceden o crustaceos que estaban clinicamente sanos el dia de la recoleccion y han sido transportados en condiciones que no alteran la situacion zoosanitaria de los productos y certifica en particular que: 
+
+II.2.1.txt2 	= (1)(2) si proceden de especies sensibles (3) a la anemia infecciosa (AIS) y/o a la necrosis hematopoyetica epizootica (NHE):
+
+II.2.1.txt3	= (1) [proceden de una fuente (4) considerada libre de AIS y/o NHE de conformidad con la legislacion de la UE o la norma de la OIE pertinentes (5)] 
+
+II.2.1.txt4	= (1)[se han sacrificado y eviscerado]] 
+
+II.2.1.txt5	= (1)(6) si proceden de especies sensibles (3) a la septicemia hemorragica viral (SHV) y/o a la necrosis hematopoyetica infecciosa (NHI):
+
+II.2.1.txt6	= (1)[proceden de una fuente (4) considereda libre de (1) VHS (1) NHI de conformidad con la UE o la norma de la OIE pertinentes (5)]
+
+II.2.1.txt7	= 
+
+P.II.LH		= Parte II: :Certification
+
+#---------------------- Page 3 -------------------
+
+III.notes	= Notas
+III.p.I		= Parte I :
+
+III.1.8		= Referencia casilla 1.8     :
+III.1.8.txt	= Región de origen y, en su caso, indicar las zonas que figuran en las Decisiones de la Comisión 2002/308/CE y 2003/634/EC.For congelados o transformados, los moluscos bivalvos, indicar la zona de producción.
+
+III.1.11	= Referencia casilla 1.11   : 
+III.1.11.txt	= Lugar de origen, nombre y dirección del establecimiento de expedición.
+
+III.1.15	= Referencia casilla 1.15   :
+III.1.15.txt	= Número de registro (vagones o contenedores de ferrocarril y camiones), número de vuelo (aviones) o nombre (barcos). En caso de descarga y carga habra de suministrarse la información por separado.
+
+III.1.19	= Referencia casilla 1.19   :
+III.1.19.txt	= Deban Utilizarse los códigos SA adecuados: 03.01, 03.02, 03.04, 03.05, 03.06, 03.07, 05.11.91, 15.04, 15.18.00, 16.03, 16.04, 16.05.
+
+III.1.23	= Referencia casilla 1.23   :
+III.1.23.txt	= N<sup>o</sup> del precinto y n<sup>o</sup> del contenedor: sólo cuando proceda.
+
+III.1.28	= Referencia casilla 1.28   :
+III.1.28.txt	= Naturaleza de las piezas: especifiquese si proceden de la acuicultura o si son de origen silvestre.
+III.1.28.txt1	= Tipo de tratamiento: piezas vivas, refrigerados, congelados, transformadas.
+III.1.28.txt2	= Planta de fabricación: incluidos buque factoría, buque congelador, almacénrefrigerado, planta de transformación.
+
+III.p.II	= Parte II :
+
+III.p.II.txt	= La Parte II.2 no afecta a las partidas destinadas a la venta al por menor, siempre que cumplan las normas aplicables al embalaje y el etiquetado establecidas en el Reglamento (CE) n<sup>o</sup> 853/2004.
+
+III.p.II.txt1	= Táchese lo que no proceda.
+
+III.p.II.txt2	= Esta parte del certificado zoosanitario solo es pertinente si la partida comprende especies consideradas sensibles a la AIS y/o la NHE. El requisito según el cual una de las dos declaraciones debe conservarse es aplicable  a las exportaciones a todos los Estados miembros, a menos que la partida esté destinada a su transformación posterior en un centro de importación autorizado.
+
+III.p.II.txt2.1	= 
+
+III.p.II.txt3	= Especies sensibles conocidas.
+
+III.p.II.disease = Enfermedad
+III.p.II.species = Especie hospedadora sensible
+
+III.p.II.EHN.h	 = EHN
+III.p.II.ISA.h	 = ISA
+III.p.II.VHS.h	 = VHS
+III.p.II.IHN.h   = IHN
+
+III.p.II.EHN	= Perca (Perca fluviatilis), trucha arco iris (Oncorhynchus mykiss).
+III.p.II.ISA	= Salmón de atlántico (Salmo salar), trucha arco iris (Oncorhynchus mykiss), trucha común (Salmo trutta).
+III.p.II.VHS	= Bacalao del Atlántico (Gadus morhua), arenque del Atlántico (Clupea harengus), trucha común (Salmo trutta), salmón real o «quinnat» (Oncorhynchus tshawytscha), salmón plateado o salmón coho (O.kisutch), tímalo (thymallus thymallus), eglefino (Melanogrammus aeglefinus), bacalao del Pacífico (Gadus macrocephalus), arenque del Pacífico (Cluteaharengus pallasi), lucio (Esox lucius), trucha arco iris (Oncorhynchus mykiss), barbada (Rhinonemus cimbrius), espadín (Sprattus sprattus), turbot (Scophthalmus maximus), corégono (Corugonus sp.)
+
+III.p.II.IHN	= Trucha arco iris(Oncorhynchus mykiss), las especies de salmón del Pacífico (salmón real o «quinnat» (o.tshawytscha), Salmón rojo (O.nerka), salmón keta(O.keta), salmón masou (O.masou), Salmón rosado (o.rhodurus) y salmón plateado o salmón coho (o.kisutch), y el salmón del Atlántico (Salmo salar).
+
+III.p.II.txt4	= La fuente puede ser un país, una zona o una piscifactoria.
+
+III.p.II.txt5	= Libre de conformidad con las disposiciones del anexo B o C de la Directiva 91/67/CEE, y de las Decisiones 2001/183/CEE y 2003/466/CE de la Comisión. También se reconoce la calificación de libre conforme a la edición más reciente del Código y del Manual de OIE.
+
+III.p.II.txt6  = Esta parte del certificado zoosanitario solo es pertinente si la partida comprende especies consideradas sensibles a la SHV y / o NHI. Para que se pudea autorizar la entrada de la partida en un Estado miembro      In fin de que la remesa que vaya a ser autorizado  o parte del mismo (casillas 1,9 y 1,10  I de el certificado), declarado libre de VHS, y / o la NHI, o en un programa de esa libertad, uno de los dos estados debe mantenerse, a menos que el envío está destinado para su transformación en un centro de importación autorizao.
+
+III.p.II.txt6.1  = En las Decisiones 2002/308/CE y 2003/634/CE de la Comisión figura una lista de tales Estados miembros y zonas.
+
+III.p.II.txt6.2  = El color de la tinta del sello y de la firma debe ser diferente del de otras indicaciones del certificado.
+
+III.OFFI.txt	= Inspector Oficial
+III.OFFI.txt1	= Nombre y apellidos (en letras de imprenta):
+III.OFFI.txt2	= Cargo y título :
+III.OFFI.txt3	= Fecha :
+III.OFFI.txt4	= Firma :
+III.OFFI.txt5	= Sello :

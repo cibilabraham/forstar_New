@@ -1,0 +1,948 @@
+
+
+CREATE TABLE IF NOT EXISTS `fuel_rate` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `rate_date` date NOT NULL,
+  `rate` float NOT NULL,
+  `createdon` date NOT NULL,
+  `createdby` int(11) NOT NULL,
+  `active` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+
+CREATE TABLE IF NOT EXISTS `ing_critical_master` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ing_id` int(11) NOT NULL,
+  `parameter_id` int(11) NOT NULL,
+  `critical_status` varchar(150) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ing_critical_parameters`
+--
+
+CREATE TABLE IF NOT EXISTS `ing_critical_parameters` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(60) NOT NULL,
+  `description` varchar(150) NOT NULL,
+  `entry_type` varchar(80) NOT NULL,
+  `active` int(11) NOT NULL,
+  `change_requirement` int(11) NOT NULL COMMENT 'if value=1 cannot have permission to edit and delete',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+ALTER TABLE `ing_purchaseorder` CHANGE `po` `po` VARCHAR(50) NULL;
+
+ALTER TABLE `ing_purchaseorder` CHANGE `user_id` `unit_id` INT(11) NOT NULL;
+
+ALTER TABLE `ing_purchaseorder_entry` ADD `supplier_ing_id` INT NOT NULL AFTER `total_amount`;
+
+ALTER TABLE `ing_receipt_entry` ADD `new_rate` FLOAT(10,2) NOT NULL AFTER `rate`;
+
+
+CREATE TABLE IF NOT EXISTS `m_employee_cost_calculation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(80) NOT NULL,
+  `percentage_value` varchar(150) NOT NULL,
+  `createdon` date NOT NULL,
+  `createdby` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `m_export_master` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `created_on` date NOT NULL,
+  `created_by` int(11) NOT NULL,
+  `active` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+ALTER TABLE `m_ingredient_rate` ADD `raw_ingredient` INT NOT NULL AFTER `lowest_price`;
+
+ALTER TABLE `ing_purchaseorder_entry` ADD `cleaned_cost` FLOAT(10,2) NOT NULL , ADD `cleaning_yield` FLOAT(10,2) NOT NULL , ADD `material_type` VARCHAR(80) NOT NULL , ADD `start_date` DATE NOT NULL , ADD `end_date` DATE NOT NULL ;
+
+ALTER TABLE `m_packing_cost` ADD `temp_increase_factor` FLOAT(10,3) NOT NULL AFTER `pmc_rate_list_id`, ADD `shrink_film` FLOAT(10,3) NOT NULL AFTER `temp_increase_factor`, ADD `rate_per_glass_bottle` FLOAT(10,3) NOT NULL AFTER `shrink_film`, ADD `rate_per_bottle` FLOAT(10,3) NOT NULL AFTER `rate_per_glass_bottle`, ADD `rate_per_retort_pouch` FLOAT(10,3) NOT NULL AFTER `rate_per_bottle`, ADD `sealing_cost_glass_bottles` FLOAT(10,3) NOT NULL AFTER `rate_per_retort_pouch`, ADD `sealing_cost` FLOAT(10,3) NOT NULL AFTER `sealing_cost_glass_bottles`, ADD `sealing_cost_pet_bottles` FLOAT(10,3) NOT NULL AFTER `sealing_cost`, ADD `loading_charges` FLOAT(10,3) NOT NULL AFTER `sealing_cost_pet_bottles`;
+
+
+CREATE TABLE IF NOT EXISTS `m_packing_material` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `stock_id` int(11) NOT NULL,
+  `rate` float(10,3) NOT NULL,
+  `created_on` date NOT NULL,
+  `created_by` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+CREATE TABLE IF NOT EXISTS `m_packing_matrix` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `packing_type` varchar(100) NOT NULL,
+  `ideal_net_wt` float(10,3) NOT NULL,
+  `inner_container` int(10) NOT NULL,
+  `inner_packing` int(10) NOT NULL,
+  `inner_sample` int(10) NOT NULL,
+  `inner_label` int(10) NOT NULL,
+  `inner_leaflet` int(10) NOT NULL,
+  `inner_seal` int(10) NOT NULL,
+  `pkg_labour_rate` int(10) NOT NULL,
+  `shrink_group` int(50) NOT NULL,
+  `dispenser_shrink_pkg` int(50) NOT NULL,
+  `no_of_packs_mc` int(50) NOT NULL,
+  `master_packing` int(10) NOT NULL,
+  `gross_mc` float(10,3) NOT NULL,
+  `inner_container_value` float(10,3) NOT NULL,
+  `inner_carton_value` float(10,3) NOT NULL,
+  `inner_sample_value` float(10,3) NOT NULL,
+  `inner_label_value` float(10,3) NOT NULL,
+  `inner_leaflet_value` float(10,3) NOT NULL,
+  `inner_seal_value` float(10,3) NOT NULL,
+  `labour_cost` float(10,3) NOT NULL,
+  `inner_packing_cost` float(10,3) NOT NULL,
+  `dispenser_pkg` float(10,3) NOT NULL,
+  `dispenser_seal` float(10,3) NOT NULL,
+  `master_packing_value` float(10,3) NOT NULL,
+  `master_seal_value` float(10,3) NOT NULL,
+  `master_load` float(10,3) NOT NULL,
+  `outer_packing_cost` float(10,3) NOT NULL,
+  `labour_cost_only` float(10,3) NOT NULL,
+  `created_by` int(10) NOT NULL,
+  `created_on` date NOT NULL DEFAULT '0000-00-00',
+  `active` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m_payment_master`
+--
+
+CREATE TABLE IF NOT EXISTS `m_payment_master` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `payment_duration` varchar(100) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `created_by` int(11) NOT NULL,
+  `created_on` date NOT NULL,
+  `active` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m_physical_ingredient`
+--
+
+CREATE TABLE IF NOT EXISTS `m_physical_ingredient` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `created_on` date NOT NULL,
+  `created_by` int(11) NOT NULL,
+  `active` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m_physical_ingredient_quantity`
+--
+
+CREATE TABLE IF NOT EXISTS `m_physical_ingredient_quantity` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `physical_ing_id` int(11) NOT NULL,
+  `supplier` int(11) NOT NULL,
+  `ingredient` int(11) NOT NULL,
+  `expected_quantity` float(10,2) NOT NULL,
+  `quantity` float(10,2) NOT NULL,
+  `difference` float(10,2) NOT NULL,
+  `entry_date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+
+CREATE TABLE IF NOT EXISTS `m_process_master` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `description` varchar(200) NOT NULL,
+  `water` float(10,3) NOT NULL,
+  `diesel` float(10,3) NOT NULL,
+  `electricity` float(10,3) NOT NULL,
+  `gas` float(10,3) NOT NULL,
+  `created_by` varchar(50) NOT NULL,
+  `created_on` date DEFAULT '0000-00-00',
+  `active` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+
+CREATE TABLE IF NOT EXISTS `m_production_advertisement` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `advt_cost_per_month` float NOT NULL,
+  `advt_cost_per_year` float NOT NULL,
+  `created_on` date NOT NULL,
+  `created_by` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m_production_fixed_manpower`
+--
+
+CREATE TABLE IF NOT EXISTS `m_production_fixed_manpower` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `department_id` int(11) NOT NULL,
+  `new_total_cost` float(10,2) NOT NULL,
+  `total_cost` float(10,2) NOT NULL,
+  `createdon` date NOT NULL,
+  `createdby` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m_production_fixed_marketing`
+--
+
+CREATE TABLE IF NOT EXISTS `m_production_fixed_marketing` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `department_id` int(11) NOT NULL,
+  `new_total_cost` float(10,2) NOT NULL,
+  `total_cost` float(10,2) NOT NULL,
+  `createdon` date NOT NULL,
+  `createdby` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m_production_fixed_operation`
+--
+
+CREATE TABLE IF NOT EXISTS `m_production_fixed_operation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `department_id` int(11) NOT NULL,
+  `new_total_cost` float(10,2) NOT NULL,
+  `total_cost` float(10,2) NOT NULL,
+  `createdon` date NOT NULL,
+  `createdby` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m_production_fuel_price`
+--
+
+CREATE TABLE IF NOT EXISTS `m_production_fuel_price` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `diesel_rate_per_unit` float NOT NULL,
+  `diesel_consumption_batch` float NOT NULL,
+  `electricity_rate_per_unit` float NOT NULL,
+  `electricity_consumption_per_day` float NOT NULL,
+  `waterprocessing_rate_per_unit` float NOT NULL,
+  `waterprocessing_consumption_batch` float NOT NULL,
+  `watergeneral_rate_per_unit` float NOT NULL,
+  `watergeneral_consumption_per_day` float NOT NULL,
+  `gas_rate_per_unit` float NOT NULL,
+  `gas_per_day` float NOT NULL,
+  `created_on` date NOT NULL,
+  `created_by` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m_production_holding_cost`
+--
+
+CREATE TABLE IF NOT EXISTS `m_production_holding_cost` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `holding_cost` float NOT NULL,
+  `holding_duration` float NOT NULL,
+  `adn_overhd_charge_code` varchar(80) NOT NULL,
+  `adn_overhd_charge_cost` float NOT NULL,
+  `profit_margin` float NOT NULL,
+  `insurance_cost` float NOT NULL,
+  `vat_code1` varchar(150) NOT NULL,
+  `vat_rate1` float NOT NULL,
+  `vat_code2` varchar(150) NOT NULL,
+  `vat_rate2` float NOT NULL,
+  `vat_code3` varchar(150) NOT NULL,
+  `vat_rate3` float NOT NULL,
+  `vat_code4` varchar(150) NOT NULL,
+  `vat_rate4` float NOT NULL,
+  `vat_code5` varchar(150) NOT NULL,
+  `vat_rate5` float NOT NULL,
+  `cst_code` varchar(150) NOT NULL,
+  `cst_rate` float NOT NULL,
+  `education_cess` float NOT NULL,
+  `excise_code` varchar(150) NOT NULL,
+  `excise_rate` float NOT NULL,
+  `pickle_code` varchar(150) NOT NULL,
+  `pickle_rate` float NOT NULL,
+  `createdon` date NOT NULL,
+  `createdby` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m_production_manpower`
+--
+
+CREATE TABLE IF NOT EXISTS `m_production_manpower` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `department_id` int(11) NOT NULL,
+  `new_fixed_cost` float NOT NULL,
+  `fixed_cost` float NOT NULL,
+  `ratelist_id` int(11) NOT NULL,
+  `createdon` int(11) NOT NULL,
+  `createdby` int(11) NOT NULL,
+  `active` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m_production_marketing`
+--
+
+CREATE TABLE IF NOT EXISTS `m_production_marketing` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `department_id` int(11) NOT NULL,
+  `new_fixed_cost` float NOT NULL,
+  `fixed_cost` float NOT NULL,
+  `ratelist_id` int(11) NOT NULL,
+  `createdon` int(11) NOT NULL,
+  `createdby` int(11) NOT NULL,
+  `active` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+drop table `m_production_matrix`;
+
+
+CREATE TABLE IF NOT EXISTS `m_production_matrix` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `process_type` int(11) NOT NULL,
+  `kettles` enum('Y','N') NOT NULL DEFAULT 'N',
+  `hrs_cooking` float(10,3) NOT NULL,
+  `filling_wt_per_pouch` float(10,3) DEFAULT NULL COMMENT 'Filling Wt per pouch in Kg',
+  `qty_per_btch` float(10,3) DEFAULT NULL COMMENT 'Production Qty per Batch',
+  `no_of_pouch` int(10) DEFAULT NULL COMMENT 'No of pouches/Batch',
+  `processed_wt_per_btch` int(10) DEFAULT NULL COMMENT 'Processed Wt per Batch in Kg',
+  `no_of_hrs_prep` float(10,3) DEFAULT NULL COMMENT 'No of Hours for Prep',
+  `no_of_hrs_cook` float(10,3) DEFAULT NULL COMMENT 'No of Hours for Cooking',
+  `no_of_hrs_filling` float(10,3) DEFAULT NULL COMMENT 'No of Hours for Filling & Sealing',
+  `no_of_hrs_fill` float(10,3) NOT NULL,
+  `no_of_hrs_retort` float(10,3) DEFAULT NULL COMMENT 'No of Hours for Retorting',
+  `no_of_hrs_first_btch` float(10,3) DEFAULT NULL COMMENT 'No of Hours for First Batch',
+  `no_of_hrs_other_btch` float(10,3) DEFAULT NULL COMMENT 'No of Hours for other Batches',
+  `no_of_btchs_per_day` float(10,3) DEFAULT NULL COMMENT 'No of Batches per Day',
+  `gas_required` enum('Y','N') NOT NULL DEFAULT 'N',
+  `boiler_required` enum('Y','N') DEFAULT 'N' COMMENT 'Boiler Required',
+  `elect_required` enum('Y','N') NOT NULL DEFAULT 'N',
+  `boiler_required_processing` enum('Y','N') NOT NULL DEFAULT 'N',
+  `diesel_cost_per_btch` float(10,3) DEFAULT NULL COMMENT 'Diesel Cost per Batch',
+  `electric_cost_per_btch` float(10,3) DEFAULT NULL COMMENT 'Electricity Cost per Batch',
+  `water_cost_per_btch` float(10,3) DEFAULT NULL COMMENT 'Water Cost per Batch',
+  `gas_cost_per_btch` float(10,3) DEFAULT NULL COMMENT 'Gas cost per Batch',
+  `tot_fuel_cost_per_btch` float(10,3) DEFAULT NULL COMMENT 'Total Fuel cost per Batch',
+  `maint_cost_per_btch` float(10,3) DEFAULT NULL COMMENT 'Maint/Cons. Cost per Batch',
+  `vari_manpower_cost_per_btch` float(10,3) DEFAULT NULL COMMENT 'Variable Manpower Cost per Batch',
+  `mktg_cost_per_btch` float(10,3) DEFAULT NULL COMMENT 'Mktg Team cost per pouch',
+  `coordination_cost` float(10,3) NOT NULL,
+  `mktg_travel_cost` float(10,3) DEFAULT NULL COMMENT 'Mktg Travel Cost',
+  `ad_cost_per_pouch` float(10,3) DEFAULT NULL COMMENT 'Advt Cost per pouch',
+  `facility_cost` float(10,3) NOT NULL,
+  `createdon` date DEFAULT NULL,
+  `createdby` int(5) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='Production Matrix Transaction' AUTO_INCREMENT=1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m_production_other_cost`
+--
+
+CREATE TABLE IF NOT EXISTS `m_production_other_cost` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `maintenance_cost` float NOT NULL,
+  `consumables_cost` float NOT NULL,
+  `lab_cost` float NOT NULL,
+  `pouches_perbatch_unit` float NOT NULL,
+  `pouches_perbatch_tcost` float NOT NULL,
+  `ingredient_powdering_cosperkg` float NOT NULL,
+  `holding_cost` float NOT NULL,
+  `holding_duration` float NOT NULL,
+  `admin_overhead_charges_code` float NOT NULL,
+  `admin_overhead_charges_cost` float NOT NULL,
+  `profit_margin` float NOT NULL,
+  `insurance_cost` float NOT NULL,
+  `createdon` date NOT NULL,
+  `createdby` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m_production_variable_manpower`
+--
+
+CREATE TABLE IF NOT EXISTS `m_production_variable_manpower` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `department_id` int(11) NOT NULL,
+  `new_total_cost` float(10,2) NOT NULL,
+  `total_cost` float(10,2) NOT NULL,
+  `createdon` date NOT NULL,
+  `createdby` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m_production_variable_marketing`
+--
+
+CREATE TABLE IF NOT EXISTS `m_production_variable_marketing` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `department_id` int(11) NOT NULL,
+  `new_total_cost` float(10,2) NOT NULL,
+  `total_cost` float(10,2) NOT NULL,
+  `createdon` date NOT NULL,
+  `createdby` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m_production_variable_operation`
+--
+
+CREATE TABLE IF NOT EXISTS `m_production_variable_operation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `department_id` int(11) NOT NULL,
+  `new_total_cost` float(10,2) NOT NULL,
+  `total_cost` float(10,2) NOT NULL,
+  `createdon` date NOT NULL,
+  `createdby` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m_production_working_hours`
+--
+
+CREATE TABLE IF NOT EXISTS `m_production_working_hours` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `no_of_hours_shift` float(10,2) NOT NULL,
+  `no_of_shifts` float(10,2) NOT NULL,
+  `no_of_gravy_cookers` float(10,2) NOT NULL,
+  `no_of_retorts` float(10,2) NOT NULL,
+  `no_of_sealing_machines` float(10,2) NOT NULL,
+  `no_of_pouches_sealed` float(10,2) NOT NULL,
+  `no_of_minutes_for_sealing` float(10,2) NOT NULL,
+  `no_of_days_in_year` int(11) NOT NULL,
+  `no_of_working_days_in_month` int(11) NOT NULL,
+  `no_of_hours` float(10,2) NOT NULL,
+  `no_of_minutes_per_hour` float(10,2) NOT NULL,
+  `created_on` date NOT NULL,
+  `created_by` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+CREATE TABLE IF NOT EXISTS `m_product_matrix` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_name` varchar(100) NOT NULL,
+  `product_style` int(10) NOT NULL,
+  `net_wt` float(10,2) DEFAULT NULL,
+  `unit` int(10) NOT NULL,
+  `fixed_wt` float(10,2) DEFAULT NULL,
+  `gravy_wt` float(10,2) DEFAULT NULL,
+  `recipe_name` int(10) NOT NULL,
+  `main_ingredient_cost` float(10,2) DEFAULT NULL,
+  `gravy_cost` float(10,2) DEFAULT NULL,
+  `raw_material_cost` float(10,2) DEFAULT NULL,
+  `production_name` int(10) NOT NULL,
+  `packing_name` int(10) NOT NULL,
+  `rd_cost_include` int(10) NOT NULL,
+  `payment` int(10) NOT NULL,
+  `created_by` int(10) NOT NULL,
+  `created_on` date NOT NULL,
+  `active` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `m_recipemaster` (
+  `id` int(2) NOT NULL AUTO_INCREMENT,
+  `code` varchar(25) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `product_catid` int(5) DEFAULT NULL COMMENT 'Product Category Id',
+  `category_id` int(5) DEFAULT NULL COMMENT 'Category Id',
+  `cusine` varchar(150) NOT NULL,
+  `net_wt` float(10,3) DEFAULT '0.000',
+  `created` date DEFAULT NULL,
+  `createdby` int(3) DEFAULT NULL,
+  `product_rate_per_pouch` float(10,2) DEFAULT NULL COMMENT 'productRatePerPouch',
+  `fish_rate_per_pouch` float(10,2) DEFAULT NULL COMMENT 'fishRatePerPouch',
+  `gravy_rate_per_pouch` float(10,2) DEFAULT NULL COMMENT 'gravyRatePerPouch',
+  `product_gms_per_pouch` float(10,3) DEFAULT NULL COMMENT 'productGmsPerPouch',
+  `fish_gms_per_pouch` float(10,3) DEFAULT NULL COMMENT 'fishGmsPerPouch',
+  `gravy_gms_per_pouch` float(10,3) DEFAULT NULL COMMENT 'gravyGmsPerPouch',
+  `product_percent_per_pouch` int(10) DEFAULT NULL COMMENT 'productPercentagePerPouch',
+  `fish_percent_per_pouch` int(10) DEFAULT NULL COMMENT 'fishPercentagePerPouch',
+  `gravy_percent_per_pouch` int(10) DEFAULT NULL COMMENT 'gravyPercentagePerPouch',
+  `product_rate_per_kg_per_btch` float(10,2) DEFAULT NULL COMMENT 'productRatePerKgPerBatch',
+  `fish_rate_per_kg_per_btch` float(10,2) DEFAULT NULL COMMENT 'fishRatePerKgPerBatch',
+  `gravy_rate_per_kg_per_btch` float(10,2) DEFAULT NULL COMMENT 'gravyRatePerKgPerBatch',
+  `pouch_per_btch` int(10) DEFAULT NULL COMMENT 'pouchPerBatch',
+  `product_rate_per_btch` float(10,2) DEFAULT NULL COMMENT 'productRatePerBatch',
+  `fish_rate_per_btch` float(10,2) DEFAULT NULL COMMENT 'fishRatePerBatch',
+  `gravy_rate_per_btch` float(10,2) DEFAULT NULL COMMENT 'gravyRatePerBatch',
+  `product_kg_per_btch` float(10,2) DEFAULT NULL COMMENT 'productKgPerBatch',
+  `fish_kg_per_btch` float(10,2) DEFAULT NULL COMMENT 'fishKgPerBatch',
+  `gravy_kg_per_btch` float(10,2) DEFAULT NULL COMMENT 'gravyKgPerBatch',
+  `pduct_raw_pcent_per_pouch` int(10) DEFAULT NULL COMMENT 'productRawPercentagePerPouch',
+  `fish_raw_pcent_per_pouch` int(10) DEFAULT NULL COMMENT 'fishRawPercentagePerPouch',
+  `gravy_raw_pcent_per_pouch` int(10) DEFAULT NULL COMMENT 'gravyRawPercentagePerPouch',
+  `pduct_kg_pouch_per_btch` float(10,2) DEFAULT NULL COMMENT 'productKgInPouchPerBatch',
+  `fish_kg_pouch_per_btch` float(10,2) DEFAULT NULL COMMENT 'fishKgInPouchPerBatch',
+  `gravy_kg_pouch_per_btch` float(10,2) DEFAULT NULL COMMENT 'gravyKgInPouchPerBatch',
+  `fish_percent_yield` int(10) DEFAULT NULL COMMENT 'fishPercentageYield',
+  `gravy_percent_yield` int(10) DEFAULT NULL COMMENT 'gravyPercentageYield',
+  `total_fixed_fish_qty` float(10,3) DEFAULT NULL COMMENT 'totalFixedFishQty',
+  `base_product` enum('Y','N') DEFAULT 'N' COMMENT 'Y-Master product  N-Converted product',
+  `reference_product_id` int(5) DEFAULT NULL COMMENT 'Base Product Id',
+  `combo_matrix_entry_id` int(5) DEFAULT NULL COMMENT 'Combo Matrix Entry Id',
+  `semi_finished` enum('Y','N') DEFAULT 'N',
+  `ing_rate_list_id` int(5) DEFAULT NULL COMMENT 'Ing Rate List Id',
+  `product_rate_per_kg` float(10,2) DEFAULT NULL COMMENT 'productRatePerKg',
+  `fish_rate_per_kg` float(10,2) DEFAULT NULL COMMENT 'Fish rs per kg',
+  `gravy_rate_per_kg` float(10,2) DEFAULT NULL COMMENT 'gravy rs per kg',
+  `active` int(5) DEFAULT '0',
+  `approval` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `mprod_id` (`id`),
+  KEY `mprod_cat_id` (`category_id`),
+  KEY `mprod_ref_id` (`reference_product_id`),
+  KEY `mprod_ing_id` (`ing_rate_list_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m_recipemaster_entry`
+--
+
+CREATE TABLE IF NOT EXISTS `m_recipemaster_entry` (
+  `id` int(2) NOT NULL AUTO_INCREMENT,
+  `recipe_id` int(2) DEFAULT NULL,
+  `ingredient_id` int(3) DEFAULT NULL,
+  `quantity` float(10,2) DEFAULT NULL,
+  `rs_per_kg` float(10,2) NOT NULL,
+  `fixed_qty_chk` enum('Y','N') DEFAULT 'N' COMMENT 'If N-it is a Variable Qty',
+  `fixed_qty` float(10,3) DEFAULT '0.000',
+  `percent_per_btch` float(10,2) DEFAULT NULL COMMENT 'percentagePerBatch',
+  `rate_per_btch` float(10,2) DEFAULT NULL COMMENT 'ratePerBatch',
+  `ing_gms_per_pouch` float(10,3) DEFAULT NULL COMMENT 'ingGmsPerPouch',
+  `percent_wt_per_pouch` float(10,2) DEFAULT NULL COMMENT 'percentageWtPerPouch',
+  `rate_per_pouch` float(10,2) DEFAULT NULL COMMENT 'ratePerPouch',
+  `percent_cost_per_pouch` float(10,2) DEFAULT NULL COMMENT 'percentageCostPerPouch',
+  `cleaned_qty` float(10,3) DEFAULT NULL COMMENT 'Cleaned Qty',
+  `sel_ing_type` enum('ING','SFP') DEFAULT 'ING' COMMENT 'ING-Ingredient, SFP - SemiFinished Product',
+  `rate_per_kg` float(10,2) DEFAULT NULL COMMENT 'Rate Per Kg',
+  `ingredient_rate_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `prme_p_id` (`recipe_id`),
+  KEY `prme_ing_id` (`ingredient_id`),
+  KEY `prme_fqty` (`fixed_qty_chk`),
+  KEY `prme_ing_type` (`sel_ing_type`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+CREATE TABLE IF NOT EXISTS `m_role_rte` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(80) NOT NULL,
+  `description` varchar(150) NOT NULL,
+  `createdon` date NOT NULL,
+  `createdby` int(11) NOT NULL,
+  `active` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+
+CREATE TABLE IF NOT EXISTS `m_rte_department` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(80) NOT NULL,
+  `description` varchar(150) NOT NULL,
+  `type` varchar(80) NOT NULL,
+  `createdon` date NOT NULL,
+  `createdby` int(11) NOT NULL,
+  `active` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
+
+
+CREATE TABLE IF NOT EXISTS `m_secondary_processcode` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `fish_id` int(11) NOT NULL,
+  `secondary_grade` int(11) NOT NULL,
+  `created_by` int(11) NOT NULL,
+  `created_on` date NOT NULL,
+  `active` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+
+CREATE TABLE IF NOT EXISTS `m_secondary_processcode_entry` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `secondary_id` int(11) NOT NULL,
+  `fish_id` int(11) NOT NULL,
+  `processcode_id` int(11) NOT NULL,
+  `grade_id` int(11) NOT NULL,
+  `percentage` float(10,2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+CREATE TABLE IF NOT EXISTS `m_staff_master` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(150) NOT NULL,
+  `function` varchar(150) NOT NULL,
+  `cost` float NOT NULL,
+  `allowance` float(10,2) NOT NULL,
+  `multiply_factor` int(11) NOT NULL,
+  `type` varchar(80) NOT NULL,
+  `department` int(11) NOT NULL,
+  `createdby` int(11) NOT NULL,
+  `createdon` date NOT NULL,
+  `active` int(11) NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
+  `actual_cost` float NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+ALTER TABLE `m_supplier_ing` ADD `rate` FLOAT(10,2) NOT NULL AFTER `ingredient_id`, ADD `start_date` INT NOT NULL AFTER `rate`, ADD `end_date` INT NOT NULL AFTER `start_date`;
+
+CREATE TABLE IF NOT EXISTS `m_supplier_ing_qty` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `supplier_ing_id` int(11) NOT NULL,
+  `quantity` float(10,2) NOT NULL,
+  `ing_recipe_id` int(11) NOT NULL,
+  `ing_recipe_entryid` int(11) NOT NULL,
+  `ingredient_date` date NOT NULL,
+  `physical_ing_id` int(11) NOT NULL,
+  `active` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+
+CREATE TABLE IF NOT EXISTS `m_transporter_cost` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `transport_cost_NSWE` float(10,3) NOT NULL,
+  `transport_cost_NE` float(10,3) NOT NULL,
+  `transport_cost_FRZ` float(10,3) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+CREATE TABLE IF NOT EXISTS `products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `info` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+CREATE TABLE IF NOT EXISTS `queue` (
+  `queue_id` int(11) NOT NULL AUTO_INCREMENT,
+  `site_id` int(11) NOT NULL,
+  `task` varchar(125) NOT NULL,
+  `args` text,
+  `priority` tinyint(2) NOT NULL DEFAULT '5' COMMENT '1-5, 1 is highest priority',
+  `date_created` datetime NOT NULL,
+  `date_timeout` datetime NOT NULL,
+  `date_completed` datetime DEFAULT NULL,
+  `locked` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `error` tinyint(1) unsigned DEFAULT '0',
+  `response` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`queue_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+ CREATE TABLE IF NOT EXISTS `recipe_main_category` (
+  `id` int(2) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL DEFAULT '',
+  `description` varchar(250) DEFAULT NULL,
+  `active` int(1) DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `recipe_subcategory`
+--
+
+CREATE TABLE IF NOT EXISTS `recipe_subcategory` (
+  `id` int(2) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL DEFAULT '',
+  `description` varchar(250) DEFAULT NULL,
+  `main_category_id` int(10) DEFAULT NULL COMMENT 'Recp Main Category Id',
+  `active` int(1) DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`),
+  KEY `idx_main_c_id` (`main_category_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+CREATE TABLE IF NOT EXISTS `saved_list` (
+  `saved_list_id` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(64) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `data_item_type` int(11) NOT NULL DEFAULT '0',
+  `site_id` int(11) NOT NULL DEFAULT '0',
+  `is_dynamic` int(1) DEFAULT '0',
+  `datagrid_instance` varchar(64) COLLATE utf8_unicode_ci DEFAULT '',
+  `parameters` text COLLATE utf8_unicode_ci,
+  `created_by` int(11) DEFAULT '0',
+  `number_entries` int(11) DEFAULT '0',
+  `date_created` datetime DEFAULT NULL,
+  `date_modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`saved_list_id`),
+  KEY `IDX_data_item_type` (`data_item_type`),
+  KEY `IDX_description` (`description`),
+  KEY `IDX_site_id` (`site_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `saved_list_entry`
+--
+
+CREATE TABLE IF NOT EXISTS `saved_list_entry` (
+  `saved_list_entry_id` int(11) NOT NULL AUTO_INCREMENT,
+  `saved_list_id` int(11) NOT NULL,
+  `data_item_type` int(11) NOT NULL DEFAULT '0',
+  `data_item_id` int(11) NOT NULL DEFAULT '0',
+  `site_id` int(11) NOT NULL DEFAULT '0',
+  `date_created` datetime DEFAULT NULL,
+  PRIMARY KEY (`saved_list_entry_id`),
+  KEY `IDX_type_id` (`data_item_type`,`data_item_id`),
+  KEY `IDX_data_item_type` (`data_item_type`),
+  KEY `IDX_data_item_id` (`data_item_id`),
+  KEY `IDX_hot_list_id` (`saved_list_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `saved_search`
+--
+
+CREATE TABLE IF NOT EXISTS `saved_search` (
+  `search_id` int(11) NOT NULL AUTO_INCREMENT,
+  `data_item_text` text COLLATE utf8_unicode_ci,
+  `url` text COLLATE utf8_unicode_ci,
+  `is_custom` int(1) DEFAULT NULL,
+  `data_item_type` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `site_id` int(11) DEFAULT NULL,
+  `date_created` datetime DEFAULT NULL,
+  PRIMARY KEY (`search_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+
+CREATE TABLE IF NOT EXISTS `settings` (
+  `settings_id` int(11) NOT NULL AUTO_INCREMENT,
+  `setting` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `value` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `site_id` int(11) NOT NULL DEFAULT '0',
+  `settings_type` int(11) DEFAULT '0',
+  PRIMARY KEY (`settings_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=16 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `site`
+--
+
+CREATE TABLE IF NOT EXISTS `site` (
+  `site_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `is_demo` int(1) NOT NULL DEFAULT '0',
+  `user_licenses` int(11) NOT NULL DEFAULT '0',
+  `entered_by` int(11) NOT NULL DEFAULT '0',
+  `date_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `unix_name` varchar(128) CHARACTER SET utf8 DEFAULT NULL,
+  `company_id` int(11) DEFAULT NULL,
+  `is_free` int(1) DEFAULT NULL,
+  `account_active` int(1) NOT NULL DEFAULT '1',
+  `account_deleted` int(1) NOT NULL DEFAULT '0',
+  `reason_disabled` text CHARACTER SET utf8,
+  `time_zone` int(5) DEFAULT '0',
+  `time_format_24` int(1) DEFAULT '0',
+  `date_format_ddmmyy` int(1) DEFAULT '0',
+  `is_hr_mode` int(1) DEFAULT '0',
+  `file_size_kb` int(11) DEFAULT '0',
+  `page_views` bigint(20) DEFAULT '0',
+  `page_view_days` int(11) DEFAULT '0',
+  `last_viewed_day` date DEFAULT NULL,
+  `first_time_setup` tinyint(4) DEFAULT '0',
+  `localization_configured` int(1) DEFAULT '0',
+  `agreed_to_license` int(1) DEFAULT '0',
+  `limit_warning` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`site_id`),
+  KEY `IDX_account_deleted` (`account_deleted`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=181 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sph_counter`
+--
+
+CREATE TABLE IF NOT EXISTS `sph_counter` (
+  `counter_id` int(11) NOT NULL,
+  `max_doc_id` int(11) NOT NULL,
+  PRIMARY KEY (`counter_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE IF NOT EXISTS `system` (
+  `system_id` int(20) NOT NULL DEFAULT '0',
+  `uid` int(20) DEFAULT NULL,
+  `available_version` int(11) DEFAULT '0',
+  `date_version_checked` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `available_version_description` text COLLATE utf8_unicode_ci,
+  `disable_version_check` int(1) DEFAULT NULL,
+  PRIMARY KEY (`system_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+ALTER TABLE `t_dailyfrozenpacking_entry` ADD `processcode_type` VARCHAR(50) NOT NULL AFTER `po_id`;
+
+ALTER TABLE `t_dailyfrozenpacking_entry_rmlotid` ADD `processcode_type` VARCHAR(50) NOT NULL AFTER `po_id`;
+
+ALTER TABLE `t_dailyfrozenpacking_grade` ADD `net_wt` FLOAT(10,2) NOT NULL AFTER `rate_list_id`;
+
+ALTER TABLE t_dailyfrozenpacking_grade_rmlotid ADD `net_wt` FLOAT(10,2) NOT NULL AFTER `rate_list_id`;
+
+ALTER TABLE `t_dailyfrozenpacking_po` ADD `company` INT NOT NULL AFTER `mcpacking_id`, ADD `unit` INT NOT NULL AFTER `company`;
+
+ALTER TABLE `t_dailyfrozenpacking_po_rmlotid` ADD `company` INT NOT NULL AFTER `mcpacking_id`, ADD `unit` INT NOT NULL AFTER `company`;
+
+ALTER TABLE `t_dailypreprocess` ADD `company_id` INT NOT NULL AFTER `date`, ADD `unit_id` INT NOT NULL AFTER `company_id`;
+
+ALTER TABLE `t_dailypreprocess_rmlotid` ADD `company_id` INT NOT NULL AFTER `date`, ADD `unit_id` INT NOT NULL AFTER `company_id`;
+
+ALTER TABLE `t_dailythawing` ADD `company_id` INT NOT NULL AFTER `flag`, ADD `unit_id` INT NOT NULL AFTER `company_id`, ADD `linked_newrm` INT NOT NULL AFTER `unit_id`, ADD `process_type` VARCHAR(100) NOT NULL AFTER `linked_newrm`;
+
+ALTER TABLE `t_dailythawing_rmlotid` ADD `company_id` INT NOT NULL AFTER `flag`, ADD `unit_id` INT NOT NULL AFTER `company_id`, ADD `process_type` VARCHAR(100) NOT NULL AFTER `unit_id`;
+
+ALTER TABLE `t_daily_rm_cb` ADD `company_id` INT NOT NULL AFTER `expt_entry`, ADD `unit_id` INT NOT NULL AFTER `company_id`;
+
+ALTER TABLE `t_fznpakng_qel_entry` ADD `process_type` VARCHAR(20) NOT NULL AFTER `processcode_id`;
+
+ALTER TABLE `t_fznpakng_qel_grade` ADD `process_type` VARCHAR(20) NOT NULL AFTER `active`, ADD `qel_subentry_id` INT NOT NULL AFTER `process_type`;
+
+ALTER TABLE `t_fznpakng_quick_entry` ADD `processcode_type` VARCHAR(40) NOT NULL AFTER `expiry_date`;
+
+ALTER TABLE `t_gate_pass` ADD `company_id` INT NOT NULL AFTER `editing_time`, ADD `unit_id` INT NOT NULL AFTER `company_id`, ADD `number_gen_id` INT NOT NULL AFTER `unit_id`;
+
+ALTER TABLE `t_purchaseorder_main` ADD `company_id` INT NOT NULL AFTER `id`, ADD `unit` INT NOT NULL AFTER `company_id`;
+
+ALTER TABLE `t_purchaseorder_rm_entry` ADD `process_type` VARCHAR(50) NOT NULL AFTER `fish_id`;
+
+ALTER TABLE `t_salesorder` ADD `po` VARCHAR(30) NOT NULL AFTER `id`;
+
+ALTER TABLE `t_salesorder` ADD `company_id` INT NOT NULL AFTER `to_pay`, ADD `unit_id` INT NOT NULL AFTER `company_id`, ADD `number_gen_id` INT NOT NULL AFTER `unit_id`;
+
+ALTER TABLE `t_soaking` ADD `company_id` INT NOT NULL AFTER `process_code`, ADD `unit_id` INT NOT NULL AFTER `company_id`;
+
+ALTER TABLE `m_grade` ADD `include_secondary` ENUM('Y','N') NOT NULL DEFAULT 'N' AFTER `unit`;
+
+ALTER TABLE `m_ingredient` ADD `number_gen_Id` INT NOT NULL AFTER `active`, ADD `material_type` INT NOT NULL AFTER `number_gen_Id`;
+
+ALTER TABLE `m_ingredient_rate` ADD `cleaned_cost` FLOAT(10,2) NOT NULL AFTER `rate_list_id`, ADD `cleaning_yield` FLOAT(10,2) NOT NULL AFTER `cleaned_cost`, ADD `material_type` VARCHAR(80) NOT NULL AFTER `cleaning_yield`, ADD `start_date` DATE NOT NULL AFTER `material_type`, ADD `end_date` DATE NOT NULL AFTER `start_date`;
+
+INSERT INTO `submodule` (`id`, `module_id`, `name`, `order_by`) VALUES ('23', '1', 'Procurement_M', ''), ('24', '2', 'Procurement_T', '');
+
+INSERT INTO `submodule` (`id`, `module_id`, `name`, `order_by`) VALUES ('25', '3', 'Procurement_R', '');
+
+INSERT INTO `function` (`id`, `module_id`, `name`, `url`, `target`, `pmenu_id`, `form_add`, `form_edit`, `form_delete`, `form_print`, `form_confirm`, `form_reedit`, `processing_activity`, `menu_order`, `group_main_id`, `frm_cpny_specific`, `extraflag`) VALUES (NULL, '1', 'Registration Type', 'RegistrationType.php', NULL, '23', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '443', '0', 'Y', NULL), (NULL, '1', 'Farm Master', 'PondMaster.php', NULL, '23', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '0', '23', '', NULL), (NULL, '1', 'RM Test Master', 'RMTestMaster.php', NULL, '23', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '439', '0', '', NULL), (NULL, '1', 'Vehicle Type', 'VehicleType.php', NULL, '23', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '0', '0', '', '438'), (NULL, '1', 'Driver Master', 'DriverMaster.php', NULL, '23', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '0', '0', '', '436'), (NULL, '1', 'Harvesting Equipment Type', 'HarvestingEquipment.php', NULL, '23', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '437', '0', '', NULL), (NULL, '1', 'Harvesting Equipment Master', 'HarvestingEquipmentMaster.php', NULL, '23', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '434', '0', '', NULL), (NULL, '1', 'Chemical Master', 'HarvestingChemicalMaster.php', NULL, '23', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '435', '0', '', NULL), (NULL, '1', 'Employee Master', 'EmployeeMaster.php', NULL, '23', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '432', '0', '', NULL), (NULL, '1', 'Vehicle Master', 'VehicleMaster.php', NULL, '23', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '433', '0', 'Y', NULL);
+
+INSERT INTO `function` (`id`, `module_id`, `name`, `url`, `target`, `pmenu_id`, `form_add`, `form_edit`, `form_delete`, `form_print`, `form_confirm`, `form_reedit`, `processing_activity`, `menu_order`, `group_main_id`, `frm_cpny_specific`, `extraflag`) VALUES (NULL, '1', 'Supplier Group', 'SupplierGroup.php', NULL, '23', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '442', '0', 'Y', NULL);
+
+INSERT INTO `function` (`id`, `module_id`, `name`, `url`, `target`, `pmenu_id`, `form_add`, `form_edit`, `form_delete`, `form_print`, `form_confirm`, `form_reedit`, `processing_activity`, `menu_order`, `group_main_id`, `frm_cpny_specific`, `extraflag`) VALUES (NULL, '2', 'Procurment GatePass', 'RMProcurmentGatePass.php', NULL, '24', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '458', '0', 'Y', NULL), (NULL, '2', 'RM Procurement Plan', 'RMProcurmentOrder.php', NULL, '24', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '0', '0', '', NULL), (NULL, '2', 'PHT Certificate List', 'PHTCertificate.php', NULL, '24', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '470', '0', '', NULL), (NULL, '2', 'RMReceipt Gate Pass', 'RMReceiptGatePass.php', NULL, '24', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '461', '0', '', NULL), (NULL, '2', 'PHT Monitoring', 'PhtMonitoring.php', NULL, '24', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '464', '0', '', NULL), (NULL, '2', 'Weighment Data Sheet', 'WeighmentDataSheet.php', NULL, '24', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '457', '0', '', NULL), (NULL, '2', 'Manage RM Lot ID', 'ManageRMLOTID.php', NULL, '24', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '0', '0', '', NULL), (NULL, '2', 'Manage Seal', 'ManageSeal.php', NULL, '24', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '0', '0', '', NULL), (NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '0', '0', '', NULL), (NULL, NULL, NULL, NULL, NULL, NULL, 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '0', '0', 'Y', NULL);
+
+INSERT INTO `function` (`id`, `module_id`, `name`, `url`, `target`, `pmenu_id`, `form_add`, `form_edit`, `form_delete`, `form_print`, `form_confirm`, `form_reedit`, `processing_activity`, `menu_order`, `group_main_id`, `frm_cpny_specific`, `extraflag`) VALUES (NULL, '3', 'RM variance Report', 'RMVarianceReport.php', NULL, '25', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '480', '0', 'Y', NULL), (NULL, '3', 'Custom Report', 'Report.php', NULL, '25', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '481', '0', '', NULL), (NULL, '3', 'Variance Report', 'VarianceReport.php', NULL, '25', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '482', '0', '', NULL), (NULL, '3', 'Pending RM Lot Report', 'PendingRMLotReport.php', NULL, '25', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '483', '0', '', NULL), (NULL, '3', 'Freezing Report', 'FreezingReport.php', NULL, '25', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '484', '0', '', NULL), (NULL, '3', 'RM Freezing Calender Report', 'RMFreezingCalenderReport.php', '', '25', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '485', '0', '', NULL), (NULL, '3', 'Factory Utilization Report', 'FactoryUtilizationReport.php', NULL, '25', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '486', '0', '', NULL), (NULL, '3', 'Lotwise SMBS Report', 'LotwiseSMBSReport.php', NULL, '25', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '487', '0', '', NULL), (NULL, '3', 'Yearwise Purchase Report', 'YearwisePurchaseReport.php', NULL, '25', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '488', '0', '', NULL), (NULL, '3', 'Yearwise Production Report', 'YearwiseProductionReport.php', NULL, '25', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '489', '0', 'Y', NULL);
+
+update `m_preprocessor` set activeconfirm='1' ;
+
+update `supplier` set activeconfirm='1' ;
+
+INSERT INTO `function` (`id`, `module_id`, `name`, `url`, `target`, `pmenu_id`, `form_add`, `form_edit`, `form_delete`, `form_print`, `form_confirm`, `form_reedit`, `processing_activity`, `menu_order`, `group_main_id`, `frm_cpny_specific`, `extraflag`) VALUES (NULL, '1', 'Designation', 'Designation.php', NULL, '5', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '0', '0', 'Y', NULL);
+
+INSERT INTO `function` (`id`, `module_id`, `name`, `url`, `target`, `pmenu_id`, `form_add`, `form_edit`, `form_delete`, `form_print`, `form_confirm`, `form_reedit`, `processing_activity`, `menu_order`, `group_main_id`, `frm_cpny_specific`, `extraflag`) VALUES (NULL, '1', 'Farm Master', 'PondMaster.php', NULL, '23', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '441', '0', 'Y', NULL);
+
+INSERT INTO `t_rm_type` (`id`, `name`) VALUES (1, 'Farmed'), (2, 'Sea Caught');
+
+INSERT INTO  `function` (`id`, `module_id`, `name`, `url`, `target`, `pmenu_id`, `form_add`, `form_edit`, `form_delete`, `form_print`, `form_confirm`, `form_reedit`, `processing_activity`, `menu_order`, `group_main_id`, `frm_cpny_specific`, `extraflag`) VALUES (NULL, '2', 'Weightment After Grading', 'WeightmentAfterGrading.php', NULL, '7', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '0', '0', 'Y', NULL);
+
+INSERT INTO  `function` (`id`, `module_id`, `name`, `url`, `target`, `pmenu_id`, `form_add`, `form_edit`, `form_delete`, `form_print`, `form_confirm`, `form_reedit`, `processing_activity`, `menu_order`, `group_main_id`, `frm_cpny_specific`, `extraflag`) VALUES (NULL, '2', 'Soaking', 'Soaking.php', NULL, '7', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '462', '0', 'Y', NULL);
+
+INSERT INTO `function` (`id`, `module_id`, `name`, `url`, `target`, `pmenu_id`, `form_add`, `form_edit`, `form_delete`, `form_print`, `form_confirm`, `form_reedit`, `processing_activity`, `menu_order`, `group_main_id`, `frm_cpny_specific`, `extraflag`) VALUES (NULL, '1', 'Secondary Process Code', 'SecondaryProcessCode.php', NULL, '2', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', '14', '0', 'Y', NULL);
+
+INSERT INTO `m_fish` (`id`, `name`, `code`, `category_id`, `source_id`, `active`) VALUES (NULL, 'Assorted', 'ASS', NULL, '', '1');
+
+
+ALTER TABLE `t_rmprocurmentorder` ADD `unit_id` INT NOT NULL AFTER `company`;
+
+ALTER TABLE `t_rmreceiptgatepass` ADD `from_company` INT NOT NULL AFTER `landingcenter_id`, ADD `from_unit` INT NOT NULL AFTER `from_company`;
+
+ALTER TABLE `m_plant` ADD `address` VARCHAR(150) NOT NULL AFTER `name`;
+
+
+INSERT INTO `m_plant` (`id`, `no`, `company_id`, `name`, `address`, `standard_production`, `based_on`, `active`) VALUES (12, 10, 1, 'SUnit-I FFF', '', '8000', 'month', NULL), (13, 11, 1, 'SUnit-II FFF', '', '5000', 'month', NULL), (14, 12, 3, 'NUnit-I FFF', '', '12000', 'month', NULL);
+
+update `t_dailycatch_main` set unit=13 where billing_company_id=1 and unit=2
+update `t_dailycatch_main` set unit=13 where billing_company_id=1 and unit=6
+update `t_dailycatch_main` set unit=2 where billing_company_id=2 and unit=6
+update `t_dailycatch_main` set unit=14 where billing_company_id=3 and unit=1
+
+UPDATE `m_plant` SET `address` = 'M-53/1,MIDC INDUSTRIAL AREA, TALOJA NAVI MUMBAI 410208 INDIA' WHERE `id` = 2;

@@ -1,0 +1,1 @@
+alter table t_purchaseorder_rm_entry add delivered_status int(1);

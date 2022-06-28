@@ -1,0 +1,323 @@
+ <flexy:include src="../../ftemplate/topL.php" />
+
+<form name="frmFrznPkgAccounts" action="FrznPkgAccounts.php" method="post">
+	<table cellspacing="0"  align="center" cellpadding="0" width="96%">
+		<tr flexy:if="err">
+			<td height="20" align="center" class="err1" >{err}</td>
+		</tr>
+			<tr>
+				<td height="10" align="center" ></td>
+			</tr>
+			<tr>
+			<td>
+				<table cellpadding="0"  cellspacing="1" border="0" align="center"  width="100%">
+					<tr>
+						<td>							
+							{setBoxHeader(#Frozen Packing Accounts#)}
+							<flexy:include src="../../ftemplate/boxTL.tpl" />					
+							<table cellpadding="0"  width="100%" cellspacing="0" border="0" align="center">
+	<tr flexy:if="listMode">	
+		<td colspan="3">
+			<table cellpadding="0" cellspacing="0" align="center">
+			<tr flexy:if="!printMode">
+				<td>
+					{if:edit}
+						<input flexy:ignore="yes" type="submit" value=" Save " name="cmdSave" class="button" onClick="return validateFrznPkgAccounts('Y');">
+					{end:}&nbsp;{if:print}<input flexy:ignore="yes" type="button" value=" Print " name="btnPrint" class="button" onClick="return printWindow('FrznPkgAccounts.php?print=y',700,600);">
+					{end:}
+				</td>
+			</tr>
+			</table>
+		</td>
+		</tr>
+
+	<tr>
+		<td colspan="3" height="5" ></td>
+	</tr>
+	<tr flexy:if="errDel">
+		<td colspan="3" height="15" align="center" class="err1">{errDel}</td>
+	</tr>
+	<tr flexy:if="listMode">
+		<td colspan="3" height="15" align="center">
+		<table>
+		<TR><TD>
+			<table>
+				<TR>
+					<td class="fieldName">Select Date:</td>
+					<td class="fieldName">*From:</td>
+					<td nowrap>					
+						<input type="text" id="dateFrom" name="dateFrom" size="8" value="{dateFrom}" onchange="submitForm('dateFrom','dateTo', frmFrznPkgAccounts);" autocomplete="off" />
+					</td>
+					<td class="fieldName">*To:</td>
+					<td nowrap>
+						<input type="text" id="dateTo" name="dateTo" size="8"  value="{dateTo}" onchange="submitForm('dateFrom','dateTo', frmFrznPkgAccounts);" autocomplete="off" />		
+					</td>
+					<td class="fieldName" nowrap="nowrap">*Pre-Processor:</td>
+                                <td>
+                       			<select name="selProcessor" id="selProcessor"></select>
+				</td>					
+					<td style="padding-left:10px; padding-right:10px;">
+						<input type="submit" name="cmdSearch" class="button" value=" Search " onclick="return validateFrznPkgAccounts('N');" />
+					</td>
+				</TR>
+			</table>
+		</TD></TR>
+		</table>
+		</td>
+	</tr>	
+<!-- New Frzn Pkg Acs Starts here -->
+<tr flexy:if="listMode">
+				<td width="1" ></td>
+				<td colspan="2" >
+				<table cellpadding="1"  width="30%" cellspacing="1" border="0" align="center" id="newspaper-b1">
+	{if:frznPkgRecSize}
+				<tr flexy:if="displayNavRow">
+					<td colspan="17" style="padding-right:10px" class="navRow">
+						<div align="right">
+						{printPagination(maxpage,pageNo,#FrznPkgAccounts.php?dateFrom=$t->dateFrom&dateTo=$t->dateTo&selProcessor=$t->selProcessorId#):h}
+						<!--<input type="hidden" name="pageNo" value="{pageNo}"> Set to last section -->
+						</div>
+					</td>
+				</tr>
+				<thead>
+			
+	<tr align="center">
+		<th nowrap style="padding-left:10px; padding-right:10px;">Fish</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Processcode</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Freezing <br>Stage</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Quality</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Frozen Code</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">MC<br> Pkg</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Frozen Qty</th>	
+		<th nowrap style="padding-left:10px; padding-right:10px;">Pkg<br> Wt</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Glaze<br> (%)</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;" >Net Wt</th><!--title="Wt without glaze"-->
+		<th nowrap style="padding-left:10px; padding-right:10px;">Total Units</th>	
+		<th nowrap style="padding-left:10px; padding-right:10px;">Qty</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Grade</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Rate</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Total Amt</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Setld</th>
+		<th nowrap style="padding-left:10px; padding-right:10px;">Setld<br> Date</th>
+	</tr>
+	</thead>
+	<tbody>
+	{setRow(1)}
+	{foreach:frznPkgRecs,key,fpR}
+		<!--{fpQty(dateFrom,dateTo,selProcessorId,fpR.processcodeid,fpR.freezingstageid,fpR.qualityid,fpR.frozencodeid)}-->
+		{if:!fpR.rategradeid} 
+			{getRate(fpR.seldate,selProcessorId,fpR.processcodeid,fpR.freezingstageid,fpR.qualityid,fpR.frozencodeid)}
+		{end:}
+		{setSettledChk(key,fpR.settled)}
+		{calcTotQty(fpR.frozenqty,fpR.slab,fpR.pkdqty)}
+	<tr>		
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">
+			{fpR.fishname}
+			<input type="hidden" name="gradeEntryId_{getRow():h}" id="gradeEntryId_{getRow():h}" size="5" style="text-align:right" value="{fpR.gentryid}" autocomplete="off" readonly />
+			<input type="hidden" name="numpack_{getRow():h}" id="numpack_{getRow():h}" size="5" style="text-align:right" value="{fpR.numpack}" autocomplete="off" readonly />
+			<input type="hidden" name="gnummc_{getRow():h}" id="gnummc_{getRow():h}" size="5" style="text-align:right" value="{fpR.gnummc}" autocomplete="off" readonly />
+			<input type="hidden" name="gnumls_{getRow():h}" id="gnumls_{getRow():h}" size="5" style="text-align:right" value="{fpR.gnumls}" autocomplete="off" readonly />
+		</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">{fpR.processcode}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">{fpR.freezingstage}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">{fpR.qualityname}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">{fpR.frozencode}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;">{fpR.mcpkgcode}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;" align="right">{fpR.frozenqty}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;" align="right">{fpR.declwt}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;" align="right">{fpR.glaze}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;" align="right">
+			{fpR.filledwt}
+			<input type="hidden" name="filledwt_{getRow():h}" id="filledwt_{getRow():h}" size="5" style="text-align:right" value="{fpR.filledwt}" readonly />
+		</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;" align="right">{fpR.slab}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;" align="right">
+			{fpR.pkdqty}
+			<input type="hidden" name="pkdQty_{getRow():h}" id="pkdQty_{getRow():h}" size="5" style="text-align:right" value="{fpR.pkdqty}" readonly />
+		</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;" align="right">{fpR.grade}</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;" align="right">
+<!-- {fpR.pkgrate} -->
+			<input type="text" name="pkgRate_{getRow():h}" id="pkgRate_{getRow():h}" size="5" style="text-align:right" value="{setRate(fpR.pkgrate)}" onkeyup="calcFPRAmt();" autocomplete="off" />
+			
+		</td>
+		<td class="listing-item" nowrap style="padding-left:10px; padding-right:10px;" align="right">
+			<input type="text" name="totPkgAmt_{getRow():h}" id="totPkgAmt_{getRow():h}" size="8" style="text-align:right; border:none;" readonly />
+		</td>	
+		<td class="listing-item" nowrap align="center">
+			<!--{fpR.settled}-->
+	{if:setldChk(fpR.settled)}
+<?php 
+	echo "<input name=\"settled_".$t->getRow()."\" type=\"checkbox\" id=\"settled_".$t->getRow()."\" value=\"Y\" class=\"chkBox\" checked >";
+?>
+			{else:}
+				<input name="settled_{getRow():h}" type="checkbox" id="settled_{getRow():h}" value="Y" class="chkBox" />
+			{end:}
+		</td>
+                 <td class="listing-item" nowrap align="center">{fpR.setlddate}</td>
+	</tr>
+		{incrementRow()}
+	{end:}	
+	<input type="hidden" name="hidRowCount" id="hidRowCount" value="{frznPkgRecSize}" readonly />
+	<input type="hidden" name="editId" value="" readonly>
+	</tbody>
+	<tr bgcolor="White">
+		<TD colspan="6" class="listing-head" style="padding-left:10px; padding-right:10px;" align="right">
+			Total:
+		</TD>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" align="right">
+			<strong>{totFrznQty}</strong>
+		</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" align="right">
+			<strong>			
+			</strong>
+		</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" align="right">
+			<strong>			
+			</strong>
+		</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" align="right">
+			<strong>			
+			</strong>
+		</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" align="right">
+			<strong>{totSlab}</strong>
+		</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" align="right">
+			<strong>{totPkdQty}</strong>
+		</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" align="right">
+			<strong>			
+			</strong>
+		</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" align="right">
+			<strong>			
+			</strong>
+		</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" align="right">
+			<strong>
+				<input type="text" name="totalAmt" id="totalAmt" size="8" value="{totalamt}" style="border:none; text-align:right;" readonly />
+			</strong>
+		</td>
+		<td colspan="2">&nbsp;</td>
+	</tr>
+<!-- Grand Total -->
+	<tr bgcolor="White" flexy:if="displayNavRow">
+		<TD colspan="6" class="listing-head" style="padding-left:10px; padding-right:10px;" align="right">
+			Grand Total:
+		</TD>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" align="right">
+			<strong>{grandTotalFrznQty}</strong>
+		</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" align="right">
+			&nbsp;
+		</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" align="right">
+			&nbsp;
+		</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" align="right">
+			&nbsp;
+		</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" align="right">
+			<strong>{grandTotalSlab}</strong>
+		</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" align="right">
+			<strong>{grandTotalPkdQty}</strong>
+		</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" align="right">
+			&nbsp;
+		</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" align="right">
+			&nbsp;
+		</td>
+		<td class="listing-item" style="padding-left:10px; padding-right:10px;" align="right" title="Rate entered grand total amt">
+			<strong>{grandTotalPkgAmt}</strong>
+		</td>
+		<td colspan="2">&nbsp;</td>
+	</tr>
+	<tr flexy:if="displayNavRow">
+		<td colspan="17" style="padding-right:10px" class="navRow">
+			<div align="right">
+			<!--{printPagination(maxpage,pageNo,#FrznPkgAccounts.php?#):h}-->
+			{printPagination(maxpage,pageNo,#FrznPkgAccounts.php?dateFrom=$t->dateFrom&dateTo=$t->dateTo&selProcessor=$t->selProcessorId#):h}
+			</div>
+		</td>
+	</tr>
+	
+	{end:}
+		</table>
+		</td>
+	</tr>
+<!-- Frzn Pkg Acs Ends here -->								
+	<tr flexy:if="listMode">	
+		<td colspan="3">
+			<table cellpadding="0" cellspacing="0" align="center">
+			<tr flexy:if="!printMode">
+				<td>
+					{if:edit}
+						<input flexy:ignore="yes" type="submit" value=" Save " name="cmdSave" class="button" onClick="return validateFrznPkgAccounts('Y');">
+					{end:}&nbsp;{if:print}<input flexy:ignore="yes" type="button" value=" Print " name="btnPrint" class="button" onClick="return printWindow('FrznPkgAccounts.php?print=y',700,600);">
+					{end:}
+				</td>
+			</tr>
+			</table>
+		</td>
+		</tr>
+								<tr>
+									<td colspan="3" height="5" ></td>
+								</tr>
+							</table>
+						<flexy:include src="../../ftemplate/boxBR.tpl" />					
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>			
+		<tr>
+			<td height="10">
+			<input type="hidden" name="entryExist" id="entryExist" value="" readonly />
+			<input type="hidden" name="pageNo" value="{pageNo}" readonly /> 
+			</td>
+		</tr>	
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+	<!--
+	Calendar.setup 
+	(	
+		{
+			inputField  : "dateFrom",         // ID of the input field
+			eventName	  : "click",	    // name of event
+			button : "dateFrom", 
+			ifFormat    : "%d/%m/%Y",    // the date format
+			singleClick : true,
+			step : 1
+		}
+	);
+	//-->
+	</SCRIPT>
+	
+	<SCRIPT LANGUAGE="JavaScript">
+	<!--
+	Calendar.setup 
+	(	
+		{
+			inputField  : "dateTo",         // ID of the input field
+			eventName	  : "click",	    // name of event
+			button : "dateTo", 
+			ifFormat    : "%d/%m/%Y",    // the date format
+			singleClick : true,
+			step : 1
+		}
+	);
+	//-->
+	</SCRIPT>
+	{if:frznPkgRecSize}
+	<script language="JavaScript" type="text/javascript">
+		calcFPRAmt();
+	</script>
+	{end:}
+		
+</form>
+
+<flexy:include src="../../ftemplate/bottomR.php" />
+

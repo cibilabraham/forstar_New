@@ -1,0 +1,1 @@
+ALTER TABLE t_purchaseorder_rm_entry CHANGE eucode_id eucode_id_removed INT(5)

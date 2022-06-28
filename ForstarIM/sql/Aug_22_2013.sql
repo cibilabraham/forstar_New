@@ -1,0 +1,1 @@
+insert into function(module_id,name,url,pmenu_id,menu_order) values (2,'Daily Frozen Re-Glazing','DailyFrozenReGlazing.php',8,425)
