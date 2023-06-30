@@ -264,6 +264,7 @@ $xajax->configure('statusMessages', true);
 		if($numbers!="" && $letters!="")
 		{
 			$chkDuplicate=$rmProcurmentOrderObj->chkDuplicate($gatePass);
+			print_r($chkDuplicate);
 			if(!$chkDuplicate)
 			{
 				$checkStatus=$rmProcurmentOrderObj->checkProcurementStatus($numbers,$letters);

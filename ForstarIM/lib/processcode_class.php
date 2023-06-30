@@ -155,6 +155,16 @@ class ProcessCode
 		$result	=	$this->databaseConnect->getRecords($qry);
 		return $result;
 	}
+
+	# Filter m_processcode table
+	function processCodeRecFilter11()
+	{
+		$qry	= "select a.id, a.fish_id, a.code, a.descr, a.b_weight,a.grade_unit_raw,a.count_unit_frozen,a.available_option,b.id, b.name,a.frozen_available, a.grade_unit_frozen, a.count_unit_raw from m_processcode a, m_fish b where a.fish_id = b.id and a.active=1 order by b.name asc, a.code asc";
+		
+		$result	=	$this->databaseConnect->getRecords($qry);
+		return $result;
+	}
+	
 	
 	# Filter m_processcode table using fish id(PAGING)	
 	function processCodeRecPagingFilter($filterId, $offset, $limit)

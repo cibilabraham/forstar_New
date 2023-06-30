@@ -243,6 +243,7 @@
 		//$objResponse->alert($unitName);
 		//
 		//if(sizeof($Details)>0)
+		
 		if($procurementAvailable=="1")
 		{
 		$Details=$objManageRMLOTID->receiptGatePassDetail($receiptID);
@@ -287,10 +288,10 @@
 		}
 		else
 		{
-		$Details=$objManageRMLOTID->receiptGatePassDetailSingle($receiptID);
+					$Details=$objManageRMLOTID->receiptGatePassDetailSingle($receiptID);
 		
-		foreach($Details as $detVal)
-			{
+					foreach($Details as $detVal)
+					{
 						$supplyDetail=$detVal[0];
 						$supplyDetailId=$detVal[3];
 						$receiptIdVal=0;
@@ -301,95 +302,99 @@
 						$supplierChellan=$detVal[9];
 						$farmIdVal=$detVal[7];
 						$landingCenterId=$detVal[10];	
-						if($farmIdVal!='0' && $landingCenterId==0)
-						{
-							$landingCenterId=$objManageRMLOTID->landingCenter($farmIdVal);
-						}
+								if($farmIdVal!='0' && $landingCenterId==0)
+								{
+									$landingCenterId=$objManageRMLOTID->landingCenter($farmIdVal);
+								}
 						$receiptGatePassID=$receiptID;
-						}
-						$supplyVal="Supplier Name:-".$supplyDetail.'<br/> '."Company Name:-".$companyName.'<br/> '."Unit:-".$unitName;
+					}
+					$supplyVal="Supplier Name:-".$supplyDetail.'<br/> '."Company Name:-".$companyName.'<br/> '."Unit:-".$unitName;
 		}
+
 		$checkGateNumberSettingsExist=$objManageRMLOTID->chkValidGatePassId($selDate,$company,$unit);
-		 if (sizeof($checkGateNumberSettingsExist)>0){
-		 $alphaCode=$objManageRMLOTID->getAlphaCode($selDate,$company,$unit);
-		 $alphaCodePrefix= $alphaCode[0];
-		//$objResponse->alert("HII");
-		//$objResponse->alert($alphaCodePrefix);
-	//}	
+
+		//print_r($checkGateNumberSettingsExist);
 		
-		$checkExist=$objManageRMLOTID->getAvailableLotIdNos($company,$unit);
-		 //$objResponse->alert($alphaCodePrefix);
-		if ($checkExist>0){
-		$nextGatePassId=$checkExist[0];
-		//$objResponse->alert($validendno);
-		/*$getFirstRecord=$objManageRMLOTID->getAvailableLotIdNos();
-		$nextGatePassId=$getFirstRecord[0];
-		$getFirstRecord=$objManageRMLOTID->getmaxGatePassId();
-		$getFirstRec= $getFirstRecord[0];
-		//$objResponse->alert($getFirstRec);
-		$getFirstRecEx=explode($alphaCodePrefix,$getFirstRec);
-		//$objResponse->alert($getFirstRecEx[1]);
-		$nextGatePassId=$getFirstRecEx[1]+1;*/
-		//$objResponse->alert($nextGatePassId);
-		$validendno=$objManageRMLOTID->getValidendnoGatePassId($selDate,$company,$unit);	
-		//$objResponse->alert($validendno);
-		if ($nextGatePassId>$validendno){
-		$GatePassMsg="Please set the Gate Pass number in Settings,since it reached the end no";
-		$objResponse->assign("message","innerHTML",$GatePassMsg);
+		if (sizeof($checkGateNumberSettingsExist)>0){
+			$alphaCode=$objManageRMLOTID->getAlphaCode($selDate,$company,$unit);
+			$alphaCodePrefix= $alphaCode[0];
+			//$objResponse->alert("HII");
+			//$objResponse->alert($alphaCodePrefix);
+			//}	
+			
+			$checkExist=$objManageRMLOTID->getAvailableLotIdNos($company,$unit);
+			//$objResponse->alert($alphaCodePrefix);
+			if ($checkExist>0){
+			$nextGatePassId=$checkExist[0];
+			//$objResponse->alert($validendno);
+			/*$getFirstRecord=$objManageRMLOTID->getAvailableLotIdNos();
+			$nextGatePassId=$getFirstRecord[0];
+			$getFirstRecord=$objManageRMLOTID->getmaxGatePassId();
+			$getFirstRec= $getFirstRecord[0];
+			//$objResponse->alert($getFirstRec);
+			$getFirstRecEx=explode($alphaCodePrefix,$getFirstRec);
+			//$objResponse->alert($getFirstRecEx[1]);
+			$nextGatePassId=$getFirstRecEx[1]+1;*/
+			//$objResponse->alert($nextGatePassId);
+			$validendno=$objManageRMLOTID->getValidendnoGatePassId($selDate,$company,$unit);	
+			//$objResponse->alert($validendno);
+				if ($nextGatePassId>$validendno){
+					$GatePassMsg="Please set the Gate Pass number in Settings,since it reached the end no";
+					$objResponse->assign("message","innerHTML",$GatePassMsg);
+				}
+				else{
+					$numbergen=$checkGateNumberSettingsExist[0][0];
+					$disGateNo="$alphaCodePrefix$nextGatePassId";
+					$tempStore=$objManageRMLOTID->addLotIdTemporary($nextGatePassId,$checkGateNumberSettingsExist[0][0]);
+					$disGatePassIds='<br/>'."RMlotId:-"."$disGateNo";
+					$validPassNoVals="$supplyVal.$disGatePassIds";
+					$objResponse->assign("display_lotId_$cnt","innerHTML","$validPassNoVals");
+					$objResponse->assign("alphaValue_$cnt","value","$alphaCodePrefix");
+					$objResponse->assign("rmId_$cnt","value","$nextGatePassId");
+					$objResponse->assign("supplyDetail_$cnt","value","$supplyDetailId");
+					//$objResponse->alert($receiptIdVal);
+					$objResponse->assign("receipt_idval_$cnt","value","$receiptIdVal");
+					$objResponse->assign("company_idval_$cnt","value","$companyIdVal");
+					$objResponse->assign("unit_idval_$cnt","value","$unitIdVal");
+					$objResponse->assign("farmIdVal_$cnt","value","$farmIdVal");
+					$objResponse->assign("landingCenterIdVal_$cnt","value","$landingCenterId");
+					$objResponse->assign("number_genval_$cnt","value","$numbergen");
+					$objResponse->assign("receiptGatePass_$cnt","value","$receiptGatePassID");
+					$objResponse->assign("supplierChellanDate_$cnt","value","$supplierChellanDt");
+					$objResponse->assign("supplierChellan_$cnt","value","$supplierChellan");
+				}
+		
+			}
+			else{
+				$numbergen=$checkGateNumberSettingsExist[0][0];
+				$validPassNo=$objManageRMLOTID->getValidGatePassId($selDate,$company,$unit);	
+				$lotVal="$alphaCodePrefix$validPassNo";
+				$checkPassId=$objManageRMLOTID->chkValidGatePassId($selDate,$company,$unit);
+				$tempStore=$objManageRMLOTID->addLotIdTemporary($validPassNo,$checkGateNumberSettingsExist[0][0]);
+				$disGatePassId='<br/>'."RMlotId:-"."$lotVal";
+				$validPassNoVal="$supplyVal.$disGatePassId";
+				$objResponse->assign("display_lotId_$cnt","innerHTML","$validPassNoVal");
+				$objResponse->assign("alphaValue_$cnt","value","$alphaCodePrefix");
+				$objResponse->assign("rmId_$cnt","value","$validPassNo");
+				$objResponse->assign("supplyDetail_$cnt","value","$supplyDetailId");
+				//$objResponse->alert($receiptIdVal);
+				$objResponse->assign("receipt_idval_$cnt","value","$receiptIdVal");
+				$objResponse->assign("company_idval_$cnt","value","$companyIdVal");
+				$objResponse->assign("unit_idval_$cnt","value","$unitIdVal");
+				$objResponse->assign("farmIdVal_$cnt","value","$farmIdVal");
+				$objResponse->assign("landingCenterIdVal_$cnt","value","$landingCenterId");
+				$objResponse->assign("number_genval_$cnt","value","$numbergen");
+				$objResponse->assign("receiptGatePass_$cnt","value","$receiptGatePassID");
+				$objResponse->assign("supplierChellanDate_$cnt","value","$supplierChellanDt");
+				$objResponse->assign("supplierChellan_$cnt","value","$supplierChellan");
+		
+			}
+		
 		}
 		else{
-		$numbergen=$checkGateNumberSettingsExist[0][0];
-		$disGateNo="$alphaCodePrefix$nextGatePassId";
-		$tempStore=$objManageRMLOTID->addLotIdTemporary($nextGatePassId,$checkGateNumberSettingsExist[0][0]);
-		$disGatePassIds='<br/>'."RMlotId:-"."$disGateNo";
-		$validPassNoVals="$supplyVal.$disGatePassIds";
-		$objResponse->assign("display_lotId_$cnt","innerHTML","$validPassNoVals");
-		$objResponse->assign("alphaValue_$cnt","value","$alphaCodePrefix");
-		$objResponse->assign("rmId_$cnt","value","$nextGatePassId");
-		$objResponse->assign("supplyDetail_$cnt","value","$supplyDetailId");
-		//$objResponse->alert($receiptIdVal);
-		$objResponse->assign("receipt_idval_$cnt","value","$receiptIdVal");
-		$objResponse->assign("company_idval_$cnt","value","$companyIdVal");
-		$objResponse->assign("unit_idval_$cnt","value","$unitIdVal");
-		$objResponse->assign("farmIdVal_$cnt","value","$farmIdVal");
-		$objResponse->assign("landingCenterIdVal_$cnt","value","$landingCenterId");
-		$objResponse->assign("number_genval_$cnt","value","$numbergen");
-		$objResponse->assign("receiptGatePass_$cnt","value","$receiptGatePassID");
-		$objResponse->assign("supplierChellanDate_$cnt","value","$supplierChellanDt");
-		$objResponse->assign("supplierChellan_$cnt","value","$supplierChellan");
-		}
-		
-		}
-		else{
-		$numbergen=$checkGateNumberSettingsExist[0][0];
-		$validPassNo=$objManageRMLOTID->getValidGatePassId($selDate,$company,$unit);	
-		$lotVal="$alphaCodePrefix$validPassNo";
-		$checkPassId=$objManageRMLOTID->chkValidGatePassId($selDate,$company,$unit);
-		$tempStore=$objManageRMLOTID->addLotIdTemporary($validPassNo,$checkGateNumberSettingsExist[0][0]);
-		$disGatePassId='<br/>'."RMlotId:-"."$lotVal";
-		$validPassNoVal="$supplyVal.$disGatePassId";
-		$objResponse->assign("display_lotId_$cnt","innerHTML","$validPassNoVal");
-		$objResponse->assign("alphaValue_$cnt","value","$alphaCodePrefix");
-		$objResponse->assign("rmId_$cnt","value","$validPassNo");
-		$objResponse->assign("supplyDetail_$cnt","value","$supplyDetailId");
-		//$objResponse->alert($receiptIdVal);
-		$objResponse->assign("receipt_idval_$cnt","value","$receiptIdVal");
-		$objResponse->assign("company_idval_$cnt","value","$companyIdVal");
-		$objResponse->assign("unit_idval_$cnt","value","$unitIdVal");
-		$objResponse->assign("farmIdVal_$cnt","value","$farmIdVal");
-		$objResponse->assign("landingCenterIdVal_$cnt","value","$landingCenterId");
-		$objResponse->assign("number_genval_$cnt","value","$numbergen");
-		$objResponse->assign("receiptGatePass_$cnt","value","$receiptGatePassID");
-		$objResponse->assign("supplierChellanDate_$cnt","value","$supplierChellanDt");
-		$objResponse->assign("supplierChellan_$cnt","value","$supplierChellan");
-		
-		}
-		
-		}
-		else{
-		//$objResponse->alert("hi");
-		$GatePassMsg="Please set the gate pass in Settings";
-		$objResponse->assign("message","innerHTML",$GatePassMsg);
+			//$objResponse->alert("hi");
+			$GatePassMsg="Please set the gate pass in Settings 222";
+			$objResponse->assign("message","innerHTML",$GatePassMsg);
 		}
 	
 		return $objResponse;
@@ -446,7 +451,7 @@
 		}
 		else{
 		//$objResponse->alert("hi");
-		$GatePassMsg="Please set the gate pass in Settings";
+		$GatePassMsg="Please set the gate pass in Settings11";
 		$objResponse->assign("message","innerHTML",$GatePassMsg);
 		}
 	

@@ -707,10 +707,7 @@
 	  <input type="hidden" name="pageNo" value="<?=$pageNo?>"> 
 	  </div></td></tr><? }?>
 
-
-
-
-
+	  
 
 
 		</table>
@@ -728,7 +725,14 @@
 	}
 	?>
 	           
-     
+	<?php	if (sizeof($dailyFrozenPackingRecs) == 0) {
+	?>
+	<tr bgcolor="white">
+		<td colspan="12"  class="err1" height="10" align="center"><?=$msgNoRecords;?></td>
+	</tr>	
+	<?php 
+		}
+	?>
 
 	</td>
         </tr>		

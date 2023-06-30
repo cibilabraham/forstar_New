@@ -44,7 +44,7 @@ Class WeighmentDataSheet{
 		
 		// $qry	= "select id,lot_Id from `t_rmreceiptgatepass` where active='1' and lot_Id != ''";
 		//$qry	= "select id,new_lot_Id from t_unittransfer where active='1'";
-		
+		//echo $qry;
 		$result	= $this->databaseConnect->getRecords($qry);
 		return $result;
 	}

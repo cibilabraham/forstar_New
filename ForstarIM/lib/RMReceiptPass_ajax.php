@@ -1023,6 +1023,7 @@ $xajax->configure('statusMessages', true);
 		//$str = 'GTP123';
 		$numbers = preg_replace('/[^0-9]/', '', $gatePass);
 		$letters = preg_replace('/[^a-zA-Z]/', '', $gatePass);
+		
 		if($numbers!="" && $letters!="")
 		{
 			$chkDuplicate=$rmReceiptGatePassObj->chkDuplicate($gatePass);

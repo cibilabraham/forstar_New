@@ -180,15 +180,17 @@ class DailyFrozenPackingNew
 	}
 	
 
-function getPagingDFPRecs($fromDate, $tillDate, $offset, $limit)
+function getPagingDFPRecs($fromDate, $tillDate, $offset, $limit,$filterProcessCode)
 	{
+		if($filterProcessCode !=""){$ADDPROCCESSFILTER = "and  b.processcode_id = ".$filterProcessCode;}
+		
 
 		//$whr		= " a.select_date>='".$fromDate."' and a.select_date<='".$tillDate."'";
 		//$whr		= " a.select_date>='".$fromDate."' and a.select_date<='".$tillDate."' and repack_main_id is null and reglaze_main_id is null and processCode is not null";
 
-		$whr1		= " a.select_date>='".$fromDate."' and a.select_date<='".$tillDate."' and repack_main_id is null and reglaze_main_id is null and mpc.code is not null ";
+		$whr1		= " a.select_date>='".$fromDate."' and a.select_date<='".$tillDate."' and repack_main_id is null and reglaze_main_id is null and mpc.code is not null ".$ADDPROCCESSFILTER;
 		
-		$whr11		= " a.select_date>='".$fromDate."' and a.select_date<='".$tillDate."' and repack_main_id is null and reglaze_main_id is null and mpc.name is not null ";
+		$whr11		= " a.select_date>='".$fromDate."' and a.select_date<='".$tillDate."' and repack_main_id is null and reglaze_main_id is null and mpc.name is not null ".$ADDPROCCESSFILTER;
 
 
 		$groupBy	= " b.processcode_id, b.freezing_stage_id, b.frozencode_id, b.mcpacking_id,new_lot_Id";
@@ -278,12 +280,13 @@ function getPagingDFPRecs($fromDate, $tillDate, $offset, $limit)
 		$dailyfrozenphysiclastkentry= array_merge($fa,$getphysicalstkentrymc);
 		$found = array();
 		foreach ($dailyfrozenphysiclastkentry as $i=>$row) {
-		$check = "$row[3],$row[4],$row[5],$row[11]";
-   
-		if (@$found[$check]++) {
-        unset($dailyfrozenphysiclastkentry[$i]);
-		}
-}	  
+				$check = "$row[3],$row[4],$row[5],$row[11]";
+		
+				if (@$found[$check]++) {
+				unset($dailyfrozenphysiclastkentry[$i]);
+				}
+		}	  
+		//echo $qry;
 		return $result;
 	}
 
@@ -368,12 +371,13 @@ function getPagingDFPRecs($fromDate, $tillDate, $offset, $limit)
 	}
 
 
-	function getDFPForDateRange($fromDate, $tillDate)
+	function getDFPForDateRange($fromDate, $tillDate,$filterProcessCode)
 	{	
+		if($filterProcessCode !=""){$ADDPROCCESSFILTER = "and  b.processcode_id = ".$filterProcessCode;}
 
-		$whr1		= " a.select_date>='".$fromDate."' and a.select_date<='".$tillDate."' and repack_main_id is null and reglaze_main_id is null and mpc.code is not null ";
+		$whr1		= " a.select_date>='".$fromDate."' and a.select_date<='".$tillDate."' and repack_main_id is null and reglaze_main_id is null and mpc.code is not null ".$ADDPROCCESSFILTER;
 		
-		$whr11		= " a.select_date>='".$fromDate."' and a.select_date<='".$tillDate."' and repack_main_id is null and reglaze_main_id is null and mpc.name is not null ";
+		$whr11		= " a.select_date>='".$fromDate."' and a.select_date<='".$tillDate."' and repack_main_id is null and reglaze_main_id is null and mpc.name is not null ".$ADDPROCCESSFILTER;
 
 
 		$groupBy	= " b.processcode_id, b.freezing_stage_id, b.frozencode_id, b.mcpacking_id,new_lot_Id";
@@ -507,6 +511,8 @@ function getPagingDFPRecs($fromDate, $tillDate, $offset, $limit)
 			if ($orderBy!="") $qry .= " order by ".$orderBy;
 			//echo  $qry ;
 			*/
+
+			//echo  $qry ;
 
 		$result	= $this->databaseConnect->getRecords($qry);
 		return $result;

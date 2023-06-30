@@ -121,8 +121,10 @@ function weightmentSupplierName($supplierGroupId,$inputId,$selSupplierGroupId)
 		$objWeighmentDataSheet = new WeighmentDataSheet($databaseConnect);
 		//$objResponse->alert(mysqlDateFormat($selDate));
 		$checkGateNumberSettingsExist=$objWeighmentDataSheet->chkValidDataSheetId($selDate,$company,$unit);
+		//print_r($checkGateNumberSettingsExist);
 		if(sizeof($checkGateNumberSettingsExist)>0)
 		{
+			//die('7777');
 			$alphaCode=$objWeighmentDataSheet->getAlphaCode($selDate,$company,$unit);
 			$alphaCodePrefix= $alphaCode[0];
 			$numbergen=$checkGateNumberSettingsExist[0][0];

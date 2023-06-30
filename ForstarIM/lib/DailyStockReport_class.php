@@ -853,7 +853,7 @@ function getPagingDFPRecs_old($fromDate, $tillDate, $offset, $limit)
 		$qry="select * from ($qry1 union all $qry2) dum group by gradeId order by code asc " ;
 		// echo "Grade===><br/>$qry<br>";		
 		$result	= $this->databaseConnect->getRecords($qry);
-		//print_r($result);
+		// print_r($result);
 		return $result;
 	}
 

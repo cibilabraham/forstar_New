@@ -95,9 +95,11 @@ $selection = "?pageNo=".$p["pageNo"]."&selectFrom=".$p["selectFrom"]."&selectTil
 				$receiptGatePass=$p["receiptGatePass_".$i];
 				$supplierChellanDate=$p["supplierChellanDate_".$i];
 				$supplierChellanVal=$p["supplierChellan_".$i];
-				
-				
-				if ($rmId!="" && $alphaValue!="" && $company_idval!="" && $unit_idval!="" && $number_genval!="" ) 
+
+				if($alphaValue == ""){$alphaValue = "F";}
+			
+
+				if ($rmId !="" && $alphaValue !="" && $company_idval !="" && $unit_idval !="" && $number_genval !="") 
 				{
 					$rmlotIdList = $objManageRMLOTID->addManageLotId($rmId,$alphaValue,$company_idval,$unit_idval,$number_genval,$userId);
 				} 

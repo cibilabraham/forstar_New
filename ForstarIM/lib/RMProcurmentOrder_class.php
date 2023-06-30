@@ -1878,16 +1878,28 @@ class ProcurementOrder
 	{	
 		$currentdate=date("Y-m-d");
 		$qry="select id,billing_company_id,unitid from number_gen where alpha_code='$letters' and '$currentdate' between start_date and end_date  and '$numbers' between start_no and end_no and type='MG'";
-		//echo $qry;
 		$result = array();
+		echo $qry;
 		$result = $this->databaseConnect->getRecord($qry);
-		return $result;
+		if(sizeof($checkStatus)>0){
+			return $result;
+		}else{
+			if($letters == 'F'){
+				$qry="select id,billing_company_id,unitid from number_gen where alpha_code=0 and '$currentdate' between start_date and end_date  and '$numbers' between start_no and end_no and type='MG'";
+				$result = array();
+				$result = $this->databaseConnect->getRecord($qry);
+				return $result;
+
+			}else{return $result;}
+			
+		}
+		
 	}
 	
 	function chkDuplicate($gatePass)
 	{
 		$qry="select id from t_rmprocurmentorder where procurement_number='$gatePass'";
-		//echo $qry;
+		echo $qry;
 		$result = array();
 		$result = $this->databaseConnect->getRecord($qry);
 		return (sizeof($result)>0)?true:false;

@@ -462,7 +462,7 @@
 		?>
 		<table align="center" cellpadding="0" cellspacing="0" width="100%">
 				<tr>
-					<td  class="fieldName" nowrap="">*Material type :</td>
+					<td  class="fieldName" nowrap="">*Material type:</td>
 					<td nowrap="">
 					
 					<select name="material_type" id="material_type" onchange="xajax_getRmLotId(document.getElementById('material_type').value,'');">
@@ -493,7 +493,7 @@
 					</td>
 				</tr>
                <tr>
-						<td  class="fieldName">* Rm Lot ID :</td>
+						<td  class="fieldName">* Rm Lot ID:</td>
 						<td nowrap="">
 						<?php
 							if($p['cmdEdit'])

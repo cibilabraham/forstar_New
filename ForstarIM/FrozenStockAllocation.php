@@ -4650,7 +4650,7 @@
 																$invConfirm=$dfpr[24];
 																
 																//if ($balMC<=0 && $balLS<=0) continue; // skip the row
-																if ($balMC<0) continue;
+																//if ($balMC<0) continue;
 
 																//$i++;
 																$dailyFrozenPackingMainId	= $dfpr[0];

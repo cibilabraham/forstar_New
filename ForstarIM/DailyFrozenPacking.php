@@ -23,6 +23,8 @@
 	$print	=false;
 	$confirm=false;
 	$reEdit = false;
+
+	$filterProcessCode = "";
 	
 	list($moduleId,$functionId) = $modulemanagerObj->resolveIds($currentUrl);
 
@@ -1368,8 +1370,10 @@
 		$fromDate = mysqlDateFormat($dateFrom);
 		$tillDate = mysqlDateFormat($dateTill);
 
-		$dailyFrozenPackingRecs = $dailyfrozenpackingObj->getPagingDFPRecs($fromDate, $tillDate, $offset, $limit);		
-		$numrows	=  sizeof($dailyfrozenpackingObj->getDFPForDateRange($fromDate, $tillDate));
+		$filterProcessCode = $p["processCode"];
+
+		$dailyFrozenPackingRecs = $dailyfrozenpackingObj->getPagingDFPRecs($fromDate, $tillDate, $offset, $limit,$filterProcessCode);		
+		$numrows	=  sizeof($dailyfrozenpackingObj->getDFPForDateRange($fromDate, $tillDate,$filterProcessCode));
 		$dailyFrozenPackingRecordSize=sizeof($dailyFrozenPackingRecs);
 	}
 	
@@ -1525,6 +1529,9 @@
 	else if ($allocateMode) $heading = $label_allocateDailyFrozenPacking; 
 	else if ($convertLS) $heading =$label_convertLSDailyFrozenPacking;
 	else $heading = $label_addDailyFrozenPacking;
+
+	$processCodeRecords	= $processcodeObj->processCodeRecFilter11();
+	//print_r($processCodeRecords);
 	
 	# $help_lnk="help/hlp_Packing.html";
 
@@ -1904,7 +1911,7 @@
 																		} else
 																		{
 																		?>
-																		<select name="processCode" onchange="this.form.editId.value=<?=$editId?>; this.form.submit();" <?=$disabled?>>
+																		<select name="processCode" >
 																		<? }?>
 																			<option value="">-- Select --</option>
 																			<?
@@ -3574,6 +3581,36 @@
 												  ?>
 												  <input type="text" id="frozenPackingTill" name="frozenPackingTill" size="8"  value="<?=$dateTill?>"></td>
 												<td class="listing-item">&nbsp;</td>
+
+												<td class="listing-item" nowrap="nowrap">Process Code:</td>
+
+																			<td>
+																			
+																				<select name="processCode" id="processCode" >
+																				
+																					<option value="">-- Select --</option>
+																					<?
+																					foreach ($processCodeRecords as $fl)
+																					{
+																						$processCodeId		=	$fl[0];
+																						$processCode		=	$fl[2];
+																						$selected	=	"";
+																						if( $filterProcessCode==$processCodeId){
+																						$selected	=	"selected";
+																						}
+																					?>
+																					<option value="<?=$processCodeId;?>" <?=$selected;?> >
+																					<?=$processCode;?>
+																					</option>
+																				<?
+																				}
+																				?>
+																				</select>
+																			</td>
+
+
+												<td class="listing-item">&nbsp;</td>
+
 												<td><input name="cmdSearch" type="submit" class="button" id="cmdSearch" value="Search " onclick="return validateDailyFrozenPackingSearch(document.frmDailyFrozenPacking);"></td>
 												<td class="listing-item" nowrap >&nbsp;</td>
 											</tr>

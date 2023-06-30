@@ -523,9 +523,16 @@ Class ManageRMLOTID
 		//$qry	= "select start_no, end_no from number_gen where billing_company_id='$billingCompany' and date_format(start_date,'%Y-%m-%d')<='$selDate' and (date_format(end_date,'%Y-%m-%d')>='$selDate' or (end_date is null || end_date=0))";
 		//$qry	="select id,number_from, number_to from manage_procrment_gate_pass where  date_format(date_from,'%Y-%m-%d')<='$selDate' and (date_format(date_to,'%Y-%m-%d')>='$selDate' or (date_to is null || date_to=0))";
 
-		//echo $qry;
 		$rec = $this->databaseConnect->getRecords($qry);
-		return $rec;
+		if(sizeof($rec)>0){
+			return $rec;
+		}else{
+			$qry	="select id,start_no, end_no from number_gen where  date_format(start_date,'%Y-%m-%d')<='$selDate' and (date_format(end_date,'%Y-%m-%d')>='$selDate' or (end_date is null || end_date=0)) and auto_generate='N' AND TYPE = 'LF' and billing_company_id='$company' and ( unitid='$unit' || unitid='0') ";
+			$rec = $this->databaseConnect->getRecords($qry);
+			return $rec;
+
+		}
+		
 		//return (sizeof($rec)>0)?true:false;
 	}
 	function getAlphaCode($selDate,$company,$unit)
@@ -647,6 +654,7 @@ Class ManageRMLOTID
 	}
 	function addManageLotId($rmId,$alphaValue,$company_idval,$unit_idval,$number_genval,$userId)
 	{
+		
 		$qry	= "insert into t_manage_rm_lotid(company_id,unit_id,rm_lotid,alpha_character,number_gen_id,created_on,created_by) values('$company_idval','$unit_idval','$rmId','$alphaValue','$number_genval',Now(),'$userId')";	
 		$insertStatus	= $this->databaseConnect->insertRecord($qry);		
 		if ($insertStatus) $this->databaseConnect->commit();
@@ -677,6 +685,7 @@ Class ManageRMLOTID
 	
 	function addManageLotIdNew($rm_lot_id,$alphaValue,$generateNewLotId,$Company_Name,$unit,$number_genval,$userId)
 	{
+		
 		$qry	= "insert into t_manage_rm_lotid(company_id,unit_id,rm_lotid,alpha_character,number_gen_id,lot_id_origin,created_on,created_by) values
 				  ('$Company_Name','$unit','$generateNewLotId','$alphaValue','$number_genval','$rm_lot_id',Now(),'$userId')";	
 		$insertStatus	= $this->databaseConnect->insertRecord($qry);		

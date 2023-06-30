@@ -1116,6 +1116,10 @@ class PurchaseOrder
 	*/
 	function qelFrzncode($fishId, $processCodeId)
 	{
+		// echo $fishId;
+		// echo "<br>";
+		// echo $processCodeId;
+
 		$qry = "select fqem.frozencode_id, mfp.code from t_fznpakng_quick_entry fqem join t_fznpakng_qel_entry fpqe on fqem.id=fpqe.qe_entry_id 
 			left join m_frozenpacking mfp on mfp.id=fqem.frozencode_id where fpqe.fish_id='$fishId' and fpqe.processcode_id='$processCodeId'
 			group by fqem.frozencode_id order by mfp.code asc
@@ -1137,14 +1141,15 @@ class PurchaseOrder
 			$frznIds = implode(',',$validArr);
 		}
 
-		if ($frznIds!="") $resultArr['FS2'] = "--Other--";
+		//if ($frznIds!="") $resultArr['FS2'] = "--Other--";
 
 		# Get All Recs
 		$qryAll = "select id, code from m_frozenpacking";
 		if ($frznIds!="") $qryAll .= " where id not in ($frznIds)";
 		$qryAll .= " order by code asc";
 		//echo "Qry2==><br>$qryAll<br>";
-		$resultAll	= $this->databaseConnect->getRecords($qryAll);
+		//$resultAll	= $this->databaseConnect->getRecords($qryAll);
+		$resultAll	= $this->databaseConnect->getRecords($qry);
 
 		if (sizeof($resultAll)>0) {
 			foreach ($resultAll as $ra) {
